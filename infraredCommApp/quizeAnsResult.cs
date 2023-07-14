@@ -7,6 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Globalization;
+using System.Reflection;
+using System.Linq;
 
 namespace infraredCommApp
 {
@@ -54,9 +57,12 @@ namespace infraredCommApp
             allPeriodCB.Checked = false;
         }
 
+        public void showQuizData(bool isOnlyID = false, bool isOnlyAccuracy = false)
+        {
+            quizprocess(isOnlyID, isOnlyAccuracy);
+        }
 
-
-        private void quizprocess()
+        private void quizprocess(bool isOnlyID = false, bool isOnlyAccuracy = false)
         {
 
             if (gQuizAnsINFO.Count == 0) return;
@@ -92,13 +98,26 @@ namespace infraredCommApp
 
             foreach (QuizAnsInformation qai in gQuizAnsINFO)
             {
+                if(isOnlyAccuracy || isOnlyID)
+                {
+                    if (isOnlyID)
+                    {
+                        szTemp1 += "コンテンツID:" + qai.u32CID.ToString("X8") + "  ";
+                    }
 
-
-                szTemp1 += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
-                        + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
-                        + "利用回数:" + qai.nTotalAccessNum.ToString()
-                        + "\r\n";
-
+                    if (isOnlyAccuracy)
+                    {
+                        szTemp1 += "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  ";
+                    }
+                    szTemp1 += "\r\n";
+                }
+                else
+                {
+                    szTemp1 += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
+                            + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
+                            + "利用回数:" + qai.nTotalAccessNum.ToString()
+                            + "\r\n";
+                }
             }
 
             quizAnsResBigTextBox.Text = szTemp1;
@@ -106,6 +125,13 @@ namespace infraredCommApp
             this.Close();
 
         }
+
+        public void SaveCSV()
+        {
+            if (gQuizAnsINFO.Count == 0) return;
+            Common.WriteCsvFile<QuizAnsInformation>(gQuizAnsINFO, Form1.workfolder + "ExportedQuizInfoResult.csv");
+        }
+
         /// <summary>
         /// //////////////////////////////////////////////////////////////////////
         /// </summary>
@@ -199,7 +225,16 @@ namespace infraredCommApp
                 szTemp1 = text.Substring(0, text.IndexOf(","));
                 d = d + " " + szTemp1;
 
-                dtUsedTiming = DateTime.Now;
+                if (DateTime.TryParse(d, out DateTime parsedDateTime))
+                {
+                    dtUsedTiming = parsedDateTime;
+                } 
+                else
+                {
+                    var invalidDateString = d.Split('/');
+                    d = $"{invalidDateString[1]}/{invalidDateString[0]}/{invalidDateString[2]}";
+                    dtUsedTiming = DateTime.Parse(d);
+                }
 
                 // content using  timing
                 text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
@@ -340,11 +375,7 @@ namespace infraredCommApp
 
             }
 
-
             quizprocess();
-
-
-
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

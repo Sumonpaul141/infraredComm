@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="buttonSetup.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt</value>
@@ -175,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonSetup.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="buttonQuizRate.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt</value>
@@ -205,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonQuizRate.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="buttonGuideTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt</value>
@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonGuideTotal.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="buttonFLowLineAnalysis.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt</value>
@@ -265,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonFLowLineAnalysis.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="map_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt</value>
@@ -295,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;map_button.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="delete_map_button8.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -325,7 +325,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;delete_map_button8.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="set_map_label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -361,7 +361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;set_map_label1.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="map_comboBox1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -391,7 +391,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;map_comboBox1.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="add_map_button1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -424,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;add_map_button1.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -463,37 +463,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Exit_map_edit_button9.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>180, 17</value>
   </metadata>
   <data name="コンテンツToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>118, 22</value>
   </data>
   <data name="コンテンツToolStripMenuItem.Text" xml:space="preserve">
     <value>赤外線</value>
   </data>
   <data name="赤外線ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>118, 22</value>
   </data>
   <data name="赤外線ToolStripMenuItem.Text" xml:space="preserve">
     <value>コンテンツ</value>
   </data>
   <data name="追加ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
+    <value>98, 22</value>
   </data>
   <data name="追加ToolStripMenuItem.Text" xml:space="preserve">
     <value>追加</value>
   </data>
   <data name="削除ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
+    <value>98, 22</value>
   </data>
   <data name="削除ToolStripMenuItem.Text" xml:space="preserve">
     <value>削除</value>
   </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 48</value>
+    <value>99, 48</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
     <value>contextMenuStrip1</value>
@@ -523,7 +523,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="lblimage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -547,7 +547,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblimage.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblCboImageName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -574,7 +574,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCboImageName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>329, 17</value>
@@ -601,7 +601,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblTagNameTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -631,7 +631,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTagNameTest.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="chartWithData.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 31</value>
@@ -655,7 +655,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chartWithData.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="lblMonth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -688,7 +688,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMonth.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblDate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -721,7 +721,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDate.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="progBarTagLoad.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 913</value>
@@ -742,7 +742,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;progBarTagLoad.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblProgBarTagLoadPercent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -772,7 +772,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProgBarTagLoadPercent.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblFromDate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -805,7 +805,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFromDate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblToDate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -838,7 +838,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblToDate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -871,7 +871,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -904,7 +904,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtAnalyzedData.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS Gothic, 14.25pt</value>
@@ -937,6 +937,180 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAnalyzedData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="exportData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 41</value>
+  </data>
+  <data name="exportData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="exportData.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="exportData.Text" xml:space="preserve">
+    <value>Export Data</value>
+  </data>
+  <data name="&gt;&gt;exportData.Name" xml:space="preserve">
+    <value>exportData</value>
+  </data>
+  <data name="&gt;&gt;exportData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportData.Parent" xml:space="preserve">
+    <value>controlPanel</value>
+  </data>
+  <data name="&gt;&gt;exportData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="barChartButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="barChartButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>636, 41</value>
+  </data>
+  <data name="barChartButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="barChartButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="barChartButton.Text" xml:space="preserve">
+    <value>barChart</value>
+  </data>
+  <data name="&gt;&gt;barChartButton.Name" xml:space="preserve">
+    <value>barChartButton</value>
+  </data>
+  <data name="&gt;&gt;barChartButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;barChartButton.Parent" xml:space="preserve">
+    <value>controlPanel</value>
+  </data>
+  <data name="&gt;&gt;barChartButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rawDataButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 41</value>
+  </data>
+  <data name="rawDataButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="rawDataButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rawDataButton.Text" xml:space="preserve">
+    <value>Raw Data</value>
+  </data>
+  <data name="&gt;&gt;rawDataButton.Name" xml:space="preserve">
+    <value>rawDataButton</value>
+  </data>
+  <data name="&gt;&gt;rawDataButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rawDataButton.Parent" xml:space="preserve">
+    <value>controlPanel</value>
+  </data>
+  <data name="&gt;&gt;rawDataButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="showOnlyIDRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="showOnlyIDRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 18</value>
+  </data>
+  <data name="showOnlyIDRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 16</value>
+  </data>
+  <data name="showOnlyIDRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="showOnlyIDRadioButton.Text" xml:space="preserve">
+    <value>Show Only ID</value>
+  </data>
+  <data name="&gt;&gt;showOnlyIDRadioButton.Name" xml:space="preserve">
+    <value>showOnlyIDRadioButton</value>
+  </data>
+  <data name="&gt;&gt;showOnlyIDRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;showOnlyIDRadioButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;showOnlyIDRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="showAccuracyRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="showAccuracyRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="showAccuracyRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 16</value>
+  </data>
+  <data name="showAccuracyRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="showAccuracyRadioButton.Text" xml:space="preserve">
+    <value>Show Accuracy</value>
+  </data>
+  <data name="&gt;&gt;showAccuracyRadioButton.Name" xml:space="preserve">
+    <value>showAccuracyRadioButton</value>
+  </data>
+  <data name="&gt;&gt;showAccuracyRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;showAccuracyRadioButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;showAccuracyRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 19</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 51</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>controlPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="controlPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 894</value>
+  </data>
+  <data name="controlPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>888, 100</value>
+  </data>
+  <data name="controlPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="controlPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;controlPanel.Name" xml:space="preserve">
+    <value>controlPanel</value>
+  </data>
+  <data name="&gt;&gt;controlPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;controlPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;controlPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

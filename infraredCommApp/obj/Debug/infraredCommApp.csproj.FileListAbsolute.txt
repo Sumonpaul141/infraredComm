@@ -798,3 +798,31 @@ C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infrar
 C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
 C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
 C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\USER\Desktop\demo\infraredComm\infraredCommApp\obj\Debug\FlowLine2022.pdb

@@ -215,6 +215,8 @@ namespace infraredCommApp
         private Timer timer;
         private Bitmap heatmap;
 
+        private quizeAnsResult _QuizeAns;
+
         //public AnimatedHeatmap()
         //{
         //    // Initialize the heatmap image with a blank bitmap
@@ -1768,6 +1770,11 @@ namespace infraredCommApp
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
             quizeAnsResult f2 = new quizeAnsResult();
             f2.ShowDialog();
+            if(f2.AnalyzedData != "")
+            {
+                controlPanel.Visible = true;
+            }
+            _QuizeAns = f2;
             txtAnalyzedData.Text = f2.AnalyzedData;
             //if (gStoryINFOALl.Count != 0)
             //{
@@ -2540,6 +2547,25 @@ namespace infraredCommApp
             }//while
 
             return true;
+        }
+
+        private void AccuracyIDRadioButtonChanged(object sender, EventArgs e)
+        {
+            if(sender is RadioButton radioButton && radioButton == showOnlyIDRadioButton)
+            {
+                _QuizeAns.showQuizData(isOnlyID: radioButton.Checked, isOnlyAccuracy: false);
+                txtAnalyzedData.Text = _QuizeAns.AnalyzedData;
+            }
+            else if (sender is RadioButton radioButton2 && radioButton2 == showAccuracyRadioButton)
+            {
+                _QuizeAns.showQuizData(isOnlyID: false, isOnlyAccuracy: radioButton2.Checked);
+                txtAnalyzedData.Text = _QuizeAns.AnalyzedData;
+            }
+        }
+
+        private void exportData_Click(object sender, EventArgs e)
+        {
+            _QuizeAns.SaveCSV();
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)

@@ -65,9 +65,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAnalyzedData = new System.Windows.Forms.TextBox();
+            this.controlPanel = new System.Windows.Forms.Panel();
+            this.barChartButton = new System.Windows.Forms.Button();
+            this.rawDataButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.showOnlyIDRadioButton = new System.Windows.Forms.RadioButton();
+            this.showAccuracyRadioButton = new System.Windows.Forms.RadioButton();
+            this.exportData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
+            this.controlPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -274,12 +283,65 @@
             this.txtAnalyzedData.Name = "txtAnalyzedData";
             this.txtAnalyzedData.ReadOnly = true;
             // 
+            // controlPanel
+            // 
+            this.controlPanel.Controls.Add(this.exportData);
+            this.controlPanel.Controls.Add(this.barChartButton);
+            this.controlPanel.Controls.Add(this.rawDataButton);
+            this.controlPanel.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.controlPanel, "controlPanel");
+            this.controlPanel.Name = "controlPanel";
+            // 
+            // barChartButton
+            // 
+            resources.ApplyResources(this.barChartButton, "barChartButton");
+            this.barChartButton.Name = "barChartButton";
+            this.barChartButton.UseVisualStyleBackColor = true;
+            // 
+            // rawDataButton
+            // 
+            resources.ApplyResources(this.rawDataButton, "rawDataButton");
+            this.rawDataButton.Name = "rawDataButton";
+            this.rawDataButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.showOnlyIDRadioButton);
+            this.groupBox1.Controls.Add(this.showAccuracyRadioButton);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // showOnlyIDRadioButton
+            // 
+            resources.ApplyResources(this.showOnlyIDRadioButton, "showOnlyIDRadioButton");
+            this.showOnlyIDRadioButton.Name = "showOnlyIDRadioButton";
+            this.showOnlyIDRadioButton.TabStop = true;
+            this.showOnlyIDRadioButton.UseVisualStyleBackColor = true;
+            this.showOnlyIDRadioButton.CheckedChanged += new System.EventHandler(this.AccuracyIDRadioButtonChanged);
+            // 
+            // showAccuracyRadioButton
+            // 
+            resources.ApplyResources(this.showAccuracyRadioButton, "showAccuracyRadioButton");
+            this.showAccuracyRadioButton.Name = "showAccuracyRadioButton";
+            this.showAccuracyRadioButton.TabStop = true;
+            this.showAccuracyRadioButton.UseVisualStyleBackColor = true;
+            this.showAccuracyRadioButton.CheckedChanged += new System.EventHandler(this.AccuracyIDRadioButtonChanged);
+            // 
+            // exportData
+            // 
+            resources.ApplyResources(this.exportData, "exportData");
+            this.exportData.Name = "exportData";
+            this.exportData.UseVisualStyleBackColor = true;
+            this.exportData.Click += new System.EventHandler(this.exportData_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
+            this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.txtAnalyzedData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -313,6 +375,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).EndInit();
+            this.controlPanel.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,6 +417,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAnalyzedData;
+        private System.Windows.Forms.Panel controlPanel;
+        private System.Windows.Forms.Button barChartButton;
+        private System.Windows.Forms.Button rawDataButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton showOnlyIDRadioButton;
+        private System.Windows.Forms.RadioButton showAccuracyRadioButton;
+        private System.Windows.Forms.Button exportData;
     }
 }
 
