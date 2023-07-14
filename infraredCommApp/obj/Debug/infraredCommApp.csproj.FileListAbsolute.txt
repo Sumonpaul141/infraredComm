@@ -770,3 +770,31 @@ C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infrared
 C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
 C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
 C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Dell\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb

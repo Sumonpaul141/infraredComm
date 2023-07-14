@@ -28,139 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonOK = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputGroupBox = new System.Windows.Forms.GroupBox();
+            this.todayBtn = new System.Windows.Forms.Button();
+            this.allPeriodCB = new System.Windows.Forms.CheckBox();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endDateLabel = new System.Windows.Forms.Label();
+            this.startDateLabel = new System.Windows.Forms.Label();
+            this.quizeAnsResOkBtn = new System.Windows.Forms.Button();
+            this.quizeAnsResCancelBtn = new System.Windows.Forms.Button();
+            this.quizAnsResBigTextBox = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.groupBox2.SuspendLayout();
+            this.inputGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // inputGroupBox
             // 
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(14, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(295, 249);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "期間指定";
+            this.inputGroupBox.Controls.Add(this.todayBtn);
+            this.inputGroupBox.Controls.Add(this.allPeriodCB);
+            this.inputGroupBox.Controls.Add(this.endDateTimePicker);
+            this.inputGroupBox.Controls.Add(this.startDateTimePicker);
+            this.inputGroupBox.Controls.Add(this.endDateLabel);
+            this.inputGroupBox.Controls.Add(this.startDateLabel);
+            this.inputGroupBox.Location = new System.Drawing.Point(14, 14);
+            this.inputGroupBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.inputGroupBox.Name = "inputGroupBox";
+            this.inputGroupBox.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.inputGroupBox.Size = new System.Drawing.Size(295, 270);
+            this.inputGroupBox.TabIndex = 15;
+            this.inputGroupBox.TabStop = false;
+            this.inputGroupBox.Text = "期間指定";
             // 
-            // button6
+            // todayBtn
             // 
-            this.button6.Location = new System.Drawing.Point(27, 195);
-            this.button6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 36);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "今日";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            this.todayBtn.Location = new System.Drawing.Point(27, 211);
+            this.todayBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.todayBtn.Name = "todayBtn";
+            this.todayBtn.Size = new System.Drawing.Size(150, 39);
+            this.todayBtn.TabIndex = 3;
+            this.todayBtn.Text = "今日";
+            this.todayBtn.UseVisualStyleBackColor = true;
+            this.todayBtn.Click += new System.EventHandler(this.TodayButtonClick);
             // 
-            // checkBox1
+            // allPeriodCB
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(28, 160);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "全て期間";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.allPeriodCB.AutoSize = true;
+            this.allPeriodCB.Location = new System.Drawing.Point(28, 173);
+            this.allPeriodCB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.allPeriodCB.Name = "allPeriodCB";
+            this.allPeriodCB.Size = new System.Drawing.Size(71, 17);
+            this.allPeriodCB.TabIndex = 2;
+            this.allPeriodCB.Text = "全て期間";
+            this.allPeriodCB.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // endDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(27, 121);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(241, 19);
-            this.dateTimePicker2.TabIndex = 1;
+            this.endDateTimePicker.Location = new System.Drawing.Point(27, 131);
+            this.endDateTimePicker.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.Size = new System.Drawing.Size(241, 20);
+            this.endDateTimePicker.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // startDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 59);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 19);
-            this.dateTimePicker1.TabIndex = 0;
+            this.startDateTimePicker.Location = new System.Drawing.Point(27, 64);
+            this.startDateTimePicker.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(241, 20);
+            this.startDateTimePicker.TabIndex = 0;
             // 
-            // label3
+            // endDateLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "終了日";
+            this.endDateLabel.AutoSize = true;
+            this.endDateLabel.Location = new System.Drawing.Point(25, 104);
+            this.endDateLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.endDateLabel.Name = "endDateLabel";
+            this.endDateLabel.Size = new System.Drawing.Size(43, 13);
+            this.endDateLabel.TabIndex = 5;
+            this.endDateLabel.Text = "終了日";
             // 
-            // label2
+            // startDateLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "開始日";
+            this.startDateLabel.AutoSize = true;
+            this.startDateLabel.Location = new System.Drawing.Point(25, 36);
+            this.startDateLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.startDateLabel.Name = "startDateLabel";
+            this.startDateLabel.Size = new System.Drawing.Size(43, 13);
+            this.startDateLabel.TabIndex = 4;
+            this.startDateLabel.Text = "開始日";
             // 
-            // button2
+            // quizeAnsResOkBtn
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(165, 321);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 42);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "OK";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.quizeAnsResOkBtn.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quizeAnsResOkBtn.Location = new System.Drawing.Point(165, 348);
+            this.quizeAnsResOkBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.quizeAnsResOkBtn.Name = "quizeAnsResOkBtn";
+            this.quizeAnsResOkBtn.Size = new System.Drawing.Size(144, 46);
+            this.quizeAnsResOkBtn.TabIndex = 7;
+            this.quizeAnsResOkBtn.Text = "OK";
+            this.quizeAnsResOkBtn.UseVisualStyleBackColor = true;
+            this.quizeAnsResOkBtn.Click += new System.EventHandler(this.QuizeAnsResOkButtonClicked);
             // 
-            // buttonOK
+            // quizeAnsResCancelBtn
             // 
-            this.buttonOK.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonOK.Location = new System.Drawing.Point(11, 321);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(144, 42);
-            this.buttonOK.TabIndex = 8;
-            this.buttonOK.Text = "Cancel";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click_1);
+            this.quizeAnsResCancelBtn.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quizeAnsResCancelBtn.Location = new System.Drawing.Point(11, 348);
+            this.quizeAnsResCancelBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.quizeAnsResCancelBtn.Name = "quizeAnsResCancelBtn";
+            this.quizeAnsResCancelBtn.Size = new System.Drawing.Size(144, 46);
+            this.quizeAnsResCancelBtn.TabIndex = 8;
+            this.quizeAnsResCancelBtn.Text = "Cancel";
+            this.quizeAnsResCancelBtn.UseVisualStyleBackColor = true;
+            this.quizeAnsResCancelBtn.Click += new System.EventHandler(this.QuizeAnsResCancelButtonClicked);
             // 
-            // textBox1
+            // quizAnsResBigTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(364, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(312, 350);
-            this.textBox1.TabIndex = 25;
+            this.quizAnsResBigTextBox.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quizAnsResBigTextBox.Location = new System.Drawing.Point(364, 14);
+            this.quizAnsResBigTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.quizAnsResBigTextBox.Multiline = true;
+            this.quizAnsResBigTextBox.Name = "quizAnsResBigTextBox";
+            this.quizAnsResBigTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.quizAnsResBigTextBox.Size = new System.Drawing.Size(312, 379);
+            this.quizAnsResBigTextBox.TabIndex = 25;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(190, 337);
+            this.radioButton1.Location = new System.Drawing.Point(190, 365);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 16);
+            this.radioButton1.Size = new System.Drawing.Size(107, 17);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "正解率順で表示";
@@ -169,10 +169,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(188, 337);
+            this.radioButton2.Location = new System.Drawing.Point(188, 365);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(117, 16);
+            this.radioButton2.Size = new System.Drawing.Size(119, 17);
             this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "利用回数順で表示";
@@ -181,10 +181,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(188, 337);
+            this.radioButton3.Location = new System.Drawing.Point(188, 365);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(107, 16);
+            this.radioButton3.Size = new System.Drawing.Size(109, 17);
             this.radioButton3.TabIndex = 6;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "クイズID順で表示";
@@ -192,21 +192,21 @@
             // 
             // quizeAnsResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 380);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonOK);
+            this.ClientSize = new System.Drawing.Size(695, 412);
+            this.Controls.Add(this.quizeAnsResOkBtn);
+            this.Controls.Add(this.quizAnsResBigTextBox);
+            this.Controls.Add(this.quizeAnsResCancelBtn);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.inputGroupBox);
             this.Name = "quizeAnsResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "クイズ解答状況";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.inputGroupBox.ResumeLayout(false);
+            this.inputGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,16 +214,16 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox inputGroupBox;
+        private System.Windows.Forms.Button todayBtn;
+        private System.Windows.Forms.CheckBox allPeriodCB;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker;
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
+        private System.Windows.Forms.Label endDateLabel;
+        private System.Windows.Forms.Label startDateLabel;
+        private System.Windows.Forms.Button quizeAnsResOkBtn;
+        private System.Windows.Forms.Button quizeAnsResCancelBtn;
+        private System.Windows.Forms.TextBox quizAnsResBigTextBox;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;

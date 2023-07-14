@@ -31,16 +31,16 @@ namespace infraredCommApp
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (checkBox1.Checked == true)
+            if (allPeriodCB.Checked == true)
             {
-                dateTimePicker1.Enabled = false;
-                dateTimePicker2.Enabled = false;
+                startDateTimePicker.Enabled = false;
+                endDateTimePicker.Enabled = false;
 
             }
             else
             {
-                dateTimePicker1.Enabled = true;
-                dateTimePicker2.Enabled = true;
+                startDateTimePicker.Enabled = true;
+                endDateTimePicker.Enabled = true;
 
             }
 
@@ -48,10 +48,10 @@ namespace infraredCommApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
+            startDateTimePicker.Value = DateTime.Now;
+            endDateTimePicker.Value = DateTime.Now;
 
-            checkBox1.Checked = false;
+            allPeriodCB.Checked = false;
         }
 
 
@@ -62,7 +62,7 @@ namespace infraredCommApp
             if (gQuizAnsINFO.Count == 0) return;
 
             //show the result to the listbox
-            textBox1.Clear();
+            quizAnsResBigTextBox.Clear();
 
             if (radioButton2.Checked == true)
             {
@@ -101,7 +101,7 @@ namespace infraredCommApp
 
             }
 
-            textBox1.Text = szTemp1;
+            quizAnsResBigTextBox.Text = szTemp1;
             AnalyzedData = szTemp1;
             this.Close();
 
@@ -111,47 +111,32 @@ namespace infraredCommApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void QuizeAnsResOkButtonClicked(object sender, EventArgs e)
         {
 
             //give a summary of the quiz answer result
             //CSV file output
             gQuizAnsINFO.Clear();
-
             bool bFound = false;
-
-            textBox1.Text = "";
-
-
-
+            quizAnsResBigTextBox.Text = "";
             // get the period information for calculateion
 
-            DateTime dtLOGStart, dtLOGEnd;
+            DateTime dtLOGStart, dtLOGEnd, dtStart, dtEnd;
             string d, f;
 
             f = "yyyy-MM-dd HH:mm:ss";
 
-
-
-            DateTime dtStart, dtEnd, dtTemp;
-
-            dtTemp = dateTimePicker1.Value;
-
-            d = dtTemp.Date.ToString("yyyy-MM-dd") + " 00:00:01";
+            d = startDateTimePicker.Value.Date.AddSeconds(1).ToString(f);
             dtStart = DateTime.ParseExact(d, f, null);
 
-            dtTemp = dateTimePicker2.Value;
 
-            d = dtTemp.Date.ToString("yyyy-MM-dd") + " 23:59:59";
+            d = endDateTimePicker.Value.Date.AddDays(1).AddSeconds(-1).ToString(f);
             dtEnd = DateTime.ParseExact(d, f, null);
 
-            if (checkBox1.Checked == false)
+            if (allPeriodCB.Checked == false)
             {
-                int nCompanre;
-
-                nCompanre = System.DateTime.Compare(dtEnd, dtStart);
-
-                if (nCompanre == -1)
+                int comparedDate = System.DateTime.Compare(dtEnd, dtStart);
+                if (comparedDate == -1)
                 {
                     MessageBox.Show("正しい期間をしてください。");
                     return;
@@ -163,13 +148,9 @@ namespace infraredCommApp
             }
             else
             {
-
                 dtLOGStart = DateTime.MinValue;
                 dtLOGEnd = DateTime.MaxValue;
             }
-
-
-
 
             // begin calculation
             string loginfopath = Form1.workfolder + "ContentPlayResult.csv";
@@ -178,9 +159,7 @@ namespace infraredCommApp
             {
                 MessageBox.Show("コンテンツ再生記録ファイルがありません");
                 return;
-
             }
-
 
             StreamReader sr = new StreamReader(loginfopath, Encoding.GetEncoding("Shift_JIS"));
 
@@ -220,7 +199,7 @@ namespace infraredCommApp
                 szTemp1 = text.Substring(0, text.IndexOf(","));
                 d = d + " " + szTemp1;
 
-                dtUsedTiming = DateTime.Parse(d);
+                dtUsedTiming = DateTime.Now;
 
                 // content using  timing
                 text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
@@ -258,7 +237,7 @@ namespace infraredCommApp
                 int nCompanre;
 
                 //check date 
-                if (checkBox1.Checked == false)
+                if (allPeriodCB.Checked == false)
                 {
 
                     nCompanre = System.DateTime.Compare(dtStart, dtUsedTiming);
@@ -392,17 +371,17 @@ namespace infraredCommApp
 
             DateTime dtStart, dtEnd, dtTemp;
 
-            dtTemp = dateTimePicker1.Value;
+            dtTemp = startDateTimePicker.Value;
 
             d = dtTemp.Date.ToString("yyyy-MM-dd") + " 00:00:01";
             dtStart = DateTime.ParseExact(d, f, null);
 
-            dtTemp = dateTimePicker2.Value;
+            dtTemp = endDateTimePicker.Value;
 
             d = dtTemp.Date.ToString("yyyy-MM-dd") + " 23:59:59";
             dtEnd = DateTime.ParseExact(d, f, null);
 
-            if (checkBox1.Checked == false)
+            if (allPeriodCB.Checked == false)
             {
                 int nCompanre;
 
@@ -520,7 +499,7 @@ namespace infraredCommApp
                 int nCompanre;
 
                 //check date 
-                if (checkBox1.Checked == false)
+                if (allPeriodCB.Checked == false)
                 {
 
                     nCompanre = System.DateTime.Compare(dtStart, dtUsedTiming);
@@ -654,12 +633,12 @@ namespace infraredCommApp
 
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
+        private void TodayButtonClick(object sender, EventArgs e)
         {
 
         }//funciton end
 
-        private void buttonOK_Click_1(object sender, EventArgs e)
+        private void QuizeAnsResCancelButtonClicked(object sender, EventArgs e)
         {
             this.Close();
         }
