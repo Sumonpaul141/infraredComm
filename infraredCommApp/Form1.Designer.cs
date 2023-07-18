@@ -66,12 +66,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAnalyzedData = new System.Windows.Forms.TextBox();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.exportData = new System.Windows.Forms.Button();
             this.barChartButton = new System.Windows.Forms.Button();
             this.rawDataButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.showOnlyIDRadioButton = new System.Windows.Forms.RadioButton();
             this.showAccuracyRadioButton = new System.Windows.Forms.RadioButton();
-            this.exportData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -292,6 +292,13 @@
             resources.ApplyResources(this.controlPanel, "controlPanel");
             this.controlPanel.Name = "controlPanel";
             // 
+            // exportData
+            // 
+            resources.ApplyResources(this.exportData, "exportData");
+            this.exportData.Name = "exportData";
+            this.exportData.UseVisualStyleBackColor = true;
+            this.exportData.Click += new System.EventHandler(this.exportData_Click);
+            // 
             // barChartButton
             // 
             resources.ApplyResources(this.barChartButton, "barChartButton");
@@ -328,20 +335,12 @@
             this.showAccuracyRadioButton.UseVisualStyleBackColor = true;
             this.showAccuracyRadioButton.CheckedChanged += new System.EventHandler(this.AccuracyIDRadioButtonChanged);
             // 
-            // exportData
-            // 
-            resources.ApplyResources(this.exportData, "exportData");
-            this.exportData.Name = "exportData";
-            this.exportData.UseVisualStyleBackColor = true;
-            this.exportData.Click += new System.EventHandler(this.exportData_Click);
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
-            this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.txtAnalyzedData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -368,6 +367,7 @@
             this.Controls.Add(this.buttonSetup);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chartWithData);
+            this.Controls.Add(this.controlPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
