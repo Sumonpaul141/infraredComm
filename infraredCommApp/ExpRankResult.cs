@@ -159,7 +159,16 @@ namespace infraredCommApp
                 szTemp1 = text.Substring(0, text.IndexOf(","));
                 d = d + " " + szTemp1;
 
-                dtUsedTiming = DateTime.Parse(d);
+                if (DateTime.TryParse(d, out DateTime parsedDateTime))
+                {
+                    dtUsedTiming = parsedDateTime;
+                }
+                else
+                {
+                    var invalidDateString = d.Split('/');
+                    d = $"{invalidDateString[1]}/{invalidDateString[0]}/{invalidDateString[2]}";
+                    dtUsedTiming = DateTime.Parse(d);
+                }
 
                 // content using  timing
                 text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);

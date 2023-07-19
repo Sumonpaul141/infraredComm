@@ -66,12 +66,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAnalyzedData = new System.Windows.Forms.TextBox();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.exportData = new System.Windows.Forms.Button();
             this.barChartButton = new System.Windows.Forms.Button();
             this.rawDataButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.showOnlyIDRadioButton = new System.Windows.Forms.RadioButton();
             this.showAccuracyRadioButton = new System.Windows.Forms.RadioButton();
-            this.exportData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -292,6 +292,13 @@
             resources.ApplyResources(this.controlPanel, "controlPanel");
             this.controlPanel.Name = "controlPanel";
             // 
+            // exportData
+            // 
+            resources.ApplyResources(this.exportData, "exportData");
+            this.exportData.Name = "exportData";
+            this.exportData.UseVisualStyleBackColor = true;
+            this.exportData.Click += new System.EventHandler(this.ExportData_Click);
+            // 
             // barChartButton
             // 
             resources.ApplyResources(this.barChartButton, "barChartButton");
@@ -303,6 +310,7 @@
             resources.ApplyResources(this.rawDataButton, "rawDataButton");
             this.rawDataButton.Name = "rawDataButton";
             this.rawDataButton.UseVisualStyleBackColor = true;
+            this.rawDataButton.Click += new System.EventHandler(this.RawDataButton_Click);
             // 
             // groupBox1
             // 
@@ -327,13 +335,6 @@
             this.showAccuracyRadioButton.TabStop = true;
             this.showAccuracyRadioButton.UseVisualStyleBackColor = true;
             this.showAccuracyRadioButton.CheckedChanged += new System.EventHandler(this.AccuracyIDRadioButtonChanged);
-            // 
-            // exportData
-            // 
-            resources.ApplyResources(this.exportData, "exportData");
-            this.exportData.Name = "exportData";
-            this.exportData.UseVisualStyleBackColor = true;
-            this.exportData.Click += new System.EventHandler(this.exportData_Click);
             // 
             // Form1
             // 

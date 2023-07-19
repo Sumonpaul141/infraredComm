@@ -2563,9 +2563,18 @@ namespace infraredCommApp
             }
         }
 
-        private void exportData_Click(object sender, EventArgs e)
+        private void ExportData_Click(object sender, EventArgs e)
         {
             _QuizeAns.SaveCSV();
+            MessageBox.Show("Data exported!");
+        }
+
+        private void RawDataButton_Click(object sender, EventArgs e)
+        {
+            showAccuracyRadioButton.Checked = false;
+            showOnlyIDRadioButton.Checked = false;
+            _QuizeAns.showQuizData(isOnlyID: false, isOnlyAccuracy: false);
+            txtAnalyzedData.Text = _QuizeAns.AnalyzedData;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
