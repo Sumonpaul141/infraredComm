@@ -485,7 +485,7 @@ namespace infraredCommApp
                             string To = ToDate;
 
                             string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
-                            DateTime dtDateTime = Convert.ToDateTime(strDateTime);
+                            DateTime dtDateTime = Common.GetValidDateTime(strDateTime);
                             if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString() && dtDateTime >= Convert.ToDateTime(FromDate) && dtDateTime <= Convert.ToDateTime(ToDate))
                             {
                                 HeatMap htMap = new HeatMap();

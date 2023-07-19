@@ -115,5 +115,19 @@ namespace infraredCommApp
 
             return data;
         }
+        public static DateTime GetValidDateTime(string dateTimeString)
+        {
+            if (DateTime.TryParse(dateTimeString, out DateTime parsedDateTime))
+            {
+                return parsedDateTime;
+            }
+            else
+            {
+                var invalidDateString = dateTimeString.Split('/');
+                dateTimeString = $"{invalidDateString[1]}/{invalidDateString[0]}/{invalidDateString[2]}";
+                return DateTime.Parse(dateTimeString);
+            }
+        }
     }
+
 }
