@@ -28,6 +28,7 @@ bld/
 
 /infraredCommApp/bin/*
 /infraredCommApp/obj/*
+/.vs/*
 
 # Visual Studio 2015 cache/options directory
 .vs/
