@@ -1,0 +1,965 @@
+C:\infraredCommApp\infraredCommApp\obj\Debug\ResolveAssemblyReference.cache
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\infraredCommApp\infraredCommApp\bin\Debug\infraredCommApp.exe
+C:\infraredCommApp\infraredCommApp\bin\Debug\infraredCommApp.pdb
+C:\infraredCommApp\infraredCommApp\bin\Debug\FTD2XX_NET.dll
+C:\infraredCommApp\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.exe
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.pdb
+C:\infraredCommApp\infraredCommApp\bin\Debug\infraredCommApp.exe.manifest
+C:\infraredCommApp\infraredCommApp\bin\Debug\infraredCommApp.application
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.exe.manifest
+C:\infraredCommApp\infraredCommApp\obj\Debug\infraredCommApp.application
+C:\StampLive2011\infraredCommApp\bin\Debug\StampRelay2011.exe.manifest
+C:\StampLive2011\infraredCommApp\bin\Debug\StampRelay2011.application
+C:\StampLive2011\infraredCommApp\bin\Debug\StampRelay2011.exe
+C:\StampLive2011\infraredCommApp\bin\Debug\StampRelay2011.pdb
+C:\StampLive2011\infraredCommApp\bin\Debug\FTD2XX_NET.dll
+C:\StampLive2011\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\StampLive2011\infraredCommApp\obj\Debug\ResolveAssemblyReference.cache
+C:\StampLive2011\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\StampLive2011\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\StampLive2011\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\StampLive2011\infraredCommApp\obj\Debug\StampRelay2011.exe.manifest
+C:\StampLive2011\infraredCommApp\obj\Debug\StampRelay2011.application
+C:\StampLive2011\infraredCommApp\obj\Debug\StampRelay2011.exe
+C:\StampLive2011\infraredCommApp\obj\Debug\StampRelay2011.pdb
+C:\StampLive20110711\infraredCommApp\obj\Debug\StampRelay2011.exe
+C:\StampLive20110711\infraredCommApp\obj\Debug\StampRelay2011.pdb
+C:\StampLive20110711\infraredCommApp\bin\Debug\StampRelay2011.exe.manifest
+C:\StampLive20110711\infraredCommApp\bin\Debug\StampRelay2011.application
+C:\StampLive20110711\infraredCommApp\bin\Debug\StampRelay2011.exe
+C:\StampLive20110711\infraredCommApp\bin\Debug\StampRelay2011.pdb
+C:\StampLive20110711\infraredCommApp\bin\Debug\FTD2XX_NET.dll
+C:\StampLive20110711\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\StampLive20110711\infraredCommApp\obj\Debug\ResolveAssemblyReference.cache
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\StampLive20110711\infraredCommApp\obj\Debug\StampRelay2011.exe.manifest
+C:\StampLive20110711\infraredCommApp\obj\Debug\StampRelay2011.application
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.password.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.Ansdetail.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.deviceUsingInfo.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\infraredCommApp.deviceUsedListShow.resources
+C:\StampLive20110711\infraredCommApp\obj\Debug\StampLive.Properties.Resources.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\StampRelay2011.exe
+C:\StampLive20110917\infraredCommApp\obj\Debug\StampRelay2011.pdb
+C:\StampLive20110917\infraredCommApp\obj\Debug\ResolveAssemblyReference.cache
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.Ansdetail.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.deviceUsedListShow.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.deviceUsingInfo.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.password.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\StampLive20110917\infraredCommApp\bin\Debug\StampRelay2011.exe.manifest
+C:\StampLive20110917\infraredCommApp\bin\Debug\StampRelay2011.application
+C:\StampLive20110917\infraredCommApp\bin\Debug\StampRelay2011.exe
+C:\StampLive20110917\infraredCommApp\bin\Debug\StampRelay2011.pdb
+C:\StampLive20110917\infraredCommApp\bin\Debug\FTD2XX_NET.dll
+C:\StampLive20110917\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\StampLive20110917\infraredCommApp\obj\Debug\StampRelay2011.exe.manifest
+C:\StampLive20110917\infraredCommApp\obj\Debug\StampRelay2011.application
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\StampLive20110917\infraredCommApp\obj\Debug\infraredCommApp.SEXAGEInput.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\StampRelay2011.exe
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\StampRelay2011.pdb
+C:\StampLiveNIGATAFinal\infraredCommApp\bin\Debug\StampRelay2011.exe.manifest
+C:\StampLiveNIGATAFinal\infraredCommApp\bin\Debug\StampRelay2011.application
+C:\StampLiveNIGATAFinal\infraredCommApp\bin\Debug\StampRelay2011.exe
+C:\StampLiveNIGATAFinal\infraredCommApp\bin\Debug\StampRelay2011.pdb
+C:\StampLiveNIGATAFinal\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.Ansdetail.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.deviceUsedListShow.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.deviceUsingInfo.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.password.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.SEXAGEInput.resources
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\StampRelay2011.exe.manifest
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\StampRelay2011.application
+C:\StampLiveNIGATAFinal\infraredCommApp\obj\Debug\infraredCommApp.csprojResolveAssemblyReference.cache
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csprojResolveAssemblyReference.cache
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\bin\Debug\FTD2XX_NET.xml
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\workingfolder\2022\展示利用状況の可視化ツール\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.DDia.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.mapset.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csprojResolveAssemblyReference.cache
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\newsatnp.DDia.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\newsatnp.mapset.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\newsatnp.mapadd.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\newsatnp.mapadd.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-1\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\Resources\maps\map1.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\Resources\maps\map2.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-2\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\Resources\maps\map1.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\Resources\maps\map2.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-3\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\Resources\maps\map1.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\Resources\maps\map2.jpg
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-4\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\Masters Research\Research Materials\Ruhin Vai\flowlinetool2022 - Copy-5\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\Atik\01-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Downloads\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2022\December\08-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\Teacher\December\13-12-2022\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\MastersResearch\ResearchMaterials\Back Up\Ali Hyder Vai\2023\January\05-Feb-2023\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Image Combo edit)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Chart er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Tag on the map)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Data Update)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\University Laptop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.Cache
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.application
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.application
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+D:\Atik\04-04-2023\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Date Filter)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.application
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.application
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe
+F:\Atik\13-04-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.application
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.exe
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.application
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.exe
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+F:\Atik\10-05-2023\flowlinetool2022(Heatmap er Kaj color done)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+F:\Atik\24-05-2023\Current\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Downloads\Masters Project\26 May 2023\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.application
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.exe
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\FlowLine2022.pdb
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.dll
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.xml
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.application
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.exe
+F:\Atik\July\12-07-2023\Graduate Project\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.pdb
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.application
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.exe
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\FlowLine2022.pdb
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.dll
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.xml
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.application
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.exe
+F:\Atik\July\16-07-2023\2nd Update flowlinetool2022(Heatmap er Kaj Monthly)1\infraredCommApp\obj\Debug\FlowLine2022.pdb
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Dell\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+D:\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe
+D:\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.pdb
+D:\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+D:\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+D:\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.application
+D:\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe
+D:\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.pdb
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.dll
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.xml
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+D:\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+D:\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+D:\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.application
+D:\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.config
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\FlowLine2022.pdb
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.dll
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.xml
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.ExpRankResult.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Form1.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.HeatMapGraph.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.InputMapName.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.mapadd.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.quizeAnsResult.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.setupbasic.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.tagaddC.resources
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe.manifest
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.application
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\infraredCommApp.csproj.CopyComplete
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.exe
+C:\Users\Administrator\Desktop\flowlineTool\infraredCommApp\obj\Debug\FlowLine2022.pdb

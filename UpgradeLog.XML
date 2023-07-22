@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="infraredCommApp">
+</Property><Property Name="ソリューション ファイル" Value="C:\StampLiveNIGATAFinal\infraredCommApp.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="C:\StampLiveNIGATAFinal\infraredCommApp.suo">
+</Property><Property Name="Date" Value="2014年12月3日">
+</Property><Property Name="Time" Value="10:37">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="infraredCommApp.sln" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp.sln としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="infraredCommApp.suo" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp.suo としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp.csproj" Description="プロジェクト ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\infraredCommApp.csproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp.csproj.user" Description="プロジェクト ユーザー ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\infraredCommApp.csproj.user としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Ansdetail.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Ansdetail.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Ansdetail.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Ansdetail.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\AnswerRecord.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\AnswerRecord.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\ContentPlayingInfo.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\ContentPlayingInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\contentsInfo.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\contentsInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsedListShow.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsedListShow.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsedListShow.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsedListShow.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\DeviceUseInformation.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\DeviceUseInformation.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsingInfo.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsingInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsingInfo.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsingInfo.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\ExpRankResult.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\ExpRankResult.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\ExpRankResult.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\ExpRankResult.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Form1.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Form1.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Form1.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Form1.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\password.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\password.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\password.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\password.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Program.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Program.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Properties\AssemblyInfo.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Properties\AssemblyInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Properties\Resources.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Properties\Resources.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Properties\Settings.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Properties\Settings.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\QuizAnsInformation.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\QuizAnsInformation.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\quizeAnsResult.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\quizeAnsResult.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\quizeAnsResult.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\quizeAnsResult.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\setupbasic.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\setupbasic.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\setupbasic.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\setupbasic.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\SEXAGEInput.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\SEXAGEInput.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\SEXAGEInput.Designer.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\SEXAGEInput.Designer.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\StoryInformation.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\StoryInformation.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\UsedDeviceInfo.cs" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\UsedDeviceInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Properties\Settings.settings" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Properties\Settings.settings としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\1202624779_1.jpg" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\1202624779_1.jpg としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\1024-768.jpg" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\1024-768.jpg としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp_TemporaryKey.pfx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\infraredCommApp_TemporaryKey.pfx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\shinryoku_002.jpg" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\shinryoku_002.jpg としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\f11.bmp" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\f11.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\f22.bmp" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\f22.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp_1_TemporaryKey.pfx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\infraredCommApp_1_TemporaryKey.pfx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp_2_TemporaryKey.pfx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\infraredCommApp_2_TemporaryKey.pfx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Resources\f33.bmp" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Resources\f33.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Icon1.ico" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Icon1.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Icon2.ico" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Icon2.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Ansdetail.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Ansdetail.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsedListShow.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsedListShow.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\deviceUsingInfo.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\deviceUsingInfo.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\ExpRankResult.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\ExpRankResult.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Form1.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Form1.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\password.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\password.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\Properties\Resources.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\Properties\Resources.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\quizeAnsResult.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\quizeAnsResult.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\setupbasic.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\setupbasic.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\SEXAGEInput.resx" Description="ファイルは正常に C:\StampLiveNIGATAFinal\Backup\infraredCommApp\SEXAGEInput.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp.csproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="infraredCommApp.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="infraredCommApp.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="infraredCommApp" Source="infraredCommApp\infraredCommApp.csproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event></UpgradeLog>
