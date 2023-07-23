@@ -28,7 +28,28 @@ bld/
 
 /infraredCommApp/bin/*
 /infraredCommApp/obj/*
+/infraredCommApp/obj/Debug/*
 /.vs/*
+
+
+*.cache
+*.dll
+*.exe
+*.pdb
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
+
 
 # Visual Studio 2015 cache/options directory
 .vs/

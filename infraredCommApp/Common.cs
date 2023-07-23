@@ -80,63 +80,23 @@ namespace infraredCommApp
                 throw new ArgumentException("Data cannot be null or empty.");
             }
 
-            var filePath = "Exported";
-            if (string.IsNullOrWhiteSpace(filePath))
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                throw new ArgumentException("File path cannot be null or empty.");
-            }
+                saveFileDialog.Filter = "CSV File (*.csv)|*.csv";
+                saveFileDialog.DefaultExt = "csv";
 
-            var columnHeaders = data.First().Keys.ToList();
-            var csvContent = new StringBuilder();
-            csvContent.AppendLine(string.Join(",", columnHeaders));
-            foreach (var rowData in data)
-            {
-                var rowValues = columnHeaders.Select(header => rowData.ContainsKey(header) ? rowData[header] : string.Empty);
-                csvContent.AppendLine(string.Join(",", rowValues));
-            }
-            File.WriteAllText(filePath, csvContent.ToString());
-        }
-
-        public static void ExportToCsv(List<Dictionary<string, string>> data, string fileNameStarting)
-        {
-            if (data == null || data.Count == 0)
-            {
-                throw new ArgumentException("Data cannot be null or empty.");
-            }
-
-            // Create an instance of the FolderBrowserDialog
-            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
-            {
-                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Get the selected folder path
-                    string folderPath = folderBrowserDialog.SelectedPath;
-
-                    // Generate a unique file name
-                    string fileName = $"{fileNameStarting}_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
-
-                    // Construct the file path
-                    string filePath = Path.Combine(folderPath, fileName);
-
-                    // Get the column headers from the first dictionary
+                    string filePath = saveFileDialog.FileName;
                     var columnHeaders = data.First().Keys.ToList();
-
-                    // Create a CSV string
                     var csvContent = new List<string>();
-
-                    // Add the column headers to the CSV string
                     csvContent.Add(string.Join(",", columnHeaders));
-
-                    // Add the data rows to the CSV string
                     foreach (var rowData in data)
                     {
                         var rowValues = columnHeaders.Select(header => rowData.ContainsKey(header) ? rowData[header] : string.Empty);
                         csvContent.Add(string.Join(",", rowValues));
                     }
-
-                    // Write the CSV string to the file
                     File.WriteAllLines(filePath, csvContent, Encoding.UTF8);
-
                     MessageBox.Show("CSV file exported successfully!");
                 }
             }
@@ -198,6 +158,46 @@ namespace infraredCommApp
                 var invalidDateString = dateTimeString.Split('/');
                 dateTimeString = $"{invalidDateString[1]}/{invalidDateString[0]}/{invalidDateString[2]}";
                 return DateTime.Parse(dateTimeString);
+            }
+        }
+
+        static public void PopulateListView<T>(ListView listView, List<T> dataList)
+        {
+            if (dataList == null || dataList.Count == 0)
+            {
+                throw new ArgumentException("Data cannot be null or empty.");
+            }
+
+            listView.Items.Clear();
+            listView.Columns.Clear();
+
+            listView.View = View.Details;
+            listView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+
+            var properties = typeof(T).GetProperties().ToList();
+
+            foreach (var property in properties)
+            {
+                listView.Columns.Add(property.Name, 100); // Set the default column width to 100
+            }
+
+            foreach (var dataItem in dataList)
+            {
+                ListViewItem item = new ListViewItem();
+
+                foreach (var property in properties)
+                {
+                    var propertyValue = property.GetValue(dataItem, null);
+                    if (property.Name == "u32CID")
+                    {
+                        item.SubItems.Add(((UInt32) propertyValue).ToString("X8"));
+                    }
+                    else
+                    {
+                        item.SubItems.Add(propertyValue.ToString());
+                    }
+                }
+                listView.Items.Add(item);
             }
         }
     }

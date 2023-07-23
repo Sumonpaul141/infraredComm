@@ -8,14 +8,14 @@ namespace infraredCommApp
     public class QuizAnsInformation
     {
 
-        public UInt32 u32CID;
-        public int nTotalAccessNum;
-        public int nCorrectAnsNum;
-        public int nMaxUsedTime;
-        public int nMinUsedTime;
-        public int nTotalUsedTime;
-        public int nAverageUsedTime;
-        public int nCorrectRatio;
+        public UInt32 u32CID { get; set; }
+        public int nTotalAccessNum { get; set; }
+        public int nCorrectAnsNum { get; set; }
+        public int nMaxUsedTime { get; set; }
+        public int nMinUsedTime { get; set; }
+        public int nTotalUsedTime { get; set; }
+        public int nAverageUsedTime { get; set; }
+        public int nCorrectRatio { get; set; }
 
 
         public QuizAnsInformation()

@@ -28,10 +28,14 @@ namespace infraredCommApp
         public string AnalyzedData = "";
         public string rdoQuizId;
         public string rdoAccurate;
-        public List<Dictionary<string, string>> dictionaryByID = new List<Dictionary<string, string>>();
-        public List<Dictionary<string, string>> dictionaryByAccurate = new List<Dictionary<string, string>>();
-        public List<Dictionary<string, string>> dictionaryByALL = new List<Dictionary<string, string>>();
+
+        //public List<Dictionary<string, string>> dictionaryByID = new List<Dictionary<string, string>>();
+        //public List<Dictionary<string, string>> dictionaryByAccurate = new List<Dictionary<string, string>>();
+        //public List<Dictionary<string, string>> dictionaryByALL = new List<Dictionary<string, string>>();
         public Dictionary<string, string> titleDictionary = new Dictionary<string, string>();
+
+        public List<QuizAnsInformation> quizAnsInformationResultList = new List<QuizAnsInformation>();
+
         // GLOBAL DEFINES
         public static string appName = "FlowLine2022";
         public static string logpath = "";
@@ -613,7 +617,7 @@ namespace infraredCommApp
             }
 
             string szTemp1 = "";
-
+            quizAnsInformationResultList.Clear();
             foreach (QuizAnsInformation qai in gQuizAnsINFO)
             {
                 for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
@@ -624,13 +628,13 @@ namespace infraredCommApp
                         + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
                         + "利用回数:" + qai.nTotalAccessNum.ToString()
                         + "\r\n";
-                        dictionaryByALL.Add(GetDictinaryValue(qai));
+                        //dictionaryByALL.Add(GetDictinaryValue(qai));
+                        quizAnsInformationResultList.Add(qai);
                     }
 
                 }
 
             }
-
             textBox1.Text = szTemp1;
             AnalyzedData = szTemp1;
 
@@ -663,61 +667,61 @@ namespace infraredCommApp
 
             //}
             //rdoAccurate = Accurate;
-            string QuizId = "";
+            //string QuizId = "";
             
-            //foreach (QuizAnsInformation qai in gconINFOSortedByQuizeID)
-            for (int m = 0; m < gconINFOSortedByQuizeID.Rows.Count; m++)
-            {
-                for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-                {
-                    if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByQuizeID.Rows[m]["u32ContentID"].ToString())
-                    {
-                        foreach (QuizAnsInformation qai in gQuizAnsINFO)
-                        {
-                            if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
-                            {
-                                QuizId += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
-                                + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
-                                + "利用回数:" + qai.nTotalAccessNum.ToString()
-                                + "\r\n";
-                                dictionaryByID.Add(GetDictinaryValue(qai));
-                            }
-                        }
-                    }
-                }
+            ////foreach (QuizAnsInformation qai in gconINFOSortedByQuizeID)
+            //for (int m = 0; m < gconINFOSortedByQuizeID.Rows.Count; m++)
+            //{
+            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
+            //    {
+            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByQuizeID.Rows[m]["u32ContentID"].ToString())
+            //        {
+            //            foreach (QuizAnsInformation qai in gQuizAnsINFO)
+            //            {
+            //                if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
+            //                {
+            //                    QuizId += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
+            //                    + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
+            //                    + "利用回数:" + qai.nTotalAccessNum.ToString()
+            //                    + "\r\n";
+            //                    dictionaryByID.Add(GetDictinaryValue(qai));
+            //                }
+            //            }
+            //        }
+            //    }
 
-            }
-            rdoQuizId = QuizId;
+            //}
+            //rdoQuizId = QuizId;
 
-            var SortedByAccurateNTotal = ListToDataTableForSortingAccurate(gQuizAnsINFO);
-            SortedByAccurateNTotal.DefaultView.Sort = "nTotalAccessNum ASC";
-            var SortedByAccurateNTotalNew = SortedByAccurateNTotal.DefaultView.ToTable();
-            gconINFOSortedByAccurateNTotal = SortedByAccurateNTotalNew;
+            //var SortedByAccurateNTotal = ListToDataTableForSortingAccurate(gQuizAnsINFO);
+            //SortedByAccurateNTotal.DefaultView.Sort = "nTotalAccessNum ASC";
+            //var SortedByAccurateNTotalNew = SortedByAccurateNTotal.DefaultView.ToTable();
+            //gconINFOSortedByAccurateNTotal = SortedByAccurateNTotalNew;
             
 
-            string Accurate = "";
-            for (int m = 0; m < gconINFOSortedByAccurateNTotal.Rows.Count; m++)
-            {
-                for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-                {
-                    if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByAccurateNTotal.Rows[m]["u32CID"].ToString())
-                    {
-                        foreach (QuizAnsInformation qai in gQuizAnsINFO)
-                        {
-                            if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
-                            {
-                                Accurate += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
-                                + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
-                                + "利用回数:" + qai.nTotalAccessNum.ToString()
-                                + "\r\n";
-                                dictionaryByAccurate.Add(GetDictinaryValue(qai));
-                            }
-                        }
-                    }
-                }
+            //string Accurate = "";
+            //for (int m = 0; m < gconINFOSortedByAccurateNTotal.Rows.Count; m++)
+            //{
+            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
+            //    {
+            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByAccurateNTotal.Rows[m]["u32CID"].ToString())
+            //        {
+            //            foreach (QuizAnsInformation qai in gQuizAnsINFO)
+            //            {
+            //                if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
+            //                {
+            //                    Accurate += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
+            //                    + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
+            //                    + "利用回数:" + qai.nTotalAccessNum.ToString()
+            //                    + "\r\n";
+            //                    dictionaryByAccurate.Add(GetDictinaryValue(qai));
+            //                }
+            //            }
+            //        }
+            //    }
 
-            }
-            rdoAccurate = Accurate;
+            //}
+            //rdoAccurate = Accurate;
 
             this.Close();
 

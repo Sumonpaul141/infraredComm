@@ -71,6 +71,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBarGraph = new System.Windows.Forms.Button();
             this.ControlGroupBox = new System.Windows.Forms.GroupBox();
+            this.resultListView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -287,7 +288,7 @@
             this.rdoQuizId.Name = "rdoQuizId";
             this.rdoQuizId.TabStop = true;
             this.rdoQuizId.UseVisualStyleBackColor = true;
-            this.rdoQuizId.CheckedChanged += new System.EventHandler(this.rdoQuizId_CheckedChanged);
+            this.rdoQuizId.CheckedChanged += new System.EventHandler(this.RadioAscDescChanged);
             // 
             // rdoAccurate
             // 
@@ -295,7 +296,7 @@
             this.rdoAccurate.Name = "rdoAccurate";
             this.rdoAccurate.TabStop = true;
             this.rdoAccurate.UseVisualStyleBackColor = true;
-            this.rdoAccurate.CheckedChanged += new System.EventHandler(this.rdoAccurate_CheckedChanged);
+            this.rdoAccurate.CheckedChanged += new System.EventHandler(this.RadioAscDescChanged);
             // 
             // button1
             // 
@@ -329,12 +330,20 @@
             this.ControlGroupBox.Name = "ControlGroupBox";
             this.ControlGroupBox.TabStop = false;
             // 
+            // resultListView
+            // 
+            this.resultListView.HideSelection = false;
+            resources.ApplyResources(this.resultListView, "resultListView");
+            this.resultListView.Name = "resultListView";
+            this.resultListView.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
+            this.Controls.Add(this.resultListView);
             this.Controls.Add(this.ControlGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -359,9 +368,9 @@
             this.Controls.Add(this.buttonQuizRate);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSetup);
+            this.Controls.Add(this.txtAnalyzedData);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chartWithData);
-            this.Controls.Add(this.txtAnalyzedData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -416,6 +425,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBarGraph;
         private System.Windows.Forms.GroupBox ControlGroupBox;
+        private System.Windows.Forms.ListView resultListView;
     }
 }
 

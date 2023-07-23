@@ -42,10 +42,12 @@ namespace infraredCommApp
         public string AnalyzedData = "";
         public string QuizId = "";
         public string Accurate = "";
-        public List<Dictionary<string, string>> DictionaryByID = new List<Dictionary<string, string>>();
-        public List<Dictionary<string, string>> DictionaryByAccurate = new List<Dictionary<string, string>>();
-        public List<Dictionary<string, string>> DictionaryByAll = new List<Dictionary<string, string>>();
+        //public List<Dictionary<string, string>> DictionaryByID = new List<Dictionary<string, string>>();
+        //public List<Dictionary<string, string>> DictionaryByAccurate = new List<Dictionary<string, string>>();
+        //public List<Dictionary<string, string>> DictionaryByAll = new List<Dictionary<string, string>>();
+        public List<Dictionary<string, string>> ExportDataDictionary = new List<Dictionary<string, string>>();
         Dictionary<string, string> TitleDictionary = new Dictionary<string, string>();
+        public List<QuizAnsInformation> QuizAnsInformationResult = new List<QuizAnsInformation>();
 
         public static List<tagu> taglist = new List<tagu>();
 
@@ -380,7 +382,7 @@ namespace infraredCommApp
                     coninfotemp.SetContentTitle(szTitle);
 
                     //get the quiz problem
-                    if (fep_Search_AnswerNo(szFilePath) == false)
+                    if (fep_Search_AnswerNo(szFilePath) == true)
                     {
                         coninfotemp.SetAnswerSelection(gnAns);
                         coninfotemp.SetQuiz(gstrQuizP);
@@ -1769,27 +1771,14 @@ namespace infraredCommApp
         }
         private void ExportClicked(object sender, EventArgs e)
         {
-
-            if (rdoAccurate.Checked)
-            {
-                Common.ExportToCsv(DictionaryByAccurate, "Accurate");
-            }
-            else if (rdoQuizId.Checked)
-            {
-                Common.ExportToCsv(DictionaryByID, "QuizId");
-            }
-            else
-            {
-                Common.ExportToCsv(DictionaryByAll, "Raw Data");
-            }
-
+            Common.ExportToCsv(ExportDataDictionary);
         }
 
         private void buttonQuizTotal_Click(object sender, EventArgs e)
         {
             //quizeAnsResult f2 = new quizeAnsResult();
             //f2.Show();
-            txtAnalyzedData.BringToFront();
+            txtAnalyzedData.SendToBack();
             chartWithData.SendToBack();
             pictureBox1.SendToBack();
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
@@ -1797,22 +1786,62 @@ namespace infraredCommApp
             quizeAnsResult f2 = new quizeAnsResult();
             f2.ShowDialog();
             ControlGroupBox.Visible = true;
-            txtAnalyzedData.Text = f2.AnalyzedData;
-            AnalyzedData = f2.AnalyzedData;
-            QuizId = f2.rdoQuizId;
-            Accurate = f2.rdoAccurate;
-            DictionaryByID = f2.dictionaryByID;
-            DictionaryByAccurate = f2.dictionaryByAccurate;
-            DictionaryByAll = f2.dictionaryByALL;
+            //txtAnalyzedData.Text = f2.AnalyzedData;
+            //AnalyzedData = f2.AnalyzedData;
+            //QuizId = f2.rdoQuizId;
+            //Accurate = f2.rdoAccurate;
+            //DictionaryByID = f2.dictionaryByID;
+            //DictionaryByAccurate = f2.dictionaryByAccurate;
+            //DictionaryByAll = f2.dictionaryByALL;
             TitleDictionary = f2.titleDictionary;
             BarGrapggStoryINFOALl = quizeAnsResult.gQuizAnsINFO;
             dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
-           
-        //if (gStoryINFOALl.Count != 0)
-        //{
-        //}
-    }
+            resultListView.Visible = true;
+            QuizAnsInformationResult = f2.quizAnsInformationResultList;
+            PopulateList(resultListView, f2.quizAnsInformationResultList);
 
+        }
+
+        private void PopulateList(System.Windows.Forms.ListView listViewQuiz, List<QuizAnsInformation> quizList)
+        {
+            ExportDataDictionary.Clear();
+            listViewQuiz.Items.Clear();
+            listViewQuiz.Columns.Clear();
+
+            listViewQuiz.View = View.Details;
+            listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+
+            listViewQuiz.Columns.Add("コンテンツID", 100);
+            listViewQuiz.Columns.Add("Title", 100);
+            listViewQuiz.Columns.Add("正解率", 100);
+            listViewQuiz.Columns.Add("利用回数", 100);
+            
+            foreach (var quizInfo in quizList)
+            {
+                ListViewItem item = new ListViewItem(quizInfo.u32CID.ToString("X8"));
+                var title = "N/A";
+                if (TitleDictionary.ContainsKey(quizInfo.u32CID.ToString()))
+                {
+                    title = TitleDictionary[quizInfo.u32CID.ToString()];
+                }
+                item.SubItems.Add(title);
+                item.SubItems.Add(string.Format("{0, 3}", quizInfo.nCorrectRatio) + "%  ");
+                item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+                listViewQuiz.Items.Add(item);
+                ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title));
+            }
+        }
+
+        private Dictionary<string, string> GetDictinaryValue(QuizAnsInformation qai, string quizTitle)
+        {
+            return new Dictionary<string, string>
+                                {
+                                    { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
+                                    { "Title", quizTitle },
+                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
+                                    { "利用回数", qai.nTotalAccessNum.ToString() }
+                                };
+        }
         private void buttonGuideTotal_Click(object sender, EventArgs e)
         {
             
@@ -2606,35 +2635,22 @@ namespace infraredCommApp
             return true;
         }
 
-        private void rdoAccurate_CheckedChanged(object sender, EventArgs e)
+        private void RadioAscDescChanged(object sender, EventArgs e)
         {
-            if(rdoAccurate.Checked)
-            {
-                txtAnalyzedData.Text = Accurate;
-            }
-            else if(rdoQuizId.Checked)
-            {
-                txtAnalyzedData.Text = QuizId;
-            }
-            else
-            {
-                txtAnalyzedData.Text = AnalyzedData;
-            }
-        }
-
-        private void rdoQuizId_CheckedChanged(object sender, EventArgs e)
-        {
+            resultListView.Visible = true;
+            
             if (rdoAccurate.Checked)
             {
-                txtAnalyzedData.Text = Accurate;
+                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.nCorrectRatio).ToList());
             }
             else if (rdoQuizId.Checked)
             {
-                txtAnalyzedData.Text = QuizId;
+                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.u32CID).ToList());
+
             }
             else
             {
-                txtAnalyzedData.Text = AnalyzedData;
+                PopulateList(resultListView, QuizAnsInformationResult);
             }
         }
 
@@ -2659,8 +2675,9 @@ namespace infraredCommApp
                 chartWithData.Series["Series1"].YValueMembers = "yPositionValue";
                 chartWithData.DataBind();
                 chartWithData.Series["Series1"].ChartType = SeriesChartType.Column;
-
-                chartWithData.Series["Series1"]["PixelPointWidth"] = "50";
+                var pixelWidth = 300 / chartWithData.Series["Series1"].Points.Count;
+                var maxWidth = pixelWidth > 50 ? 50 : pixelWidth;
+                chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
                 chartWithData.Series["Series1"].IsValueShownAsLabel = true;
                 chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
                 chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
@@ -2718,7 +2735,8 @@ namespace infraredCommApp
         {
             chartWithData.SendToBack();
             pictureBox1.SendToBack();
-            txtAnalyzedData.BringToFront();
+            txtAnalyzedData.SendToBack();
+            resultListView.BringToFront();
         }
 
         private void FindDataButtonClick(object sender, EventArgs e)
