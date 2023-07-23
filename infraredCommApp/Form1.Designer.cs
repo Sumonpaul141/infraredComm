@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetup = new System.Windows.Forms.Button();
             this.buttonQuizRate = new System.Windows.Forms.Button();
@@ -104,7 +104,7 @@
             resources.ApplyResources(this.buttonGuideTotal, "buttonGuideTotal");
             this.buttonGuideTotal.Name = "buttonGuideTotal";
             this.buttonGuideTotal.UseVisualStyleBackColor = true;
-            this.buttonGuideTotal.Click += new System.EventHandler(this.buttonGuideTotal_Click);
+            this.buttonGuideTotal.Click += new System.EventHandler(this.ButtonGuideClicked);
             // 
             // buttonFLowLineAnalysis
             // 
@@ -224,16 +224,16 @@
             // 
             // chartWithData
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartWithData.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartWithData.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartWithData.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartWithData.Legends.Add(legend2);
             resources.ApplyResources(this.chartWithData, "chartWithData");
             this.chartWithData.Name = "chartWithData";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartWithData.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartWithData.Series.Add(series2);
             // 
             // lblMonth
             // 
@@ -334,6 +334,7 @@
             // 
             this.resultListView.HideSelection = false;
             resources.ApplyResources(this.resultListView, "resultListView");
+            this.resultListView.MultiSelect = false;
             this.resultListView.Name = "resultListView";
             this.resultListView.UseCompatibleStateImageBehavior = false;
             // 

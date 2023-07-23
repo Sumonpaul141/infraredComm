@@ -1781,9 +1781,10 @@ namespace infraredCommApp
             txtAnalyzedData.SendToBack();
             chartWithData.SendToBack();
             pictureBox1.SendToBack();
+            resultListView.BringToFront();
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
-            
-            quizeAnsResult f2 = new quizeAnsResult();
+
+            quizeAnsResult f2 = new quizeAnsResult(true);
             f2.ShowDialog();
             ControlGroupBox.Visible = true;
             //txtAnalyzedData.Text = f2.AnalyzedData;
@@ -1796,7 +1797,6 @@ namespace infraredCommApp
             TitleDictionary = f2.titleDictionary;
             BarGrapggStoryINFOALl = quizeAnsResult.gQuizAnsINFO;
             dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
-            resultListView.Visible = true;
             QuizAnsInformationResult = f2.quizAnsInformationResultList;
             PopulateList(resultListView, f2.quizAnsInformationResultList);
 
@@ -1830,6 +1830,7 @@ namespace infraredCommApp
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title));
             }
+            resultListView.Visible = true;
         }
 
         private Dictionary<string, string> GetDictinaryValue(QuizAnsInformation qai, string quizTitle)
@@ -1841,6 +1842,31 @@ namespace infraredCommApp
                                     { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
                                     { "利用回数", qai.nTotalAccessNum.ToString() }
                                 };
+        }
+
+        private void ButtonGuideClicked(object sender, EventArgs e)
+        {
+            txtAnalyzedData.SendToBack();
+            chartWithData.SendToBack();
+            pictureBox1.SendToBack();
+            //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
+
+            quizeAnsResult f2 = new quizeAnsResult(false);
+            f2.ShowDialog();
+            ControlGroupBox.Visible = true;
+            //txtAnalyzedData.Text = f2.AnalyzedData;
+            //AnalyzedData = f2.AnalyzedData;
+            //QuizId = f2.rdoQuizId;
+            //Accurate = f2.rdoAccurate;
+            //DictionaryByID = f2.dictionaryByID;
+            //DictionaryByAccurate = f2.dictionaryByAccurate;
+            //DictionaryByAll = f2.dictionaryByALL;
+            TitleDictionary = f2.titleDictionary;
+            BarGrapggStoryINFOALl = quizeAnsResult.gQuizAnsINFO;
+            dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
+            resultListView.Visible = true;
+            QuizAnsInformationResult = f2.quizAnsInformationResultList;
+            PopulateList(resultListView, f2.quizAnsInformationResultList);
         }
         private void buttonGuideTotal_Click(object sender, EventArgs e)
         {
@@ -2675,8 +2701,7 @@ namespace infraredCommApp
                 chartWithData.Series["Series1"].YValueMembers = "yPositionValue";
                 chartWithData.DataBind();
                 chartWithData.Series["Series1"].ChartType = SeriesChartType.Column;
-                var pixelWidth = 300 / chartWithData.Series["Series1"].Points.Count;
-                var maxWidth = pixelWidth > 50 ? 50 : pixelWidth;
+                var maxWidth = 50;
                 chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
                 chartWithData.Series["Series1"].IsValueShownAsLabel = true;
                 chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;

@@ -56,9 +56,15 @@ namespace infraredCommApp
         string gstrQuizP = "";
         string gstrQuizA = "";
         int gnAns = 0;
-        public quizeAnsResult()
+
+        private bool _isQuiz = true;
+
+
+        public quizeAnsResult(bool isQuiz)
         {
+            _isQuiz = isQuiz;
             InitializeComponent();
+            this.Text = isQuiz ? "Aggregation for Quiz" : "Aggregation for Guide";
 
             //For Quize Title
             string apppath = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
@@ -131,7 +137,7 @@ namespace infraredCommApp
                     coninfotemp.SetContentsID(u32CCID);
                     coninfotemp.SetContentTitle(szTitle);
                     //get the quiz problem
-                    if (fep_Search_AnswerNo(szFilePath) == true)
+                    if (fep_Search_AnswerNo(szFilePath) == _isQuiz)
                     {
                         coninfotemp.SetAnswerSelection(gnAns);
                         coninfotemp.SetQuiz(gstrQuizP);
@@ -231,17 +237,19 @@ namespace infraredCommApp
             //    })
             //    .CopyToDataTable();
             //gconINFOSortedByAccurate = SortedByAccurate;
-            var SortedByQuizeID = ListToDataTableForSorting(gconINFO);
 
-            SortedByQuizeID.DefaultView.Sort = "u32ContentID ASC";
-            var SortedByQuizeIDNew = SortedByQuizeID.DefaultView.ToTable();
 
-            gconINFOSortedByQuizeID = SortedByQuizeIDNew;
+            //////var SortedByQuizeID = ListToDataTableForSorting(gconINFO);
 
-            var SortedByAccurate = ListToDataTableForSorting(gconINFO);
-            SortedByAccurate.DefaultView.Sort = "nCorrectAns ASC";
-            var SortedByAccurateNew = SortedByAccurate.DefaultView.ToTable();
-            gconINFOSortedByAccurate = SortedByAccurateNew;
+            //////SortedByQuizeID.DefaultView.Sort = "u32ContentID ASC";
+            //////var SortedByQuizeIDNew = SortedByQuizeID.DefaultView.ToTable();
+
+            //////gconINFOSortedByQuizeID = SortedByQuizeIDNew;
+
+            //////var SortedByAccurate = ListToDataTableForSorting(gconINFO);
+            //////SortedByAccurate.DefaultView.Sort = "nCorrectAns ASC";
+            //////var SortedByAccurateNew = SortedByAccurate.DefaultView.ToTable();
+            //////gconINFOSortedByAccurate = SortedByAccurateNew;
 
 
           
@@ -256,11 +264,19 @@ namespace infraredCommApp
             dt.Columns.Add("nCorrectAns", typeof(int));
             foreach (contentsInfo item in list)
             {
-                DataRow dtrRS = dt.NewRow();
-                dtrRS["u32ContentID"] = item.u32ContentID;
-                dtrRS["strTitle"] = item.strTitle;
-                dtrRS["nCorrectAns"] = item.nCorrectAns;
-                dt.Rows.Add(dtrRS);
+                try
+                {
+                    DataRow dtrRS = dt.NewRow();
+                    dtrRS["u32ContentID"] = item.u32ContentID;
+                    dtrRS["strTitle"] = item.strTitle;
+                    dtrRS["nCorrectAns"] = item.nCorrectAns;
+                    dt.Rows.Add(dtrRS);
+                }
+                catch
+                {
+
+                }
+
             }
             return dt;
         }
@@ -570,6 +586,7 @@ namespace infraredCommApp
             if (gQuizAnsINFO.Count == 0) return;
             //show the result to the listbox
             textBox1.Clear();
+            dtQuizeTitle.Columns.Clear();
             if (radioButton2.Checked == true)
             {
                 // show at quiz ID
@@ -880,7 +897,7 @@ namespace infraredCommApp
 
 
                 //if this is not quiz, we skip this line record
-                if (bQuizTemp == false) continue;
+                if (bQuizTemp == !_isQuiz) continue;
 
                 if (nInputAns2 == 0) continue; //uncompleted answer record, ignore it
 

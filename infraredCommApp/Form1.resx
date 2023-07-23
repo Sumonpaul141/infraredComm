@@ -468,30 +468,6 @@
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>180, 17</value>
   </metadata>
-  <data name="コンテンツToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
-  </data>
-  <data name="コンテンツToolStripMenuItem.Text" xml:space="preserve">
-    <value>赤外線</value>
-  </data>
-  <data name="赤外線ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
-  </data>
-  <data name="赤外線ToolStripMenuItem.Text" xml:space="preserve">
-    <value>コンテンツ</value>
-  </data>
-  <data name="追加ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="追加ToolStripMenuItem.Text" xml:space="preserve">
-    <value>追加</value>
-  </data>
-  <data name="削除ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="削除ToolStripMenuItem.Text" xml:space="preserve">
-    <value>削除</value>
-  </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 48</value>
   </data>
@@ -524,6 +500,30 @@
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>27</value>
+  </data>
+  <data name="追加ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="追加ToolStripMenuItem.Text" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="コンテンツToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="コンテンツToolStripMenuItem.Text" xml:space="preserve">
+    <value>赤外線</value>
+  </data>
+  <data name="赤外線ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="赤外線ToolStripMenuItem.Text" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="削除ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="削除ToolStripMenuItem.Text" xml:space="preserve">
+    <value>削除</value>
   </data>
   <data name="lblimage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1116,6 +1116,9 @@
   <data name="resultListView.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
+  <data name="resultListView.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;resultListView.Name" xml:space="preserve">
     <value>resultListView</value>
   </data>
@@ -1126,7 +1129,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;resultListView.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
