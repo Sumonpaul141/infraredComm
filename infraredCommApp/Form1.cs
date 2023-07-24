@@ -2667,7 +2667,7 @@ namespace infraredCommApp
             
             if (rdoAccurate.Checked)
             {
-                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.nCorrectRatio).ToList());
+                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.nTotalAccessNum).ToList());
             }
             else if (rdoQuizId.Checked)
             {

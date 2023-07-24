@@ -897,9 +897,9 @@ namespace infraredCommApp
 
 
                 //if this is not quiz, we skip this line record
-                if (bQuizTemp == !_isQuiz) continue;
+                //if (bQuizTemp == true) continue;
 
-                if (nInputAns2 == 0) continue; //uncompleted answer record, ignore it
+                //if (nInputAns2 == 0) continue; //uncompleted answer record, ignore it
 
                 int nCompanre;
 

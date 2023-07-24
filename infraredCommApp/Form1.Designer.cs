@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetup = new System.Windows.Forms.Button();
             this.buttonQuizRate = new System.Windows.Forms.Button();
@@ -224,16 +224,16 @@
             // 
             // chartWithData
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartWithData.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartWithData.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chartWithData.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartWithData.Legends.Add(legend3);
             resources.ApplyResources(this.chartWithData, "chartWithData");
             this.chartWithData.Name = "chartWithData";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartWithData.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartWithData.Series.Add(series3);
             // 
             // lblMonth
             // 
@@ -332,8 +332,8 @@
             // 
             // resultListView
             // 
-            this.resultListView.HideSelection = false;
             resources.ApplyResources(this.resultListView, "resultListView");
+            this.resultListView.HideSelection = false;
             this.resultListView.MultiSelect = false;
             this.resultListView.Name = "resultListView";
             this.resultListView.UseCompatibleStateImageBehavior = false;
@@ -344,7 +344,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
-            this.Controls.Add(this.resultListView);
             this.Controls.Add(this.ControlGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -369,6 +368,7 @@
             this.Controls.Add(this.buttonQuizRate);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSetup);
+            this.Controls.Add(this.resultListView);
             this.Controls.Add(this.txtAnalyzedData);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chartWithData);
