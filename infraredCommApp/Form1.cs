@@ -488,9 +488,9 @@ namespace infraredCommApp
                     {
                         for(int i = 0;i < csvData.Rows.Count;i++)
                         {
-                            //   CultureInfo culture = new CultureInfo("en-US");
-                           // DateTime tempDate2 = DateTime.ParseExact(csvData.Rows[i]["Date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                            //if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString()&& tempDate2 >= Convert.ToDateTime(FromDate).Date && tempDate2 <= Convert.ToDateTime(ToDate).Date)
+                           //CultureInfo culture = new CultureInfo("en-US");
+                           //DateTime tempDate2 = DateTime.ParseExact(csvData.Rows[i]["Date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                           //if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString()&& tempDate2 >= Convert.ToDateTime(FromDate).Date && tempDate2 <= Convert.ToDateTime(ToDate).Date)
                             string from = FromDate;
                             string To = ToDate;
 
@@ -1248,9 +1248,6 @@ namespace infraredCommApp
                     var targetMap = gitems.Where(o => o.MapFileName == name);
                     Map map = new Map("", "");
 
-
-
-
                     string mapTagName = "";
                     foreach (var item in targetMap)
                     {
@@ -1810,7 +1807,6 @@ namespace infraredCommApp
 
             listViewQuiz.View = View.Details;
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-
             listViewQuiz.Columns.Add("コンテンツID", 100);
             listViewQuiz.Columns.Add("Title", 100);
             listViewQuiz.Columns.Add("正解率", 100);
