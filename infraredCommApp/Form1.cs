@@ -1799,7 +1799,7 @@ namespace infraredCommApp
 
         }
 
-        private void PopulateList(System.Windows.Forms.ListView listViewQuiz, List<QuizAnsInformation> quizList)
+        private void PopulateList(System.Windows.Forms.ListView listViewQuiz, List<QuizAnsInformation> quizList, bool isQuiz = true)
         {
             ExportDataDictionary.Clear();
             listViewQuiz.Items.Clear();
@@ -1811,6 +1811,12 @@ namespace infraredCommApp
             listViewQuiz.Columns.Add("Title", 100);
             listViewQuiz.Columns.Add("正解率", 100);
             listViewQuiz.Columns.Add("利用回数", 100);
+            if (isQuiz)
+            {
+                listViewQuiz.Columns.Add("Corrent ans", 100);
+                listViewQuiz.Columns.Add("Incorrect ans", 100);
+            }
+
             
             foreach (var quizInfo in quizList)
             {
@@ -1823,6 +1829,11 @@ namespace infraredCommApp
                 item.SubItems.Add(title);
                 item.SubItems.Add(string.Format("{0, 3}", quizInfo.nCorrectRatio) + "%  ");
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+                if (isQuiz)
+                {
+                    item.SubItems.Add(quizInfo.nCorrectAnsNum.ToString());
+                    item.SubItems.Add((quizInfo.nTotalAccessNum - quizInfo.nCorrectAnsNum).ToString());
+                }
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title));
             }
