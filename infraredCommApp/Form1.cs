@@ -1811,7 +1811,7 @@ namespace infraredCommApp
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
             var quizHeader = new List<string>() { "コンテンツID", "Title", "正解率", "利用回数", "Corrent ans", "Incorrect ans" };
-            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "Completed ans", "InCompleted ans" };
+            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "No. of Completed", "No. of InCompleted" };
 
             if (isQuiz)
             {
@@ -1862,8 +1862,8 @@ namespace infraredCommApp
                                     { "Title", quizTitle },
                                     { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
                                     { "利用回数", qai.nTotalAccessNum.ToString() },
-                                    { "Corrent ans", qai.nCorrectAnsNum.ToString() },
-                                    { "InCompleted ans", (qai.nTotalAccessNum - qai.nCorrectAnsNum).ToString() },
+                                    { "Correct ans", qai.nCorrectAnsNum.ToString() },
+                                    { "Incorrect ans", (qai.nTotalAccessNum - qai.nCorrectAnsNum).ToString() },
                                 };
             }
             else
@@ -1874,8 +1874,8 @@ namespace infraredCommApp
                                     { "Title", quizTitle },
                                     { "Completed Ratio", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
                                     { "利用回数", qai.nTotalAccessNum.ToString() },
-                                    { "Completed ans", qai.nCompletedAns.ToString() },
-                                    { "Incorrect ans", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
+                                    { "No. of Completed", qai.nCompletedAns.ToString() },
+                                    { "No. of Incompleted", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
                                 };
             }
 
