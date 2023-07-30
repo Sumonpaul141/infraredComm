@@ -17,8 +17,6 @@ namespace infraredCommApp
     {
 
         public static List<QuizAnsInformation> gQuizAnsINFO = new List<QuizAnsInformation>();
-        List<QuizAnsInformation> gQuizAnsINFOAccurate = new List<QuizAnsInformation>();
-        List<QuizAnsInformation> gQuizAnsINFOQuizId = new List<QuizAnsInformation>();
         public static DataTable dtQuizeTitle = new DataTable();
 
         public static DataTable gconINFOSortedByQuizeID = new DataTable();
@@ -608,13 +606,6 @@ namespace infraredCommApp
 
             }
 
-            // Haze
-            //gQuizAnsINFOAccurate = gQuizAnsINFO.Sort(delegate (QuizAnsInformation qai1, QuizAnsInformation qai2) { return (qai2.nTotalAccessNum) - qai1.nTotalAccessNum; });
-
-            //gQuizAnsINFOQuizId= gQuizAnsINFO.Sort(delegate (QuizAnsInformation qai1, QuizAnsInformation qai2)
-            //{ return qai1.u32CID.CompareTo(qai2.u32CID); });
-            // Lagbe
-            //DataTable dtQuizeTitle = new DataTable();
             dtQuizeTitle.Columns.Add("strTitle", typeof(String));           
             dtQuizeTitle.Columns.Add("u32ContentID", typeof(String));           
 
@@ -655,108 +646,11 @@ namespace infraredCommApp
             textBox1.Text = szTemp1;
             AnalyzedData = szTemp1;
 
-            //string QuizId = "";
-            ////foreach (QuizAnsInformation qai in gconINFOSortedByQuizeID)
-            //for (int m= 0; m < gconINFOSortedByQuizeID.Rows.Count; m++)
-            //{
-            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-            //    {
-            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == dtQuizeTitle.Rows[m]["u32CID"].ToString())
-            //        {
-            //            QuizId += "コンテンツID:" +Convert.ToInt32( dtQuizeTitle.Rows[m]["u32CID"].ToString()).ToString("X8")
-            //            + "\r\n";
-            //        }
-            //    }
-
-            //}
-            //rdoQuizId = QuizId;
-            //string Accurate = "";
-            //foreach (QuizAnsInformation qai in gQuizAnsINFO)
-            //{
-            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-            //    {
-            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
-            //        {
-            //            Accurate +=  "利用回数:" + qai.nTotalAccessNum.ToString()
-            //            + "\r\n";
-            //        }
-            //    }
-
-            //}
-            //rdoAccurate = Accurate;
-            //string QuizId = "";
             
-            ////foreach (QuizAnsInformation qai in gconINFOSortedByQuizeID)
-            //for (int m = 0; m < gconINFOSortedByQuizeID.Rows.Count; m++)
-            //{
-            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-            //    {
-            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByQuizeID.Rows[m]["u32ContentID"].ToString())
-            //        {
-            //            foreach (QuizAnsInformation qai in gQuizAnsINFO)
-            //            {
-            //                if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
-            //                {
-            //                    QuizId += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
-            //                    + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
-            //                    + "利用回数:" + qai.nTotalAccessNum.ToString()
-            //                    + "\r\n";
-            //                    dictionaryByID.Add(GetDictinaryValue(qai));
-            //                }
-            //            }
-            //        }
-            //    }
-
-            //}
-            //rdoQuizId = QuizId;
-
-            //var SortedByAccurateNTotal = ListToDataTableForSortingAccurate(gQuizAnsINFO);
-            //SortedByAccurateNTotal.DefaultView.Sort = "nTotalAccessNum ASC";
-            //var SortedByAccurateNTotalNew = SortedByAccurateNTotal.DefaultView.ToTable();
-            //gconINFOSortedByAccurateNTotal = SortedByAccurateNTotalNew;
-            
-
-            //string Accurate = "";
-            //for (int m = 0; m < gconINFOSortedByAccurateNTotal.Rows.Count; m++)
-            //{
-            //    for (int i = 0; i < dtQuizeTitle.Rows.Count; i++)
-            //    {
-            //        if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == gconINFOSortedByAccurateNTotal.Rows[m]["u32CID"].ToString())
-            //        {
-            //            foreach (QuizAnsInformation qai in gQuizAnsINFO)
-            //            {
-            //                if (dtQuizeTitle.Rows[i]["u32ContentID"].ToString() == qai.u32CID.ToString())
-            //                {
-            //                    Accurate += "コンテンツID:" + qai.u32CID.ToString("X8") + "  "
-            //                    + "正解率:" + string.Format("{0, 3}", qai.nCorrectRatio) + "%  "
-            //                    + "利用回数:" + qai.nTotalAccessNum.ToString()
-            //                    + "\r\n";
-            //                    dictionaryByAccurate.Add(GetDictinaryValue(qai));
-            //                }
-            //            }
-            //        }
-            //    }
-
-            //}
-            //rdoAccurate = Accurate;
-
             this.Close();
 
         }
-        private Dictionary<string, string> GetDictinaryValue(QuizAnsInformation qai)
-        {
-            return new Dictionary<string, string>
-                                {
-                                    { "コンテンツID", qai.u32CID.ToString("X8") },
-                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
-                                    { "利用回数", qai.nTotalAccessNum.ToString() }
-                                };
-        }
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -777,19 +671,13 @@ namespace infraredCommApp
 
             f = "yyyy-MM-dd HH:mm:ss";
 
+            DateTime dtStart, dtEnd;
 
+            var dateStartCheckboxValue = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + " 00:00:01";
+            dtStart = DateTime.ParseExact(dateStartCheckboxValue, f, null);
 
-            DateTime dtStart, dtEnd, dtTemp;
-
-            dtTemp = dateTimePicker1.Value;
-
-            d = dtTemp.Date.ToString("yyyy-MM-dd") + " 00:00:01";
-            dtStart = DateTime.ParseExact(d, f, null);
-
-            dtTemp = dateTimePicker2.Value;
-
-            d = dtTemp.Date.ToString("yyyy-MM-dd") + " 23:59:59";
-            dtEnd = DateTime.ParseExact(d, f, null);
+            var dateEndCheckboxValue = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + " 23:59:59";
+            dtEnd = DateTime.ParseExact(dateEndCheckboxValue, f, null);
 
             if (checkBox1.Checked == false)
             {
@@ -834,7 +722,7 @@ namespace infraredCommApp
             string szTemp1;
 
             UInt32 u32CIDTemp = 0;
-            int nUsedTimeTemp = 0;
+            int nUsedTimeTemp = 0, EndMode = 0;
             DateTime dtUsedTiming;
             bool bQuizTemp = false;
             bool bCorrectAnsTemp = false;
@@ -849,55 +737,33 @@ namespace infraredCommApp
 
                 if (text == "") break;
 
+                var firstRowData = text.Split(',');
+
                 // analysis this line
                 //skip the user SN
-                szTemp1 = text.Substring(0, text.IndexOf(","));
 
                 //get the CID
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                u32CIDTemp = Convert.ToUInt32(szTemp1, 16);
+                u32CIDTemp = Convert.ToUInt32(firstRowData[1], 16);
 
                 // date
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                d = szTemp1;
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                d = d + " " + szTemp1;
-
-                dtUsedTiming = Common.GetValidDateTime(d);
+                dtUsedTiming = Common.GetValidDateTime(firstRowData[2] + " " + firstRowData[3]);
 
                 // content using  timing
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                nUsedTimeTemp = int.Parse(szTemp1);
+                nUsedTimeTemp = int.Parse(firstRowData[4]);
 
-
-                // skip end mode
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-
+                EndMode = int.Parse(firstRowData[5]);
 
                 // get Quiz mode
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                bQuizTemp = bool.Parse(szTemp1);
+                bQuizTemp = bool.Parse(firstRowData[6]);
 
                 // get Answer Correct mode
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                szTemp1 = text.Substring(0, text.IndexOf(","));
-                bCorrectAnsTemp = bool.Parse(szTemp1);
+                bCorrectAnsTemp = bool.Parse(firstRowData[7]);
 
                 // get input answer No
-                text = text.Substring(text.IndexOf(",") + 1, text.Length - text.IndexOf(",") - 1);
-                //szTemp1 = text.Substring(0, text.IndexOf(","));
-                nInputAns2 = int.Parse(text);
-
-
+                nInputAns2 = int.Parse(firstRowData[8]);
 
                 //if this is not quiz, we skip this line record
-                //if (bQuizTemp == true) continue;
+                // if (bQuizTemp == true) continue;
 
                 //if (nInputAns2 == 0) continue; //uncompleted answer record, ignore it
 
@@ -947,6 +813,7 @@ namespace infraredCommApp
                         qai.nTotalAccessNum++;
 
                         if (bCorrectAnsTemp) qai.nCorrectAnsNum++;
+                        if (EndMode == 0) qai.nCompletedAns++;
 
                         qai.nTotalUsedTime += nUsedTimeTemp;
 
@@ -957,6 +824,7 @@ namespace infraredCommApp
                         qai.nAverageUsedTime = qai.nTotalUsedTime / qai.nTotalUsedTime;
 
                         qai.nCorrectRatio = (qai.nCorrectAnsNum * 100) / qai.nTotalAccessNum;
+                        qai.nCompletedRatio = (qai.nCompletedAns * 100) / qai.nTotalAccessNum;
 
                         bFound2 = true;
 
@@ -975,6 +843,7 @@ namespace infraredCommApp
                     qaiTemp.nTotalAccessNum++;
 
                     if (bCorrectAnsTemp) qaiTemp.nCorrectAnsNum++;
+                    if (EndMode == 0) qaiTemp.nCompletedAns++;
 
                     qaiTemp.nTotalUsedTime += nUsedTimeTemp;
 
@@ -1009,7 +878,6 @@ namespace infraredCommApp
 
             // Lagbe
             quizprocess();
-
 
 
         }

@@ -48,6 +48,7 @@ namespace infraredCommApp
         public List<Dictionary<string, string>> ExportDataDictionary = new List<Dictionary<string, string>>();
         Dictionary<string, string> TitleDictionary = new Dictionary<string, string>();
         public List<QuizAnsInformation> QuizAnsInformationResult = new List<QuizAnsInformation>();
+        public bool isQuizAnalyzing = true;
 
         public static List<tagu> taglist = new List<tagu>();
 
@@ -1775,13 +1776,14 @@ namespace infraredCommApp
         {
             //quizeAnsResult f2 = new quizeAnsResult();
             //f2.Show();
+            isQuizAnalyzing = true;
             txtAnalyzedData.SendToBack();
             chartWithData.SendToBack();
             pictureBox1.SendToBack();
             resultListView.BringToFront();
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
 
-            quizeAnsResult f2 = new quizeAnsResult(true);
+            quizeAnsResult f2 = new quizeAnsResult(isQuizAnalyzing);
             f2.ShowDialog();
             ControlGroupBox.Visible = true;
             //txtAnalyzedData.Text = f2.AnalyzedData;
@@ -1807,14 +1809,17 @@ namespace infraredCommApp
 
             listViewQuiz.View = View.Details;
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            listViewQuiz.Columns.Add("コンテンツID", 100);
-            listViewQuiz.Columns.Add("Title", 100);
-            listViewQuiz.Columns.Add("正解率", 100);
-            listViewQuiz.Columns.Add("利用回数", 100);
+
+            var quizHeader = new List<string>() { "コンテンツID", "Title", "正解率", "利用回数", "Corrent ans", "Incorrect ans" };
+            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "Completed ans", "Incompleted ans" };
+
             if (isQuiz)
             {
-                listViewQuiz.Columns.Add("Corrent ans", 100);
-                listViewQuiz.Columns.Add("Incorrect ans", 100);
+                quizHeader.ForEach(head => listViewQuiz.Columns.Add(head, 100));
+            }
+            else
+            {
+                guideHeader.ForEach(head => listViewQuiz.Columns.Add(head, 100));
             }
 
             
@@ -1827,12 +1832,19 @@ namespace infraredCommApp
                     title = TitleDictionary[quizInfo.u32CID.ToString()];
                 }
                 item.SubItems.Add(title);
-                item.SubItems.Add(string.Format("{0, 3}", quizInfo.nCorrectRatio) + "%  ");
+                
+                item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
+                
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
                 if (isQuiz)
                 {
                     item.SubItems.Add(quizInfo.nCorrectAnsNum.ToString());
                     item.SubItems.Add((quizInfo.nTotalAccessNum - quizInfo.nCorrectAnsNum).ToString());
+                }
+                else
+                {
+                    item.SubItems.Add(quizInfo.nCompletedAns.ToString());
+                    item.SubItems.Add((quizInfo.nTotalAccessNum - quizInfo.nCompletedAns).ToString());
                 }
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title));
@@ -1853,12 +1865,13 @@ namespace infraredCommApp
 
         private void ButtonGuideClicked(object sender, EventArgs e)
         {
+            isQuizAnalyzing = false;
             txtAnalyzedData.SendToBack();
             chartWithData.SendToBack();
             pictureBox1.SendToBack();
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
 
-            quizeAnsResult f2 = new quizeAnsResult(false);
+            quizeAnsResult f2 = new quizeAnsResult(isQuizAnalyzing);
             f2.ShowDialog();
             ControlGroupBox.Visible = true;
             //txtAnalyzedData.Text = f2.AnalyzedData;
@@ -1873,7 +1886,7 @@ namespace infraredCommApp
             dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
             resultListView.Visible = true;
             QuizAnsInformationResult = f2.quizAnsInformationResultList;
-            PopulateList(resultListView, f2.quizAnsInformationResultList);
+            PopulateList(resultListView, f2.quizAnsInformationResultList, false);
         }
         private void buttonGuideTotal_Click(object sender, EventArgs e)
         {
@@ -2674,11 +2687,11 @@ namespace infraredCommApp
             
             if (rdoAccurate.Checked)
             {
-                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.nTotalAccessNum).ToList());
+                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.nTotalAccessNum).ToList(), isQuizAnalyzing);
             }
             else if (rdoQuizId.Checked)
             {
-                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.u32CID).ToList());
+                PopulateList(resultListView, QuizAnsInformationResult.OrderBy(x => x.u32CID).ToList(), isQuizAnalyzing);
 
             }
             else

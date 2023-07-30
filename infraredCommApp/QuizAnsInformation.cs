@@ -16,7 +16,8 @@ namespace infraredCommApp
         public int nTotalUsedTime { get; set; }
         public int nAverageUsedTime { get; set; }
         public int nCorrectRatio { get; set; }
-
+        public int nCompletedAns { get; set; }
+        public int nCompletedRatio { get; set; }
 
         public QuizAnsInformation()
         {
