@@ -1860,7 +1860,7 @@ namespace infraredCommApp
                                 {
                                     { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
                                     { "Title", quizTitle },
-                                    { "Completed Ratio", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
+                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
                                     { "利用回数", qai.nTotalAccessNum.ToString() },
                                     { "Corrent ans", qai.nCorrectAnsNum.ToString() },
                                     { "InCompleted ans", (qai.nTotalAccessNum - qai.nCorrectAnsNum).ToString() },
@@ -1872,7 +1872,7 @@ namespace infraredCommApp
                                 {
                                     { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
                                     { "Title", quizTitle },
-                                    { "正解率", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
+                                    { "Completed Ratio", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
                                     { "利用回数", qai.nTotalAccessNum.ToString() },
                                     { "Completed ans", qai.nCompletedAns.ToString() },
                                     { "Incorrect ans", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
