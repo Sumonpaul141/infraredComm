@@ -1811,7 +1811,7 @@ namespace infraredCommApp
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
             var quizHeader = new List<string>() { "コンテンツID", "Title", "正解率", "利用回数", "Corrent ans", "Incorrect ans" };
-            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "Completed ans", "Incompleted ans" };
+            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "Completed ans", "InCompleted ans" };
 
             if (isQuiz)
             {
@@ -1847,20 +1847,38 @@ namespace infraredCommApp
                     item.SubItems.Add((quizInfo.nTotalAccessNum - quizInfo.nCompletedAns).ToString());
                 }
                 listViewQuiz.Items.Add(item);
-                ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title));
+                ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
             }
             resultListView.Visible = true;
         }
 
-        private Dictionary<string, string> GetDictinaryValue(QuizAnsInformation qai, string quizTitle)
+        private Dictionary<string, string> GetDictinaryValue(QuizAnsInformation qai, string quizTitle, bool isQuiz)
         {
-            return new Dictionary<string, string>
+            if (isQuiz)
+            {
+                return new Dictionary<string, string>
                                 {
                                     { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
                                     { "Title", quizTitle },
-                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
-                                    { "利用回数", qai.nTotalAccessNum.ToString() }
+                                    { "Completed Ratio", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
+                                    { "利用回数", qai.nTotalAccessNum.ToString() },
+                                    { "Corrent ans", qai.nCorrectAnsNum.ToString() },
+                                    { "InCompleted ans", (qai.nTotalAccessNum - qai.nCorrectAnsNum).ToString() },
                                 };
+            }
+            else
+            {
+                return new Dictionary<string, string>
+                                {
+                                    { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
+                                    { "Title", quizTitle },
+                                    { "正解率", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
+                                    { "利用回数", qai.nTotalAccessNum.ToString() },
+                                    { "Completed ans", qai.nCompletedAns.ToString() },
+                                    { "Incorrect ans", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
+                                };
+            }
+
         }
 
         private void ButtonGuideClicked(object sender, EventArgs e)
