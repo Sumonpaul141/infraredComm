@@ -1810,8 +1810,8 @@ namespace infraredCommApp
             listViewQuiz.View = View.Details;
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
-            var quizHeader = new List<string>() { "コンテンツID", "Title", "正解率", "利用回数", "Corrent ans", "Incorrect ans" };
-            var guideHeader = new List<string>() { "コンテンツID", "Title", "Completed Ratio", "利用回数", "No. of Completed", "No. of InCompleted" };
+            var quizHeader = new List<string>() { "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans"  , "正解率", "再生回数" };
+            var guideHeader = new List<string>() { "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数" };
 
             if (isQuiz)
             {
@@ -1832,10 +1832,7 @@ namespace infraredCommApp
                     title = TitleDictionary[quizInfo.u32CID.ToString()];
                 }
                 item.SubItems.Add(title);
-                
-                item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
-                
-                item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+
                 if (isQuiz)
                 {
                     item.SubItems.Add(quizInfo.nCorrectAnsNum.ToString());
@@ -1846,6 +1843,11 @@ namespace infraredCommApp
                     item.SubItems.Add(quizInfo.nCompletedAns.ToString());
                     item.SubItems.Add((quizInfo.nTotalAccessNum - quizInfo.nCompletedAns).ToString());
                 }
+
+                item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
+                
+                item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
             }
@@ -1859,11 +1861,12 @@ namespace infraredCommApp
                 return new Dictionary<string, string>
                                 {
                                     { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
-                                    { "Title", quizTitle },
-                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
-                                    { "利用回数", qai.nTotalAccessNum.ToString() },
+                                    { "タイトル", quizTitle },
                                     { "Correct ans", qai.nCorrectAnsNum.ToString() },
                                     { "Incorrect ans", (qai.nTotalAccessNum - qai.nCorrectAnsNum).ToString() },
+                                    { "正解率", string.Format("{0, 3}", qai.nCorrectRatio) + "%  " },
+                                    { "再生回数", qai.nTotalAccessNum.ToString() },
+
                                 };
             }
             else
@@ -1871,11 +1874,12 @@ namespace infraredCommApp
                 return new Dictionary<string, string>
                                 {
                                     { "コンテンツID", "-" + qai.u32CID.ToString("X8") },
-                                    { "Title", quizTitle },
+                                    { "タイトル", quizTitle },
+                                    { "全部再生数", qai.nCompletedAns.ToString() },
+                                    { "一部再生数", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
                                     { "Completed Ratio", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
-                                    { "利用回数", qai.nTotalAccessNum.ToString() },
-                                    { "No. of Completed", qai.nCompletedAns.ToString() },
-                                    { "No. of Incompleted", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
+                                    { "再生回数", qai.nTotalAccessNum.ToString() },
+
                                 };
             }
 
