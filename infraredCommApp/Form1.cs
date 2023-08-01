@@ -1877,7 +1877,7 @@ namespace infraredCommApp
                                     { "タイトル", quizTitle },
                                     { "全部再生数", qai.nCompletedAns.ToString() },
                                     { "一部再生数", (qai.nTotalAccessNum - qai.nCompletedAns).ToString() },
-                                    { "Completed Ratio", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
+                                    { "全部再生率", string.Format("{0, 3}", qai.nCompletedRatio) + "%  " },
                                     { "再生回数", qai.nTotalAccessNum.ToString() },
 
                                 };
