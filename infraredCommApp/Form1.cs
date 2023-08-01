@@ -1849,6 +1849,7 @@ namespace infraredCommApp
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
 
                 listViewQuiz.Items.Add(item);
+                listViewQuiz.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
             }
             resultListView.Visible = true;
