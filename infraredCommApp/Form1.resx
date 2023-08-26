@@ -403,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="add_map_button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 956</value>
+    <value>144, 954</value>
   </data>
   <data name="add_map_button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 38</value>
@@ -664,7 +664,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMonth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>817, 989</value>
+    <value>151, 1013</value>
   </data>
   <data name="lblMonth.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 16</value>
@@ -674,6 +674,9 @@
   </data>
   <data name="lblMonth.Text" xml:space="preserve">
     <value>Month</value>
+  </data>
+  <data name="lblMonth.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblMonth.Name" xml:space="preserve">
     <value>lblMonth</value>
@@ -697,7 +700,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>816, 969</value>
+    <value>150, 989</value>
   </data>
   <data name="lblDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 19</value>
@@ -707,6 +710,9 @@
   </data>
   <data name="lblDate.Text" xml:space="preserve">
     <value>Date</value>
+  </data>
+  <data name="lblDate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblDate.Name" xml:space="preserve">
     <value>lblDate</value>
@@ -781,7 +787,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFromDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>946, 913</value>
+    <value>209, 957</value>
   </data>
   <data name="lblFromDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 19</value>
@@ -814,7 +820,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblToDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>946, 944</value>
+    <value>465, 961</value>
   </data>
   <data name="lblToDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 19</value>
@@ -847,7 +853,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 913</value>
+    <value>140, 957</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 19</value>
@@ -880,7 +886,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>899, 944</value>
+    <value>418, 961</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 19</value>
@@ -1108,7 +1114,7 @@
     <value>1</value>
   </data>
   <data name="resultListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 12pt</value>
+    <value>MS UI Gothic, 18pt</value>
   </data>
   <data name="resultListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 29</value>

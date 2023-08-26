@@ -1734,6 +1734,29 @@ namespace infraredCommApp
             pbox.Image = resized;
 
         }
+
+        private void ButtonManage(bool isVisible)
+        {
+            // ai 4 ta show hobe kon butto
+            add_map_button1.Visible = isVisible;
+            delete_map_button8.Visible = isVisible;
+            set_map_label1.Visible = isVisible;
+            Exit_map_edit_button9.Visible = isVisible;
+            map_comboBox1.Visible = isVisible;
+
+
+            progBarTagLoad.Visible = !isVisible;
+            lblProgBarTagLoadPercent.Visible = !isVisible;
+            label1.Visible = !isVisible;
+            label2.Visible = !isVisible;
+            lblToDate.Visible = !isVisible;
+            lblFromDate.Visible = !isVisible;
+            lblDate.Visible = !isVisible;
+            lblMonth.Visible = !isVisible;
+
+
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -2028,25 +2051,14 @@ namespace infraredCommApp
             double hours = diff.TotalHours;
 
             button＿MapEdit_Click( sender, e);
+            ButtonManage(false);
             map_comboBox1.SelectedIndex= 2;
         }
 
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
-            // July
-            this.add_map_button1.Visible = true;
-            this.delete_map_button8.Visible = true;
-            this.set_map_label1.Visible = true;
-            this.map_comboBox1.Visible = true;
-            this.Exit_map_edit_button9.Visible = true;
-
-            lblProgBarTagLoadPercent.Visible = true;
-            lblFromDate.Visible = true;
-            lblToDate.Visible = true;
-            label1.Visible = true;
-            label2.Visible = true;
-            this.progBarTagLoad.Visible = true;
-            
+            //run koren
+            ButtonManage(true);
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();

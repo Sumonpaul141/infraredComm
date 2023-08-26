@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetup = new System.Windows.Forms.Button();
             this.buttonQuizRate = new System.Windows.Forms.Button();
@@ -224,16 +224,16 @@
             // 
             // chartWithData
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartWithData.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartWithData.Legends.Add(legend3);
+            chartArea4.Name = "ChartArea1";
+            this.chartWithData.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartWithData.Legends.Add(legend4);
             resources.ApplyResources(this.chartWithData, "chartWithData");
             this.chartWithData.Name = "chartWithData";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartWithData.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartWithData.Series.Add(series4);
             // 
             // lblMonth
             // 

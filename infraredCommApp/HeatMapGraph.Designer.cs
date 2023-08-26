@@ -40,7 +40,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBoxAllData = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -83,15 +82,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.dtToDateTime);
             this.groupBox2.Controls.Add(this.dtFromDateTime);
-            this.groupBox2.Controls.Add(this.PictureBox);
             this.groupBox2.Controls.Add(this.cmbType);
             this.groupBox2.Controls.Add(this.dtToDate);
             this.groupBox2.Controls.Add(this.dtFromDate);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.PictureBox);
             this.groupBox2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox2.Location = new System.Drawing.Point(14, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -121,7 +119,7 @@
             // PictureBox
             // 
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBox.Location = new System.Drawing.Point(8, 167);
+            this.PictureBox.Location = new System.Drawing.Point(28, 133);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(24, 10);
             this.PictureBox.TabIndex = 32;
@@ -170,16 +168,6 @@
             this.listBoxAllData.Size = new System.Drawing.Size(416, 148);
             this.listBoxAllData.TabIndex = 32;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 34;
-            this.comboBox1.Text = "Time Period";
-            // 
             // HeatMapGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -214,6 +202,5 @@
         private System.Windows.Forms.DateTimePicker dtToDateTime;
         private System.Windows.Forms.DateTimePicker dtFromDateTime;
         private System.Windows.Forms.ListBox listBoxAllData;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
