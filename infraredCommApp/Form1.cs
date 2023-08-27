@@ -1821,7 +1821,7 @@ namespace infraredCommApp
             dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
             QuizAnsInformationResult = f2.quizAnsInformationResultList;
             PopulateList(resultListView, f2.quizAnsInformationResultList);
-
+            //btnBarGraph_Click( sender,  e);
         }
 
         private void PopulateList(System.Windows.Forms.ListView listViewQuiz, List<QuizAnsInformation> quizList, bool isQuiz = true)
@@ -1838,11 +1838,11 @@ namespace infraredCommApp
 
             if (isQuiz)
             {
-                quizHeader.ForEach(head => listViewQuiz.Columns.Add(head, 100));
+                quizHeader.ForEach(head => listViewQuiz.Columns.Add(head));
             }
             else
             {
-                guideHeader.ForEach(head => listViewQuiz.Columns.Add(head, 100));
+                guideHeader.ForEach(head => listViewQuiz.Columns.Add(head));
             }
 
             
@@ -1873,6 +1873,7 @@ namespace infraredCommApp
 
                 listViewQuiz.Items.Add(item);
                 listViewQuiz.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+                listViewQuiz.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
             }
             resultListView.Visible = true;
@@ -2759,10 +2760,14 @@ namespace infraredCommApp
                 var maxWidth = 50;
                 chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
                 chartWithData.Series["Series1"].IsValueShownAsLabel = true;
+                chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Black;
+                chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
                 chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
                 chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
                 chartWithData.ChartAreas[0].AxisX.Interval = 1;
-               
+
+                chartWithData.ChartAreas[0].AxisY.LabelStyle.Angle = 0; // Horizontal labels
+
 
                 for (int i = 0; i < chartWithData.Series["Series1"].Points.Count; i++)
                 {
@@ -2779,33 +2784,18 @@ namespace infraredCommApp
                     if (y > 100)
                     {
                         dataPoint.LabelAngle = 90;
+                        dataPoint.LabelForeColor = System.Drawing.Color.White;
 
                     }
 
                 }
 
-                //chartWithData.Titles.Add("Museum Chart");
                 if (chartWithData.Titles.Count == 0)
                 {
                     chartWithData.Titles.Add("Museum Chart");
                 }
-                //chartWithData.Legends.All;
-                //chartWithData.Series["Series1"].Points.DataBindXY(ds, "DATE", ds, "VALUE");
-
-                //chartWithData.Series["Series1"].Legend = "xPositionValue";
-                //chartWithData.Series["Series1"].Legend = "yPositionValue";
 
                 chartWithData.Series["Series1"].IsVisibleInLegend = true;
-
-
-                //chartWithData.Legends.Add(new Legend("Series1"));
-
-                //// Set Docking of the Legend chart to the Default Chart Area.
-                //chartWithData.Legends["Series1"].DockedToChartArea = "Default";
-
-                //// Assign the legend to Series1.
-                //chartWithData.Series["Series1"].Legend = "Legend2";
-                //chartWithData.Series["Series1"].IsVisibleInLegend = true;
                 chartWithData.Series["Series1"].MarkerSize = 10;
             }
 
