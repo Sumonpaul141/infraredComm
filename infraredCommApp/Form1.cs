@@ -1754,6 +1754,7 @@ namespace infraredCommApp
             lblDate.Visible = !isVisible;
             lblMonth.Visible = !isVisible;
 
+            ControlGroupBox.Visible = false;
 
 
         }
@@ -1821,7 +1822,6 @@ namespace infraredCommApp
             dtBarGrapggStoryINFOALl = quizeAnsResult.dtQuizeTitle;
             QuizAnsInformationResult = f2.quizAnsInformationResultList;
             PopulateList(resultListView, f2.quizAnsInformationResultList);
-            //btnBarGraph_Click( sender,  e);
         }
 
         private void PopulateList(System.Windows.Forms.ListView listViewQuiz, List<QuizAnsInformation> quizList, bool isQuiz = true)
@@ -1872,9 +1872,11 @@ namespace infraredCommApp
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
 
                 listViewQuiz.Items.Add(item);
-                listViewQuiz.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-                listViewQuiz.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
+            }
+            for (int i = 0; i < listViewQuiz.Columns.Count; i++)
+            {
+                listViewQuiz.Columns[i].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
             resultListView.Visible = true;
         }
@@ -2760,7 +2762,7 @@ namespace infraredCommApp
                 var maxWidth = 50;
                 chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
                 chartWithData.Series["Series1"].IsValueShownAsLabel = true;
-                chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Black;
+                chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Red;
                 chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
                 chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
                 chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
