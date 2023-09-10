@@ -118,6 +118,7 @@ namespace infraredCommApp
         private bool bClickGetLog = false;
         // Atik Global Variable
         List<Map> gitems = new List<Map>();// item=
+        //BindingList<Map> bindingList = new BindingList<Map>();
         public static string imageFileName = "";
         int flag = 0;
 
@@ -821,7 +822,7 @@ namespace infraredCommApp
             if (gContPLAY.Count == 0) return;
 
             //write a head
-            string strTemp = "User SN, Content ID, Date, Time, Play Time, EndMode, IsQuiz, IsCorrect Ans, inputed Ans, UID, RFID";
+            string strTemp = "User SN, Content ID, Date, Time, Play Time, EndMode, IsQuiz, IsCorrect Ans, inputed Ans";
             //string strIds = "UID, RFID, IdType, DATE, TIME";
             string strIds = "Id, IdType, Date, Time";
 
@@ -862,9 +863,7 @@ namespace infraredCommApp
                    + cpi.nEndMode.ToString() + ","
                    + cpi.bQuiz.ToString() + ","
                    + cpi.bCorrectAns.ToString() + ","
-                   + cpi.nInputAns.ToString() + ","
-                   + cpi.UID.ToString() + ","
-                   + cpi.RFID.ToString();
+                   + cpi.nInputAns.ToString();
 
 
                 DURw.WriteLine(strTemp);
@@ -2062,6 +2061,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
+            //ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2070,9 +2070,11 @@ namespace infraredCommApp
             if (File.Exists(fileName))
             {
                 //List<Map> gitem = (List<Map>)LoadFromBinaryFile(fileName); // load 
-                gitems = null;
+                gitems.Clear();
                 gitems = (List<Map>)LoadFromBinaryFile(fileName); // load                 
-                map_comboBox1.DataSource = gitems;               
+                BindingList<Map> bindingList = new BindingList<Map>();
+                gitems.ForEach(q => bindingList.Add(q));
+                map_comboBox1.DataSource = bindingList;               
                 map_comboBox1.DisplayMember = "MapName";
                 map_comboBox1.ValueMember = "MapFileName";
                 // MapName='Map-1'
@@ -2121,6 +2123,13 @@ namespace infraredCommApp
 
         }
 
+        private void ChangeLocation()
+        {
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10,450);
+        }
         private void add_map_button1_Click(object sender, EventArgs e)
         {
             // New Picturbox
@@ -2144,15 +2153,17 @@ namespace infraredCommApp
                 //lblimage.Text = imageFileName;
                 lblimage.Visible = false;
                 //string destinationPath = workfolder + "Image\\" + InputMapName.fileName.Trim() + ".jpeg";
-                string destinationPath = workfolder + "Image\\" + (gitems.Count + 1).ToString() + ".jpeg";
+                var itemsNo = 1;
+                string destinationPath = workfolder + "Image\\" + (gitems.Count + itemsNo).ToString() + ".jpeg";
                 string MapFilename = (gitems.Count + 1).ToString();
-                if (File.Exists(destinationPath))
+                while (File.Exists(destinationPath))
                 {
                     //File.Delete(destinationPath);
                     //MessageBox.Show("This name already exist");
                     //  return;
-                    destinationPath = workfolder + "Image\\" + (gitems.Count +2).ToString() + ".jpeg";
-                    MapFilename = (gitems.Count + 2).ToString();
+                    destinationPath = workfolder + "Image\\" + (gitems.Count +itemsNo).ToString() + ".jpeg";
+                    MapFilename = (gitems.Count + itemsNo).ToString();
+                    itemsNo++;
                 }
                 // Save the image to work folder
                 //File.Copy(MapFileName, destinationPath);
@@ -2173,9 +2184,7 @@ namespace infraredCommApp
 
                 gitems.Add(map);
                 */
-                map_comboBox1.DataSource = gitems;
-                map_comboBox1.DisplayMember = "MapName";
-                map_comboBox1.ValueMember = "MapFileName";
+                //bindingList.Add(map);
                 //Show the map in picbox 
                 pictureBox1.Image = Image.FromFile(file_name);
                 int width = pictureBox1.Width;
@@ -2265,12 +2274,17 @@ namespace infraredCommApp
             string itemFileName = map_comboBox1.SelectedValue.ToString();
             string itemFileNamePath = workfolder + "Image\\"+ itemFileName+".jpeg";
 
-            gitems.RemoveAll(r => r.MapFileName== itemFileName);
+            var mapForDelete = gitems.Where(r => r.MapFileName== itemFileName).FirstOrDefault();
+            if(mapForDelete != null)
+            {
+                gitems.Remove(mapForDelete);
+                //bindingList.Remove(mapForDelete);
 
-            SaveToBinaryFile(gitems, fileNameData);
-            map_comboBox1.SelectedIndex = 0;
-          
-            pictureBox1.Dispose();           
+                SaveToBinaryFile(gitems, fileNameData);
+                map_comboBox1.SelectedIndex = 0;
+
+                pictureBox1.Dispose();
+            }
             
         }
 

@@ -30,21 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetup = new System.Windows.Forms.Button();
             this.buttonQuizRate = new System.Windows.Forms.Button();
             this.buttonGuideTotal = new System.Windows.Forms.Button();
             this.buttonFLowLineAnalysis = new System.Windows.Forms.Button();
             this.map_button = new System.Windows.Forms.Button();
-            this.delete_map_button8 = new System.Windows.Forms.Button();
             this.set_map_label1 = new System.Windows.Forms.Label();
-            this.map_comboBox1 = new System.Windows.Forms.ComboBox();
-            this.add_map_button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Exit_map_edit_button9 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.追加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +57,6 @@
             this.progBarTagLoad = new System.Windows.Forms.ProgressBar();
             this.lblProgBarTagLoadPercent = new System.Windows.Forms.Label();
             this.lblFromDate = new System.Windows.Forms.Label();
-            this.lblToDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAnalyzedData = new System.Windows.Forms.TextBox();
@@ -72,6 +67,11 @@
             this.btnBarGraph = new System.Windows.Forms.Button();
             this.ControlGroupBox = new System.Windows.Forms.GroupBox();
             this.resultListView = new System.Windows.Forms.ListView();
+            this.add_map_button1 = new System.Windows.Forms.Button();
+            this.map_comboBox1 = new System.Windows.Forms.ComboBox();
+            this.delete_map_button8 = new System.Windows.Forms.Button();
+            this.Exit_map_edit_button9 = new System.Windows.Forms.Button();
+            this.lblToDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -120,43 +120,15 @@
             this.map_button.UseVisualStyleBackColor = true;
             this.map_button.Click += new System.EventHandler(this.button＿MapEdit_Click);
             // 
-            // delete_map_button8
-            // 
-            resources.ApplyResources(this.delete_map_button8, "delete_map_button8");
-            this.delete_map_button8.Name = "delete_map_button8";
-            this.delete_map_button8.UseVisualStyleBackColor = true;
-            this.delete_map_button8.Click += new System.EventHandler(this.delete_map_button8_Click);
-            // 
             // set_map_label1
             // 
             resources.ApplyResources(this.set_map_label1, "set_map_label1");
             this.set_map_label1.Name = "set_map_label1";
             // 
-            // map_comboBox1
-            // 
-            resources.ApplyResources(this.map_comboBox1, "map_comboBox1");
-            this.map_comboBox1.FormattingEnabled = true;
-            this.map_comboBox1.Name = "map_comboBox1";
-            this.map_comboBox1.SelectedIndexChanged += new System.EventHandler(this.map_comboBox1_SelectedIndexChanged);
-            // 
-            // add_map_button1
-            // 
-            resources.ApplyResources(this.add_map_button1, "add_map_button1");
-            this.add_map_button1.Name = "add_map_button1";
-            this.add_map_button1.UseVisualStyleBackColor = true;
-            this.add_map_button1.Click += new System.EventHandler(this.add_map_button1_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // Exit_map_edit_button9
-            // 
-            resources.ApplyResources(this.Exit_map_edit_button9, "Exit_map_edit_button9");
-            this.Exit_map_edit_button9.Name = "Exit_map_edit_button9";
-            this.Exit_map_edit_button9.UseVisualStyleBackColor = true;
-            this.Exit_map_edit_button9.Click += new System.EventHandler(this.Exit_map_edit_button9_Click);
             // 
             // pictureBox1
             // 
@@ -224,16 +196,16 @@
             // 
             // chartWithData
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartWithData.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartWithData.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartWithData.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWithData.Legends.Add(legend1);
             resources.ApplyResources(this.chartWithData, "chartWithData");
             this.chartWithData.Name = "chartWithData";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartWithData.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartWithData.Series.Add(series1);
             // 
             // lblMonth
             // 
@@ -260,11 +232,6 @@
             // 
             resources.ApplyResources(this.lblFromDate, "lblFromDate");
             this.lblFromDate.Name = "lblFromDate";
-            // 
-            // lblToDate
-            // 
-            resources.ApplyResources(this.lblToDate, "lblToDate");
-            this.lblToDate.Name = "lblToDate";
             // 
             // label1
             // 
@@ -338,6 +305,39 @@
             this.resultListView.Name = "resultListView";
             this.resultListView.UseCompatibleStateImageBehavior = false;
             // 
+            // add_map_button1
+            // 
+            resources.ApplyResources(this.add_map_button1, "add_map_button1");
+            this.add_map_button1.Name = "add_map_button1";
+            this.add_map_button1.UseVisualStyleBackColor = true;
+            this.add_map_button1.Click += new System.EventHandler(this.add_map_button1_Click);
+            // 
+            // map_comboBox1
+            // 
+            resources.ApplyResources(this.map_comboBox1, "map_comboBox1");
+            this.map_comboBox1.FormattingEnabled = true;
+            this.map_comboBox1.Name = "map_comboBox1";
+            this.map_comboBox1.SelectedIndexChanged += new System.EventHandler(this.map_comboBox1_SelectedIndexChanged);
+            // 
+            // delete_map_button8
+            // 
+            resources.ApplyResources(this.delete_map_button8, "delete_map_button8");
+            this.delete_map_button8.Name = "delete_map_button8";
+            this.delete_map_button8.UseVisualStyleBackColor = true;
+            this.delete_map_button8.Click += new System.EventHandler(this.delete_map_button8_Click);
+            // 
+            // Exit_map_edit_button9
+            // 
+            resources.ApplyResources(this.Exit_map_edit_button9, "Exit_map_edit_button9");
+            this.Exit_map_edit_button9.Name = "Exit_map_edit_button9";
+            this.Exit_map_edit_button9.UseVisualStyleBackColor = true;
+            this.Exit_map_edit_button9.Click += new System.EventHandler(this.Exit_map_edit_button9_Click);
+            // 
+            // lblToDate
+            // 
+            resources.ApplyResources(this.lblToDate, "lblToDate");
+            this.lblToDate.Name = "lblToDate";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -394,12 +394,8 @@
         private System.Windows.Forms.Button buttonGuideTotal;
         private System.Windows.Forms.Button buttonFLowLineAnalysis;
         private System.Windows.Forms.Button map_button;
-        private System.Windows.Forms.Button delete_map_button8;
         private System.Windows.Forms.Label set_map_label1;
-        private System.Windows.Forms.ComboBox map_comboBox1;
-        private System.Windows.Forms.Button add_map_button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button Exit_map_edit_button9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblimage;
         private System.Windows.Forms.Label lblCboImageName;
@@ -416,7 +412,6 @@
         private System.Windows.Forms.ProgressBar progBarTagLoad;
         private System.Windows.Forms.Label lblProgBarTagLoadPercent;
         private System.Windows.Forms.Label lblFromDate;
-        private System.Windows.Forms.Label lblToDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAnalyzedData;
@@ -427,6 +422,11 @@
         private System.Windows.Forms.Button btnBarGraph;
         private System.Windows.Forms.GroupBox ControlGroupBox;
         private System.Windows.Forms.ListView resultListView;
+        private System.Windows.Forms.Button add_map_button1;
+        private System.Windows.Forms.ComboBox map_comboBox1;
+        private System.Windows.Forms.Button delete_map_button8;
+        private System.Windows.Forms.Button Exit_map_edit_button9;
+        private System.Windows.Forms.Label lblToDate;
     }
 }
 
