@@ -117,7 +117,7 @@ namespace infraredCommApp
         private bool bClickDeviceSet = false;
         private bool bClickGetLog = false;
         // Atik Global Variable
-        List<Map> gitems = new List<Map>();// item=
+        List<Map> gitems = new List<Map>();
         //BindingList<Map> bindingList = new BindingList<Map>();
         public static string imageFileName = "";
         int flag = 0;
@@ -473,7 +473,7 @@ namespace infraredCommApp
             List<HeatMap> HeatMapList = new List<HeatMap>();
             List<HeatMap> HeatMapListAll = new List<HeatMap>();
 
-            if(FromDate!=null&& FromDate != "")
+            if(!string.IsNullOrWhiteSpace(FromDate))
             {
                 tagDateFirstMonth = Convert.ToInt16(Convert.ToDateTime(FromDate).Month);
                 tagInitialDateFirstMonth = tagDateFirstMonth;
@@ -497,7 +497,7 @@ namespace infraredCommApp
                             string To = ToDate;
 
                             string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
-                            DateTime dtDateTime = Convert.ToDateTime(strDateTime);
+                            DateTime dtDateTime = Convert.ToDateTime(Common.GetValidDateTime(strDateTime));
                             if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString() && dtDateTime >= Convert.ToDateTime(FromDate) && dtDateTime <= Convert.ToDateTime(ToDate))
                             {
                                 HeatMap htMap = new HeatMap();
@@ -1146,7 +1146,6 @@ namespace infraredCommApp
                 fep_save_Content_Play_Info(00000);
                 
             }
-            pannel_map_loader(1);
             //string fileName = workfolder + "obj";
             //List<Map> obj2 = (List<Map>)LoadFromBinaryFile(fileName);
             //foreach (Map obj in obj2)
@@ -1156,14 +1155,6 @@ namespace infraredCommApp
 
 
 
-        }
-        public void pannel_map_loader(Int32 combo_index)
-        {
-            //string file_name;
-            //combo_index = combo_index + 1;
-            //file_name = Application.StartupPath + "\\Resources\\maps" + combo_index.ToString() + ".jpg";
-            //pictureBox1.Image= Image.FromFile(file_name);
-            //this.panel1.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void ProgressBarTagLoad(double value)
         {
@@ -1179,13 +1170,6 @@ namespace infraredCommApp
         }
         private void map_comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string fileName = workfolder + "Image\\obj";
-            //if (File.Exists(fileName))
-            //{
-            //    gitems = null;
-            //    gitems = (List<Map>)LoadFromBinaryFile(fileName);
-            //}
-            //if (map_comboBox1.SelectedIndex != -1)
             if (map_comboBox1.SelectedValue != null)
             {
                 if(HeatMapConsider==1)
@@ -1197,17 +1181,11 @@ namespace infraredCommApp
 
                 if (map_comboBox1.SelectedValue.ToString() != "infraredCommApp.Map" && map_comboBox1.SelectedValue.ToString() != "")
                 {
-                    // January  
-                    // taglist.Clear();
-                    //taglist2.Clear();
-
                     string name = map_comboBox1.SelectedValue.ToString();
-                    int width = pictureBox1.Width;
-                    int height = pictureBox1.Height;
                     pictureBox1.Image = Image.FromFile(workfolder + "Image\\" + name + ".jpeg", true);
                     var filePath = workfolder + "Image\\" + name + ".jpeg";
                     Bitmap bmap = new Bitmap(filePath);
-                    if (Width < pictureBox1.Image.Width || height < pictureBox1.Image.Height)
+                    if (pictureBox1.Width < pictureBox1.Image.Width || pictureBox1.Height < pictureBox1.Image.Height)
                     {
                         this.pictureBox1.Size = new System.Drawing.Size(PictureBoxActualWidth, PictureBoxActualHeight);
                         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1215,96 +1193,52 @@ namespace infraredCommApp
                     else
                     {
                         pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-                        Common.FillPictureBox(pictureBox1, bmap);
                     }
-                    // New code 15 December
                     lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
 
-                    Bitmap OriginalBitmap = new Bitmap(filePath);
+                    
 
-                    var resized = Common.FillPictureBox(pictureBox1, OriginalBitmap);
+                    var targetMap = gitems.Where(o => o.MapFileName == name).FirstOrDefault();
+                    taglist = targetMap.taglist;
+                    var maps = GetTagNames(targetMap);
+                    var imageToDraw = RedrawMapAndUpdateTagListAndGetCopiedFile(filePath, targetMap.taglist);
 
-                    //var resized = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-                    Bitmap arrowBitmap = new Bitmap(workfolder + "Resources\\2.png");
-                    Bitmap copy = new Bitmap(resized);
-                    Graphics g2 = Graphics.FromImage(copy);
-                    Bitmap arrowBitmap1 = new Bitmap(workfolder + "Resources\\1.png");
-                    Graphics g1 = Graphics.FromImage(copy);
-                    var targetMap = gitems.Where(o => o.MapFileName == name);
-                    Map map = new Map("", "");
-                    string mapTagName = "";
-                    foreach (var item in targetMap)
-                    {
-                        map = new Map(item.MapFileName, item.MapName);
-                        if (item.taglist != null)
-                        {
-                            taglist = item.taglist;
-                            foreach (tagu taguSingle in item.taglist)
-                            {
-                                if (taguSingle.tagtype == 1)
-                                {
-                                    //g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx, taguSingle.pointy));
-                                    g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx +Convert.ToInt32((Convert.ToDouble(taguSingle.pointx)*0.365)), taguSingle.pointy+ Convert.ToInt32((Convert.ToDouble(taguSingle.pointy) * 0.30))));
-                                }
-                                else if (taguSingle.tagtype == 2)
-                                {
-                                    //g2.DrawImage(arrowBitmap, new Point(taguSingle.pointx, taguSingle.pointy));
-                                    g2.DrawImage(arrowBitmap, new Point(taguSingle.pointx + Convert.ToInt32((Convert.ToDouble(taguSingle.pointx) * 0.365)), taguSingle.pointy + Convert.ToInt32((Convert.ToDouble(taguSingle.pointy) * 0.30))));
-                                }
-                                mapTagName = mapTagName + " " + taguSingle.tagname;
-                                lblTagNameTest.Text = mapTagName;
-                            }
-
-
-                        }
-
-
-                        //if (item.taglist1 != null)
-                        //{
-
-                        //    taglist= item.taglist1;
-                        //    foreach (tagu taguSingle in item.taglist1)
-                        //    {
-                        //        // January Test                       
-                        //       // lblTagNameTest.Text = mapTagName + " " + taguSingle.tagname;
-
-                        //        g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx, taguSingle.pointy));
-                        //    }
-                        //    foreach (tagu taguSingle in item.taglist1)
-                        //    {
-                        //        // January Test                       
-                        //        mapTagName = mapTagName + " " + taguSingle.tagname;
-                        //        lblTagNameTest.Text = mapTagName;
-                        //    }
-                        //}
-                    }
-                    System.Drawing.Color c = System.Drawing.ColorTranslator.FromHtml("#F5F7F8");
-                    String strHtmlColor = System.Drawing.ColorTranslator.ToHtml(c);
-
-                    Graphics gs = Graphics.FromImage(copy);
-                    int position = 820;
-                    int positionYellow = 820;
-                    int div = 0;
-
-
-                    DataTable dtTagNameAllOwn = new DataTable();
-                    dtTagNameAllOwn.Columns.Add("TagNameAll", typeof(String));
-                    int divider = 0;
-
-                    AllWorkDoneForImage5(name, copy, dtTagNameAllOwn, divider, div, position, positionYellow);                    
-                    pictureBox1.Image = copy;
+                    AllWorkDoneForImage5(name, imageToDraw);                    
                     
                 }
                 else
                 {
-                        pictureBox1.Image = null;
+                    pictureBox1.Image = null;
                 }
             }
             
         }
 
-        private void AllWorkDoneForImage5(string mapFileName, Bitmap imageToDraw, DataTable dtTagNameAllOwn, int divider, int div, int position, int positionYellow)
+        private string GetTagNames(Map map)
         {
+            var mapTagNameString = "";
+            foreach (tagu tag in map.taglist)
+            {
+                mapTagNameString +=  tag.tagname + " ";
+            }
+            return mapTagNameString;
+        }
+
+        private void AllWorkDoneForImage5(string mapFileName, Bitmap imageToDraw)
+        {
+
+            System.Drawing.Color c = System.Drawing.ColorTranslator.FromHtml("#F5F7F8");
+            String strHtmlColor = System.Drawing.ColorTranslator.ToHtml(c);
+
+            int position = 820;
+            int positionYellow = 820;
+            int div = 0;
+
+
+            DataTable dtTagNameAllOwn = new DataTable();
+            dtTagNameAllOwn.Columns.Add("TagNameAll", typeof(String));
+            int divider = 0;
+
             Graphics imageGraphics = Graphics.FromImage(imageToDraw);
 
             if (mapFileName == "5")
@@ -2103,6 +2037,7 @@ namespace infraredCommApp
             delete_map_button8.Location = new Point(10, 350);
             map_comboBox1.Location = new Point(10, 400);
             Exit_map_edit_button9.Location = new Point(10,450);
+            lblTagNameTest.Location = new Point(10, 500);
         }
         private void add_map_button1_Click(object sender, EventArgs e)
         {
@@ -2231,15 +2166,11 @@ namespace infraredCommApp
             string itemFileName = map_comboBox1.SelectedValue.ToString();
             string itemFileNamePath = workfolder + "Image\\"+ itemFileName+".jpeg";
 
-            var mapForDelete = gitems.Where(r => r.MapFileName== itemFileName).FirstOrDefault();
+            var mapForDelete = gitems.FirstOrDefault(r => r.MapFileName== itemFileName);
             if(mapForDelete != null)
             {
                 gitems.Remove(mapForDelete);
-                //bindingList.Remove(mapForDelete);
-
-                SaveToBinaryFile(gitems, fileNameData);
                 map_comboBox1.SelectedIndex = 0;
-
                 pictureBox1.Dispose();
             }
             
@@ -2805,87 +2736,7 @@ namespace infraredCommApp
        
         private void 赤外線ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Type 2
-
-            tagaddC TAC = new tagaddC();
-            TAC.ShowDialog();            
-            tagID = tagaddC.ID;
-            tagName = tagaddC.Name;
-            if (tagName != "" && tagName != null)
-            {
-                // 2nd Tag
-                int x = 0;
-                int y = 0;
-                x = xMouseRightClick;
-                y = yMouseRightClick;
-
-                string name = "";
-                var filePath = "";
-               if (lblimage.Text != "")
-                {
-                    name = lblimage.Text;
-                    filePath = filePathNew;
-                }
-                else
-                {
-                    name = map_comboBox1.SelectedValue.ToString();
-                    filePath = workfolder + "Image\\" + name + ".jpeg";
-                }
-               //Friday
-                    //string name = map_comboBox1.SelectedValue.ToString();
-                //var filePath = workfolder + "Image\\" + name + ".jpeg";
-                Bitmap OriginalBitmap = new Bitmap(filePath);
-
-                var resized = Common.FillPictureBox(pictureBox1, OriginalBitmap);
-
-                Bitmap arrowBitmap2 = new Bitmap(workfolder + "Resources\\2.png");
-                Bitmap copy = new Bitmap(resized);
-
-                Graphics g2 = Graphics.FromImage(copy);
-
-                tagu Single = new tagu();
-                Single.pointx = x;
-                Single.pointy = y;
-                Single.tagname = tagName;
-               // Single.tagId = Convert.ToInt32(tagID);//tag type need
-                Single.tagId = tagID;//tag type need
-                Single.tagtype = 2;//tag type need
-
-                taglist.Add(Single);
-
-                Bitmap arrowBitmap1 = new Bitmap(workfolder + "Resources\\1.png");
-                Graphics g1 = Graphics.FromImage(copy);
-               
-                foreach (tagu taguSingle in taglist)
-                {
-                    if (taguSingle.tagtype == 1)
-                    {
-                        g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx, taguSingle.pointy));
-                    }
-                    else if (taguSingle.tagtype == 2)
-                    {
-                        g2.DrawImage(arrowBitmap2, new Point(taguSingle.pointx, taguSingle.pointy));
-                    }
-                }
-                pictureBox1.Image = copy;
-
-                var targetMap = gitems.Where(o => o.MapFileName == name);
-                Map map = new Map("", "");
-                foreach (var item in targetMap)
-                {
-                    map = new Map(item.MapFileName, item.MapName);
-                    map.taglist = taglist;
-                }
-                // January
-                //if (lblimage.Text == "")
-                //{
-                    gitems = gitems.Except(targetMap).ToList();
-                    gitems.Add(map);
-                //}
-
-                
-            }
-
+            AddTagOnImage(tagType: 2);
         }
 
         private void SetTagNameAndIdFromTagPopUpDialog()
@@ -2895,10 +2746,9 @@ namespace infraredCommApp
             tagID = tagaddC.ID;
             tagName = tagaddC.Name;
         }
-        
-        private void コンテンツToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        private void AddTagOnImage(int tagType = 1)
+        {
             SetTagNameAndIdFromTagPopUpDialog();
             if (!string.IsNullOrWhiteSpace(tagName) && !string.IsNullOrWhiteSpace(tagID))
             {
@@ -2916,34 +2766,59 @@ namespace infraredCommApp
                     mapFilePath = workfolder + "Image\\" + mapFileName + ".jpeg";
                 }
 
-                taglist.Add(new tagu()
-                {
-                    pointx = xMouseRightClick,
-                    pointy = yMouseRightClick,
-                    tagname = tagName,
-                    tagId = tagID,
-                    tagtype = 1 //tag type need
-                });
+                Map mapItem = new Map("", "");
 
-                RedrawMapAndUpdateTagList(mapFilePath, mapFileName);
+                for (int i = 0; i < gitems.Count; i++)
+                {
+                    if (gitems[i].MapFileName == mapFileName)
+                    {
+                        mapItem = gitems[i];
+                        var tags = new List<tagu>();
+                        tags.Add(new tagu()
+                        {
+                            pointx = xMouseRightClick,
+                            pointy = yMouseRightClick,
+                            tagname = tagName,
+                            tagId = tagID,
+                            tagtype = tagType
+                        });
+                        tags.AddRange(mapItem.taglist);
+                        mapItem.taglist = tags;
+                    }
+
+                }
+                RedrawMapAndUpdateTagList(mapFilePath, mapItem.taglist);
+                SetLatestMapData(mapFileName, mapItem.taglist);
 
             }
-
+        }
+        
+        private void コンテンツToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTagOnImage(tagType: 1);
         }
 
-        private void RedrawMapAndUpdateTagList(string mapFilePath, string mapFileName)
+        private void RedrawMapAndUpdateTagList(string mapFilePath, List<tagu> tags)
         {
             Bitmap OriginalBitmap = new Bitmap(mapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, OriginalBitmap);
             Bitmap copiedResizedImage = new Bitmap(resizedImage);
-            Common.DrawImageAndTags(workfolder, copiedResizedImage, taglist, pictureBox1);
-            SetLatestMapData(mapFileName);
+            Common.DrawImageAndTags(workfolder, copiedResizedImage, tags, pictureBox1);
         }
 
-        private void SetLatestMapData(string mapFileName)
+        private Bitmap RedrawMapAndUpdateTagListAndGetCopiedFile(string mapFilePath, List<tagu> tags)
         {
-            var targetMap = gitems.Where(o => o.MapFileName == mapFileName).FirstOrDefault();
-            targetMap.taglist = taglist;
+            Bitmap OriginalBitmap = new Bitmap(mapFilePath);
+            var resizedImage = Common.FillPictureBox(pictureBox1, OriginalBitmap);
+            Bitmap copiedResizedImage = new Bitmap(resizedImage);
+            Common.DrawImageAndTags(workfolder, copiedResizedImage, tags, pictureBox1);
+            return copiedResizedImage;
+        }
+
+        private void SetLatestMapData(string mapFileName, List<tagu> tags)
+        {
+            var targetMap = gitems.FirstOrDefault(o => o.MapFileName == mapFileName);
+            targetMap.taglist = tags;
             gitems = gitems.Where(o => o.MapFileName != mapFileName).ToList();
             gitems.Add(targetMap);
         }
@@ -2969,9 +2844,9 @@ namespace infraredCommApp
 
             foreach (tagu taguSingle in taglist)
             {
-                if (taguSingle.pointx + 10 >= clickedXPosition && taguSingle.pointx - 10 <= clickedXPosition)
+                if (taguSingle.pointx + 20 >= clickedXPosition && taguSingle.pointx - 20 <= clickedXPosition)
                 {
-                    if (taguSingle.pointy + 10 >= clickedYPosition && taguSingle.pointy - 10 <= clickedYPosition)
+                    if (taguSingle.pointy + 20 >= clickedYPosition && taguSingle.pointy - 20 <= clickedYPosition)
                     {
                         return new Rectangle(taguSingle.pointx, taguSingle.pointy, 50, 50);
                     }
@@ -3000,7 +2875,8 @@ namespace infraredCommApp
                             taglist = taglist.Except(targetTag).ToList();
                             string mapFileName = map_comboBox1.SelectedValue.ToString();
                             var mapFilePath = workfolder + "Image\\" + mapFileName + ".jpeg";
-                            RedrawMapAndUpdateTagList(mapFilePath, mapFileName);
+                            RedrawMapAndUpdateTagList(mapFilePath, taglist);
+                            SetLatestMapData(mapFileName, taglist);
                         }
                     }
                 }

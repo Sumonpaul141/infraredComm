@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlowLine2022.exe" size="167424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlowLine2022.exe" size="166400">
       <assemblyIdentity name="FlowLine2022" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wZsQr2m0hfqmhcU+6s+Ph8CF/4bCfojQJ0qM6PZOgkY=</dsig:DigestValue>
+        <dsig:DigestValue>Padn2L5jRlyG0PXSJvFjNp6LqL4hPyMfEqrK8BbmSvA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

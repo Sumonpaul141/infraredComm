@@ -231,22 +231,24 @@ namespace infraredCommApp
         }
 
         // Mr Paul
-        static public void DrawImageAndTags(String workfolder, Bitmap imageToDrawTags, List<tagu> taglist, PictureBox pictureBox)
+        static public void DrawImageAndTags(String workfolder, Bitmap imageToDrawTags, List<tagu> tags, PictureBox pictureBox)
         {
             Bitmap arrowBitmap1 = new Bitmap(workfolder + "Resources\\1.png");
             Bitmap arrowBitmap2 = new Bitmap(workfolder + "Resources\\2.png");
 
             Graphics graphics = Graphics.FromImage(imageToDrawTags);
 
-            foreach (tagu taguSingle in taglist)
+            foreach (tagu taguSingle in tags)
             {
                 if (taguSingle.tagtype == 1)
                 {
-                    graphics.DrawImage(arrowBitmap1, new Point(taguSingle.pointx, taguSingle.pointy));
+                    // g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx + Convert.ToInt32((Convert.ToDouble(taguSingle.pointx) * 0.365)), taguSingle.pointy + Convert.ToInt32((Convert.ToDouble(taguSingle.pointy) * 0.30))));
+                    graphics.DrawImage(arrowBitmap1, new Point(taguSingle.pointx - (arrowBitmap1.Width / 2), taguSingle.pointy - arrowBitmap1.Height));
                 }
                 else if (taguSingle.tagtype == 2)
                 {
-                    graphics.DrawImage(arrowBitmap2, new Point(taguSingle.pointx, taguSingle.pointy));
+                    // g1.DrawImage(arrowBitmap1, new Point(taguSingle.pointx + Convert.ToInt32((Convert.ToDouble(taguSingle.pointx) * 0.365)), taguSingle.pointy + Convert.ToInt32((Convert.ToDouble(taguSingle.pointy) * 0.30))));
+                    graphics.DrawImage(arrowBitmap2, new Point(taguSingle.pointx - (arrowBitmap2.Width / 2) , taguSingle.pointy - arrowBitmap2.Height));
                 }
             }
 
