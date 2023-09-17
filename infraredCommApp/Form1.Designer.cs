@@ -310,7 +310,7 @@
             resources.ApplyResources(this.add_map_button1, "add_map_button1");
             this.add_map_button1.Name = "add_map_button1";
             this.add_map_button1.UseVisualStyleBackColor = true;
-            this.add_map_button1.Click += new System.EventHandler(this.add_map_button1_Click);
+            this.add_map_button1.Click += new System.EventHandler(this.AddMapImageAndFillPictureBoxWithResizedImage);
             // 
             // map_comboBox1
             // 

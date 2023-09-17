@@ -119,7 +119,7 @@ namespace infraredCommApp
         // Atik Global Variable
         List<Map> gitems = new List<Map>();
         //BindingList<Map> bindingList = new BindingList<Map>();
-        public static string imageFileName = "";
+        //public static string imageFileName = "";
         int flag = 0;
 
         //ボタンコントロール配列のフィールドを作成 (Create field for button control array)
@@ -465,161 +465,134 @@ namespace infraredCommApp
         {
             string FilePath = workfolder + "Contentid.CSV";
             DataTable csvData = GetDataTabletFromCSVFile(FilePath);
-            string name ="";
-            name = "3";
-            var targetMap = gitems.Where(o => o.MapFileName == name);
-            string mapTagName = "";
-            Map map = new Map("", "");
-            List<HeatMap> HeatMapList = new List<HeatMap>();
+            string name ="3";
+            var map = gitems.FirstOrDefault(o => o.MapFileName == name);
+            List<HeatMap> HeatMapListDateTimeFiltered = new List<HeatMap>();
             List<HeatMap> HeatMapListAll = new List<HeatMap>();
 
-            if(!string.IsNullOrWhiteSpace(FromDate))
+            if(!string.IsNullOrWhiteSpace(FromDate) && !string.IsNullOrWhiteSpace(ToDate))
             {
                 tagDateFirstMonth = Convert.ToInt16(Convert.ToDateTime(FromDate).Month);
                 tagInitialDateFirstMonth = tagDateFirstMonth;
                 tagDateLastMonth = Convert.ToInt16(Convert.ToDateTime(ToDate).Month);
             }
-
-            foreach (var item in targetMap)
+            if (map.taglist != null)
             {
-                map = new Map(item.MapFileName, item.MapName);
-                if (item.taglist != null)
+                taglist = map.taglist;
+                foreach (tagu taguSingle in map.taglist)
                 {
-                    taglist = item.taglist;
-                    foreach (tagu taguSingle in item.taglist)
+                    for (int i = 0; i < csvData.Rows.Count; i++)
                     {
-                        for(int i = 0;i < csvData.Rows.Count;i++)
-                        {
-                           //CultureInfo culture = new CultureInfo("en-US");
-                           //DateTime tempDate2 = DateTime.ParseExact(csvData.Rows[i]["Date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                           //if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString()&& tempDate2 >= Convert.ToDateTime(FromDate).Date && tempDate2 <= Convert.ToDateTime(ToDate).Date)
-                            string from = FromDate;
-                            string To = ToDate;
 
-                            string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
-                            DateTime dtDateTime = Convert.ToDateTime(Common.GetValidDateTime(strDateTime));
-                            if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString() && dtDateTime >= Convert.ToDateTime(FromDate) && dtDateTime <= Convert.ToDateTime(ToDate))
+                        string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
+                        DateTime dtDateTime = Convert.ToDateTime(Common.GetValidDateTime(strDateTime));
+                        if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString())
+                        {
+                            HeatMap htMap = new HeatMap();
+                            htMap.tagId = taguSingle.tagId;
+                            htMap.tagname = taguSingle.tagname;
+                            htMap.pointx = taguSingle.pointx;
+                            htMap.pointy = taguSingle.pointy;
+                            htMap.tagtype = taguSingle.tagtype;
+                            htMap.tagDate = dtDateTime;
+                            if (dtDateTime >= Convert.ToDateTime(FromDate) && dtDateTime <= Convert.ToDateTime(ToDate))
                             {
-                                HeatMap htMap = new HeatMap();
-                                htMap.tagId= taguSingle.tagId;
-                                htMap.tagname = taguSingle.tagname;
-                                htMap.pointx = taguSingle.pointx;
-                                htMap.pointy = taguSingle.pointy;
-                                htMap.tagtype = taguSingle.tagtype;
-                                //htMap.tagDate = tempDate2;
-                                htMap.tagDate = dtDateTime;                                
-                                HeatMapList.Add(htMap);
-                            }
-                            // Not in The List
-                            if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString() )
+                                HeatMapListDateTimeFiltered.Add(htMap);
+
+                            }else
                             {
-                                HeatMap htMap = new HeatMap();
-                                htMap.tagId = taguSingle.tagId;
-                                htMap.tagname = taguSingle.tagname;
-                                htMap.pointx = taguSingle.pointx;
-                                htMap.pointy = taguSingle.pointy;
-                                htMap.tagtype = taguSingle.tagtype;
-                                //htMap.tagDate = tempDate2;
-                                htMap.tagDate = dtDateTime;
                                 HeatMapListAll.Add(htMap);
                             }
-
                         }
-                        
+
                     }
 
-                    foreach (HeatMap htMap in HeatMapList)
-                    {
-                        // March Test
-                        HeatMap htMap2 = new HeatMap();
-                        htMap2 = htMap;
-                    }
-                    var table = ListToDataTable(HeatMapList);
-                    var table2 = ListToDataTable(HeatMapListAll);
-                    //HeatMapUnSorted = table;
-                    //var query = from row in table.AsEnumerable()
-                    //            group row by row.Field<string>("tagId") into sales
-                    //            orderby sales.Key
-                    //            select new
-                    //            {
-                    //                Name = sales.Key,
-                    //                CountOfClients = sales.Count()
-                    //            };
+                }
 
-                    var query = from row in table.AsEnumerable()
-                                group row by row.Field<string>("tagId") into sales
-                                orderby sales.Count()
-                                select new
-                                {
-                                    Name = sales.Key,
-                                    CountOfClients = sales.Count().ToString()
+                var heatMapListDateTimeFilteredTable = ListToDataTable(HeatMapListDateTimeFiltered);
+                var heatMapListTableAll = ListToDataTable(HeatMapListAll);
 
-                                };
-                    
-                    var query2 = table.AsEnumerable()  
-                                .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
-                                .Select(g =>
-                                {
-                                    var row = table.NewRow();
-                                    //row["PK"] = g.Min(r => r.Field<int>("PK"));
-                                    row["tagId"] = g.Key.tagId;
-                                    row["tagname"] = g.Key.tagname;
-                                    row["pointx"] = g.Key.pointx;
-                                    row["pointy"] = g.Key.pointy;
-                                    row["tagDate"] = g.Key.tagDate;                                   
-                                    return row;
-                                })
-                                .CopyToDataTable();
-                  
-                    HeatMapUnSorted = query2;
+                var query = from row in heatMapListDateTimeFilteredTable.AsEnumerable()
+                            group row by row.Field<string>("tagId") into sales
+                            orderby sales.Count()
+                            select new
+                            {
+                                Name = sales.Key,
+                                CountOfClients = sales.Count().ToString()
+                            };
 
-                    var QueryAll = table2.AsEnumerable()
-                               .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
-                               .Select(g =>
-                               {
-                                   var row = table.NewRow();
-                                   //row["PK"] = g.Min(r => r.Field<int>("PK"));
-                                   row["tagId"] = g.Key.tagId;
-                                   row["tagname"] = g.Key.tagname;
-                                   row["pointx"] = g.Key.pointx;
-                                   row["pointy"] = g.Key.pointy;
-                                   row["tagDate"] = g.Key.tagDate;
+                HeatMapUnSorted = heatMapListDateTimeFilteredTable.AsEnumerable()
+                            .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
+                            .Select(g =>
+                            {
+                                var row = heatMapListDateTimeFilteredTable.NewRow();
+                                row["tagId"] = g.Key.tagId;
+                                row["tagname"] = g.Key.tagname;
+                                row["pointx"] = g.Key.pointx;
+                                row["pointy"] = g.Key.pointy;
+                                row["tagDate"] = g.Key.tagDate;
+                                return row;
+                            })
+                            .CopyToDataTable();
 
-
-                                   return row;
-
-                               })
-                               .CopyToDataTable();
-
-                    HeatMapUnSortedAll = QueryAll;
-
-                    // print result
-
-                    HeatMapSorted = CreateDataTable(query);
-
-                    var query3 = HeatMapSorted.AsEnumerable()
-                           .GroupBy(r => new { CountIndividual = r["CountOfClients"]})
+                HeatMapUnSortedAll = heatMapListTableAll.AsEnumerable()
+                           .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
                            .Select(g =>
                            {
-                               var row = HeatMapSorted.NewRow();
-
-                               //row["PK"] = g.Min(r => r.Field<int>("PK"));
-                               row["CountOfClients"] = g.Key.CountIndividual;                              
-
+                               var row = heatMapListDateTimeFilteredTable.NewRow();
+                               row["tagId"] = g.Key.tagId;
+                               row["tagname"] = g.Key.tagname;
+                               row["pointx"] = g.Key.pointx;
+                               row["pointy"] = g.Key.pointy;
+                               row["tagDate"] = g.Key.tagDate;
                                return row;
 
                            })
                            .CopyToDataTable();
-                    HeatMapSortedIndividual = query3;
 
-                    foreach (var salesman in query)
-                    {
-                        var s = salesman;
-                        //Console.WriteLine("{0}\t{1}", salesman.Name, salesman.CountOfClients);
-                    }
+                // print result
 
+                HeatMapSorted = CreateDataTable(query);
+
+                var query3 = HeatMapSorted.AsEnumerable()
+                       .GroupBy(r => new { CountIndividual = r["CountOfClients"] })
+                       .Select(g =>
+                       {
+                           var row = HeatMapSorted.NewRow();
+
+                               //row["PK"] = g.Min(r => r.Field<int>("PK"));
+                               row["CountOfClients"] = g.Key.CountIndividual;
+
+                           return row;
+
+                       })
+                       .CopyToDataTable();
+                HeatMapSortedIndividual = query3;
+
+                foreach (var salesman in query)
+                {
+                    var s = salesman;
                 }
+
             }
+        }
+
+        private DataTable Convert(DataTable tableToConvert)
+        {
+            return tableToConvert.AsEnumerable()
+                           .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
+                           .Select(g =>
+                           {
+                               var row = heatMapListDateTimeFilteredTable.NewRow();
+                               row["tagId"] = g.Key.tagId;
+                               row["tagname"] = g.Key.tagname;
+                               row["pointx"] = g.Key.pointx;
+                               row["pointy"] = g.Key.pointy;
+                               row["tagDate"] = g.Key.tagDate;
+                               return row;
+
+                           })
+                           .CopyToDataTable();
         }
 
         public static DataTable CreateDataTable(IEnumerable source)
@@ -831,11 +804,11 @@ namespace infraredCommApp
             string deviceusedresultPath = Form1.workfolder + "ContentPlayResult.csv";
             string uIdAndRfidPth = Form1.workfolder + "Contentid.csv";
 
-            if (File.Exists(deviceusedresultPath) == true)
+            if (File.Exists(deviceusedresultPath))
             {
                 strTemp = "";
             }
-            if(File.Exists(uIdAndRfidPth) == true)
+            if(File.Exists(uIdAndRfidPth))
             {
                 strIds = "";
             }
@@ -1980,55 +1953,31 @@ namespace infraredCommApp
                 //List<Map> gitem = (List<Map>)LoadFromBinaryFile(fileName); // load 
                 gitems.Clear();
                 gitems = (List<Map>)LoadFromBinaryFile(fileName); // load                 
-                BindingList<Map> bindingList = new BindingList<Map>();
-                gitems.ForEach(q => bindingList.Add(q));
-                map_comboBox1.DataSource = bindingList;               
+                //BindingList<Map> bindingList = new BindingList<Map>();
+                //gitems.ForEach(q => bindingList.Add(q));
+                //map_comboBox1.DataSource = bindingList;               
+                map_comboBox1.DataSource = gitems;               
                 map_comboBox1.DisplayMember = "MapName";
                 map_comboBox1.ValueMember = "MapFileName";
-                // MapName='Map-1'
-                // MapFileName='Map-1' 
-                // End
+
                 if(gitems.Count>0)
                 {
                     map_comboBox1.SelectedIndex = -1;
                     map_comboBox1.SelectedIndex = 0;
                     lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
-
                 }
-
-                // lblCboImageName.Text = map_comboBox1.Text;
-
             }
+            EnableMapSpecificButtons();
+        }
 
-
+        private void EnableMapSpecificButtons()
+        {
             this.map_button.Enabled = false;
-            //this.edit_button7.Enabled = true;
             this.add_map_button1.Enabled = true;
             this.delete_map_button8.Enabled = true;
             this.set_map_label1.Enabled = true;
             this.map_comboBox1.Enabled = true;
             this.Exit_map_edit_button9.Enabled = true;
-
-           // map_comboBox1.SelectedIndex = 0;
-
-            //declare list<map>
-            // load and initialize  list map here
-            // initialize combox based on list map
-            //string fileName = workfolder + "obj";
-            //string fileNameData = workfolder + "obj";
-            //List<Map> items = new List<Map>();
-            //List<Map> obj2 = (List<Map>)LoadFromBinaryFile(fileNameData);
-
-            //foreach (Map obj in obj2)
-            //{
-            //    items.Add(new Map(obj.MapFileName, obj.MapName));
-            //}
-            //items.Add(new Map(InputMapName.fileName, obj2.Count + 1));
-
-
-            // show the map of the first item in combox
-
-
         }
 
         private void ChangeLocation()
@@ -2039,7 +1988,7 @@ namespace infraredCommApp
             Exit_map_edit_button9.Location = new Point(10,450);
             lblTagNameTest.Location = new Point(10, 500);
         }
-        private void add_map_button1_Click(object sender, EventArgs e)
+        private void AddMapImageAndFillPictureBoxWithResizedImage(object sender, EventArgs e)
         {
             // New Picturbox
             OpenFileDialog opnfd = new OpenFileDialog();
@@ -2047,35 +1996,20 @@ namespace infraredCommApp
             // pick the image from Computer folder
             if (opnfd.ShowDialog() == DialogResult.OK)
             {
-                string file_name;
-                file_name = opnfd.FileName;
                 string MapFileName = opnfd.FileName;
-
-                // Image name or Filename  : Give Image File name
-
                 InputMapName map_name = new InputMapName();
-                map_name.ShowDialog();
-                //add map file and map name to gitem
-              
-                imageFileName = InputMapName.fileName.Trim();
-               // imageFileName = InputMapName.fileName.Trim();
-                //lblimage.Text = imageFileName;
+                map_name.ShowDialog();              
+                //imageFileName = InputMapName.fileName.Trim();
                 lblimage.Visible = false;
-                //string destinationPath = workfolder + "Image\\" + InputMapName.fileName.Trim() + ".jpeg";
                 var itemsNo = 1;
                 string destinationPath = workfolder + "Image\\" + (gitems.Count + itemsNo).ToString() + ".jpeg";
                 string MapFilename = (gitems.Count + itemsNo).ToString();
                 while (File.Exists(destinationPath))
                 {
-                    //File.Delete(destinationPath);
-                    //MessageBox.Show("This name already exist");
-                    //  return;
                     destinationPath = workfolder + "Image\\" + (gitems.Count +itemsNo).ToString() + ".jpeg";
                     MapFilename = (gitems.Count + itemsNo).ToString();
                     itemsNo++;
                 }
-                // Save the image to work folder
-                //File.Copy(MapFileName, destinationPath);
                 filePathNew = destinationPath;
                 lblimage.Text = MapFilename;
                 File.Copy(MapFileName, destinationPath);
@@ -2083,20 +2017,10 @@ namespace infraredCommApp
                 Map map = new Map(MapFilename, mapName);
                 taglist.Clear();
                 gitems.Add(map);
-                pictureBox1.Image = Image.FromFile(file_name);
-                int width = pictureBox1.Width;
-                int height = pictureBox1.Height;
+                pictureBox1.Image = Image.FromFile(MapFileName);
                 Bitmap bmap = new Bitmap(MapFileName);
-                //if (Width < pictureBox1.Image.Width || height < pictureBox1.Image.Height)
-                //{
-                //    this.pictureBox1.Size = new System.Drawing.Size(PictureBoxActualWidth, PictureBoxActualHeight);
-                //    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                //}
-                //else
-                //{
-                    pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-                    Common.FillPictureBox(pictureBox1, bmap);
-                //}                
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                Common.FillPictureBox(pictureBox1, bmap);
                 flag = 1;
             }
         }
