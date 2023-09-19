@@ -423,13 +423,13 @@ namespace infraredCommApp
             string FilePath = workfolder + "Contentid.CSV";
 
             DataTable csvData = GetDataTabletFromCSVFile(FilePath);
-            TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
+            TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual, "3");
         }
-        void  TagLocationSet(DataTable heatMapSorted, DataTable heatMapUnSorted, DataTable heatMapUnSortedAll, DataTable heatMapSortedIndividual)
+        void  TagLocationSet(DataTable heatMapSorted, DataTable heatMapUnSorted, DataTable heatMapUnSortedAll, DataTable heatMapSortedIndividual, String name)
         {
             string FilePath = workfolder + "Contentid.CSV";
             DataTable csvData = GetDataTabletFromCSVFile(FilePath);
-            string name ="3";
+
             var map = gitems.FirstOrDefault(o => o.MapFileName == name);
             List<HeatMap> HeatMapListDateTimeFiltered = new List<HeatMap>();
             List<HeatMap> HeatMapListAll = new List<HeatMap>();
@@ -1087,7 +1087,7 @@ namespace infraredCommApp
             {
                 if(HeatMapConsider==1)
                 {
-                    TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
+                    TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual, "3");
                 }
                 HeatMapConsider = 0;
 
