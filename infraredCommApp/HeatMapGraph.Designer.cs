@@ -36,7 +36,7 @@
             this.dtToDateTime = new System.Windows.Forms.DateTimePicker();
             this.dtFromDateTime = new System.Windows.Forms.DateTimePicker();
             this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.dayHourComboBox = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBoxAllData = new System.Windows.Forms.ListBox();
@@ -84,7 +84,7 @@
             // 
             this.groupBox2.Controls.Add(this.dtToDateTime);
             this.groupBox2.Controls.Add(this.dtFromDateTime);
-            this.groupBox2.Controls.Add(this.cmbType);
+            this.groupBox2.Controls.Add(this.dayHourComboBox);
             this.groupBox2.Controls.Add(this.dtToDate);
             this.groupBox2.Controls.Add(this.dtFromDate);
             this.groupBox2.Controls.Add(this.label3);
@@ -127,15 +127,15 @@
             // 
             // cmbType
             // 
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
+            this.dayHourComboBox.FormattingEnabled = true;
+            this.dayHourComboBox.Items.AddRange(new object[] {
             "Hour",
             "Day"});
-            this.cmbType.Location = new System.Drawing.Point(126, 11);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 24);
-            this.cmbType.TabIndex = 40;
-            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
+            this.dayHourComboBox.Location = new System.Drawing.Point(126, 11);
+            this.dayHourComboBox.Name = "cmbType";
+            this.dayHourComboBox.Size = new System.Drawing.Size(121, 24);
+            this.dayHourComboBox.TabIndex = 40;
+            this.dayHourComboBox.SelectedIndexChanged += new System.EventHandler(this.DayHourComboBoxChange);
             // 
             // button2
             // 
@@ -146,7 +146,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.HeatMapDialogCancel);
             // 
             // button1
             // 
@@ -181,7 +181,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HeatMapGraph";
             this.Load += new System.EventHandler(this.HeatMapGraph_Load);
-            this.Click += new System.EventHandler(this.HeatMapGraph_Click);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
@@ -198,7 +197,7 @@
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.ComboBox dayHourComboBox;
         private System.Windows.Forms.DateTimePicker dtToDateTime;
         private System.Windows.Forms.DateTimePicker dtFromDateTime;
         private System.Windows.Forms.ListBox listBoxAllData;

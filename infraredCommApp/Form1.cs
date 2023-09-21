@@ -376,8 +376,8 @@ namespace infraredCommApp
             }
 
             //
-            ExcelFile();
-
+            // TagLocationSet("3");
+            this.buttonFLowLineAnalysis.Visible = false;
         }
         private static DataTable GetDataTabletFromCSVFile(string csv_file_path)
         {
@@ -418,14 +418,7 @@ namespace infraredCommApp
             }
             return csvData;
         }
-        void ExcelFile()
-        {
-            string FilePath = workfolder + "Contentid.CSV";
-
-            DataTable csvData = GetDataTabletFromCSVFile(FilePath);
-            TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual, "3");
-        }
-        void  TagLocationSet(DataTable heatMapSorted, DataTable heatMapUnSorted, DataTable heatMapUnSortedAll, DataTable heatMapSortedIndividual, String name)
+        void TagLocationSet(string name)
         {
             string FilePath = workfolder + "Contentid.CSV";
             DataTable csvData = GetDataTabletFromCSVFile(FilePath);
@@ -485,7 +478,7 @@ namespace infraredCommApp
                                 CountOfClients = sales.Count().ToString()
                             };
 
-                heatMapUnSorted = heatMapListDateTimeFilteredTable.AsEnumerable()
+                HeatMapUnSorted = heatMapListDateTimeFilteredTable.AsEnumerable()
                             .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
                             .Select(g =>
                             {
@@ -499,7 +492,7 @@ namespace infraredCommApp
                             })
                             .CopyToDataTable();
 
-                heatMapUnSortedAll = heatMapListTableAll.AsEnumerable()
+                HeatMapUnSortedAll = heatMapListTableAll.AsEnumerable()
                            .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
                            .Select(g =>
                            {
@@ -516,13 +509,13 @@ namespace infraredCommApp
 
                 // print result
 
-                heatMapSorted = CreateDataTable(query);
+                HeatMapSorted = CreateDataTable(query);
 
-                heatMapSortedIndividual = heatMapSorted.AsEnumerable()
+                HeatMapSortedIndividual = HeatMapSorted.AsEnumerable()
                        .GroupBy(r => new { CountIndividual = r["CountOfClients"] })
                        .Select(g =>
                        {
-                           var row = heatMapSorted.NewRow();
+                           var row = HeatMapSorted.NewRow();
 
                                //row["PK"] = g.Min(r => r.Field<int>("PK"));
                                row["CountOfClients"] = g.Key.CountIndividual;
@@ -578,8 +571,6 @@ namespace infraredCommApp
             foreach (HeatMap item in list)
             {
                 DataRow dtrRS = dt.NewRow();
-                //dtrRS["xPositionValue"] = sit.u32CID.ToString("X8");
-                //dtrRS["yPositionValue"] = sit.nTotalAccessNum.ToString();
                 dtrRS["tagId"] = item.tagId;
                 dtrRS["tagname"] = item.tagname;
                 dtrRS["pointx"] = item.pointx;
@@ -1081,13 +1072,21 @@ namespace infraredCommApp
                 progBarTagLoad.Value = 0;
             }
         }
+
+        private void SelectionCommited(object sender, EventArgs e)
+        {
+            map_comboBox1_SelectedIndexChanged(sender, e);
+        }
         private void map_comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (map_comboBox1.SelectedValue != null)
             {
-                if(HeatMapConsider==1)
+                this.buttonFLowLineAnalysis.Visible = true;
+
+                if (HeatMapConsider==1)
                 {
-                    TagLocationSet(HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual, "3");
+                    var name = map_comboBox1.SelectedValue.ToString();
+                    TagLocationSet(name);
                 }
                 HeatMapConsider = 0;
 
@@ -1116,8 +1115,8 @@ namespace infraredCommApp
                     var maps = GetTagNames(targetMap);
                     var imageToDraw = RedrawMapAndUpdateTagListAndGetCopiedFile(filePath, targetMap.taglist);
 
-                    AllWorkDoneForImage5(name, imageToDraw, HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);                    
-                    
+                    AllWorkDoneForImage5(name, imageToDraw, HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
+
                 }
                 else
                 {
@@ -1849,33 +1848,24 @@ namespace infraredCommApp
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
             HeatMapConsider = 1;
-            //DDia f2 = new DDia();
-            //f2.Show();
-            HeatMapGraph f2 = new HeatMapGraph();
-            f2.ShowDialog();
+            HeatMapGraph f2 = new HeatMapGraph(map_comboBox1.SelectedValue.ToString());
+            var dialogResult = f2.ShowDialog();
+            if (dialogResult == DialogResult.OK) 
+            {
+                FromDate = HeatMapGraph.FromDate.Trim();
+                ToDate = HeatMapGraph.ToDate.Trim();
+                Type = HeatMapGraph.Type.Trim();
+                int counter = HeatMapGraph.counter;
+                dtTagNameAll = HeatMapGraph.dtTagNameAll;
+                FirstDay = Convert.ToInt16(Convert.ToDateTime(FromDate).Day);
+                LastDay = Convert.ToInt16(Convert.ToDateTime(ToDate).Day);
+                TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
+                double hours = diff.TotalHours;
+                button＿MapEdit_Click(sender, e);
+                ButtonManage(false);
+                //map_comboBox1.SelectedIndex = 2;
+            }
 
-            //f2.Show();
-            //FromDate = HeatMapGraph.FromDate.Trim() + " 00:00:01";
-            //ToDate = HeatMapGraph.ToDate.Trim() + " 23:59:59";
-
-            FromDate = HeatMapGraph.FromDate.Trim();
-            ToDate = HeatMapGraph.ToDate.Trim();
-            Type = HeatMapGraph.Type.Trim();
-            int counter = HeatMapGraph.counter;
-            //DataTable dtTagNameAll = new DataTable();
-            //TagNameAll[counter] = HeatMapGraph.TagNameAll[counter];
-            //DataTable dtTagNameAll = new DataTable();
-            dtTagNameAll = HeatMapGraph.dtTagNameAll;           
-
-            FirstDay = Convert.ToInt16(Convert.ToDateTime(FromDate).Day);
-            LastDay = Convert.ToInt16(Convert.ToDateTime(ToDate).Day);
-
-            TimeSpan diff = Convert.ToDateTime(ToDate) -Convert.ToDateTime( FromDate);
-            double hours = diff.TotalHours;
-
-            button＿MapEdit_Click( sender, e);
-            ButtonManage(false);
-            map_comboBox1.SelectedIndex= 2;
         }
 
         private void button＿MapEdit_Click(object sender, EventArgs e)
@@ -1890,20 +1880,16 @@ namespace infraredCommApp
             string fileName = workfolder + "Image\\obj";
             if (File.Exists(fileName))
             {
-                //List<Map> gitem = (List<Map>)LoadFromBinaryFile(fileName); // load 
                 gitems.Clear();
-                gitems = (List<Map>)LoadFromBinaryFile(fileName); // load                 
-                //BindingList<Map> bindingList = new BindingList<Map>();
-                //gitems.ForEach(q => bindingList.Add(q));
-                //map_comboBox1.DataSource = bindingList;               
+                gitems = (List<Map>)LoadFromBinaryFile(fileName); // load                             
                 map_comboBox1.DataSource = gitems;               
                 map_comboBox1.DisplayMember = "MapName";
                 map_comboBox1.ValueMember = "MapFileName";
 
                 if(gitems.Count>0)
                 {
-                    map_comboBox1.SelectedIndex = -1;
-                    map_comboBox1.SelectedIndex = 0;
+                    //map_comboBox1.SelectedIndex = -1;
+                    //map_comboBox1.SelectedIndex = 0;
                     lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
                 }
             }
