@@ -455,7 +455,7 @@ namespace infraredCommApp
                                 tagDate = dtDateTime,
                             };
 
-                            if (dtDateTime >= Convert.ToDateTime(FromDate) && dtDateTime <= Convert.ToDateTime(ToDate))
+                            if (htMap.tagDate >= Convert.ToDateTime(FromDate) && htMap.tagDate <= Convert.ToDateTime(ToDate))
                             {
                                 HeatMapListDateTimeFiltered.Add(htMap);
                             }
@@ -469,6 +469,7 @@ namespace infraredCommApp
                 var heatMapListDateTimeFilteredTable = ListToDataTable(HeatMapListDateTimeFiltered);
                 var heatMapListTableAll = ListToDataTable(HeatMapListAll);
 
+
                 var query = from row in heatMapListDateTimeFilteredTable.AsEnumerable()
                             group row by row.Field<string>("tagId") into sales
                             orderby sales.Count()
@@ -477,6 +478,15 @@ namespace infraredCommApp
                                 Name = sales.Key,
                                 CountOfClients = sales.Count().ToString()
                             };
+
+                //var xQuery = from row in HeatMapListDateTimeFiltered
+                //        group row by row.tagId into sales
+                //        orderby sales.Count()
+                //        select new
+                //        {
+                //            Name = sales.Key,
+                //            CountOfClients = sales.Count().ToString()
+                //        };
 
                 HeatMapUnSorted = heatMapListDateTimeFilteredTable.AsEnumerable()
                             .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
@@ -491,6 +501,18 @@ namespace infraredCommApp
                                 return row;
                             })
                             .CopyToDataTable();
+
+                //HeatMapUnSorted = HeatMapListDateTimeFiltered.Select(g =>
+                //{
+                //    var row = heatMapListDateTimeFilteredTable.NewRow();
+                //    row["tagId"] = g.tagId;
+                //    row["tagname"] = g.tagname;
+                //    row["pointx"] = g.pointx;
+                //    row["pointy"] = g.pointy;
+                //    row["tagDate"] = g.tagDate;
+                //    return row;
+                //})
+                //.CopyToDataTable();
 
                 HeatMapUnSortedAll = heatMapListTableAll.AsEnumerable()
                            .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
@@ -510,6 +532,7 @@ namespace infraredCommApp
                 // print result
 
                 HeatMapSorted = CreateDataTable(query);
+                //var x = CreateDataTable(query);
 
                 HeatMapSortedIndividual = HeatMapSorted.AsEnumerable()
                        .GroupBy(r => new { CountIndividual = r["CountOfClients"] })
@@ -1149,7 +1172,6 @@ namespace infraredCommApp
 
             DataTable dtTagNameAllOwn = new DataTable();
             dtTagNameAllOwn.Columns.Add("TagNameAll", typeof(String));
-            int divider = 0;
 
             Graphics imageGraphics = Graphics.FromImage(imageToDraw);
 

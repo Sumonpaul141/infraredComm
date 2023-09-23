@@ -68,7 +68,7 @@ namespace infraredCommApp
 
         DataTable GetListItemData()
         {
-            if (CurrentMap != null && CurrentMap.taglist != null)
+            if (CurrentMap != null && CurrentMap.taglist != null && CurrentMap.taglist.Any())
             {
                 List<HeatMap> heatMapList = new List<HeatMap>();
                 foreach (tagu taguSingle in CurrentMap.taglist)
@@ -159,7 +159,7 @@ namespace infraredCommApp
             var data = GetListItemData();
             if(data != null)
             {
-                listBoxAllData.DataSource = GetListItemData();
+                listBoxAllData.DataSource = data;
                 listBoxAllData.DisplayMember = "tagname";
                 listBoxAllData.ValueMember = "tagId";
                 listBoxAllData.SelectionMode = SelectionMode.MultiSimple;
