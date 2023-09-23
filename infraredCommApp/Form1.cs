@@ -479,14 +479,7 @@ namespace infraredCommApp
                                 CountOfClients = sales.Count().ToString()
                             };
 
-                //var xQuery = from row in HeatMapListDateTimeFiltered
-                //        group row by row.tagId into sales
-                //        orderby sales.Count()
-                //        select new
-                //        {
-                //            Name = sales.Key,
-                //            CountOfClients = sales.Count().ToString()
-                //        };
+                
 
                 HeatMapUnSorted = heatMapListDateTimeFilteredTable.AsEnumerable()
                             .GroupBy(r => new { tagId = r["tagId"], tagname = r["tagname"], pointx = r["pointx"], pointy = r["pointy"], tagDate = r["tagDate"] })
@@ -1131,11 +1124,8 @@ namespace infraredCommApp
                     }
                     lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
 
-                    
-
-                    var targetMap = gitems.Where(o => o.MapFileName == name).FirstOrDefault();
+                    var targetMap = gitems.FirstOrDefault(o => o.MapFileName == name);
                     taglist = targetMap.taglist;
-                    var maps = GetTagNames(targetMap);
                     var imageToDraw = RedrawMapAndUpdateTagListAndGetCopiedFile(filePath, targetMap.taglist);
 
                     AllWorkDoneForImage5(name, imageToDraw, HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
@@ -1162,8 +1152,6 @@ namespace infraredCommApp
         private void AllWorkDoneForImage5(string mapFileName, Bitmap imageToDraw, DataTable heatMapSorted, DataTable heatMapUnSorted, DataTable heatMapUnSortedAll, DataTable heatMapSortedIndividual)
         {
 
-            System.Drawing.Color c = System.Drawing.ColorTranslator.FromHtml("#F5F7F8");
-            String strHtmlColor = System.Drawing.ColorTranslator.ToHtml(c);
 
             int position = 820;
             int positionYellow = 820;
@@ -1172,6 +1160,7 @@ namespace infraredCommApp
 
             DataTable dtTagNameAllOwn = new DataTable();
             dtTagNameAllOwn.Columns.Add("TagNameAll", typeof(String));
+            int divider = 0;
 
             Graphics imageGraphics = Graphics.FromImage(imageToDraw);
 
@@ -1253,10 +1242,9 @@ namespace infraredCommApp
                                                 {
                                                     colorCountBlue = 0;
                                                 }
-                                                int fg = 0;// Lagbe
+
                                                 for (int dti = 0; dti < dtTagNameAll.Rows.Count; dti++)
                                                 {
-                                                    fg = 0;
                                                     string tgn1 = heatMapUnSorted.Rows[j]["tagname"].ToString();
                                                     string tgn2 = dtTagNameAll.Rows[dti]["TagNameAll"].ToString();
                                                     if (heatMapUnSorted.Rows[j]["tagname"].ToString() == dtTagNameAll.Rows[dti]["TagNameAll"].ToString())
@@ -1266,30 +1254,17 @@ namespace infraredCommApp
                                                         int RatioX = Convert.ToInt32((Convert.ToDouble(Convert.ToUInt32(heatMapUnSorted.Rows[j]["pointx"].ToString())) * 0.365));
                                                         int RatioY = Convert.ToInt32((Convert.ToDouble(Convert.ToUInt32(heatMapUnSorted.Rows[j]["pointy"].ToString())) * 0.30));
                                                         imageGraphics.FillEllipse(new SolidBrush(c1), Convert.ToUInt32(heatMapUnSorted.Rows[j]["pointx"].ToString()) + RatioX, Convert.ToUInt32(heatMapUnSorted.Rows[j]["pointy"].ToString()) + RatioY, 30, 30);
-                                                        //Convert.ToInt32((Convert.ToDouble(taguSingle.pointx) * 0.365))
-                                                        string id = heatMapSorted.Rows[i]["Name"].ToString();
-                                                        string x = heatMapUnSorted.Rows[j]["pointx"].ToString();
-                                                        string y = heatMapUnSorted.Rows[j]["pointy"].ToString();
-                                                        fg = 1;
+
 
                                                         DataRow dRow = dtTagNameAllOwn.NewRow();
-                                                        string k = tgn1;
+
                                                         dRow["TagNameAll"] = tgn1;
                                                         //counter= counter+1;
                                                         dtTagNameAllOwn.Rows.Add(dRow);
                                                     }
 
                                                 }
-                                                //if(fg==0)
-                                                //{
-                                                //    Color c2 = Color.FromArgb(255, 255, 0);
-                                                //    gs.FillEllipse(new SolidBrush(c2), Convert.ToUInt32(HeatMapUnSorted.Rows[j]["pointx"].ToString()), Convert.ToUInt32(HeatMapUnSorted.Rows[j]["pointy"].ToString()), 30, 30);
 
-                                                //    string id = HeatMapSorted.Rows[i]["Name"].ToString();
-                                                //    string x = HeatMapUnSorted.Rows[j]["pointx"].ToString();
-                                                //    string y = HeatMapUnSorted.Rows[j]["pointy"].ToString();
-
-                                                //}
                                             }
                                         }
                                     }
@@ -1538,8 +1513,6 @@ namespace infraredCommApp
 
             }
         }
-
-
 
         protected override void OnShown(EventArgs e)
         {
@@ -1866,13 +1839,38 @@ namespace infraredCommApp
             ds.Tables.Add(dt);
             return ds;
         }
-        
+
+        //private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
+        //{
+        //    HeatMapConsider = 1;
+        //    var heatmapImageName = map_comboBox1.SelectedValue.ToString();
+        //    HeatMapGraph f2 = new HeatMapGraph(heatmapImageName);
+        //    var dialogResult = f2.ShowDialog();
+        //    if (dialogResult == DialogResult.OK)
+        //    {
+        //        FromDate = HeatMapGraph.FromDate.Trim();
+        //        ToDate = HeatMapGraph.ToDate.Trim();
+        //        Type = HeatMapGraph.Type.Trim();
+        //        int counter = HeatMapGraph.counter;
+        //        dtTagNameAll = HeatMapGraph.dtTagNameAll;
+        //        FirstDay = Convert.ToInt16(Convert.ToDateTime(FromDate).Day);
+        //        LastDay = Convert.ToInt16(Convert.ToDateTime(ToDate).Day);
+        //        TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
+        //        double hours = diff.TotalHours;
+        //        button＿MapEdit_Click(sender, e);
+        //        ButtonManage(false);
+        //        //map_comboBox1.SelectedIndex = 2;
+        //        // GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
+        //    }
+
+        //}
+
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
-            HeatMapConsider = 1;
-            HeatMapGraph f2 = new HeatMapGraph(map_comboBox1.SelectedValue.ToString());
+            var heatmapImageName = map_comboBox1.SelectedValue.ToString();
+            HeatMapGraph f2 = new HeatMapGraph(heatmapImageName);
             var dialogResult = f2.ShowDialog();
-            if (dialogResult == DialogResult.OK) 
+            if (dialogResult == DialogResult.OK)
             {
                 FromDate = HeatMapGraph.FromDate.Trim();
                 ToDate = HeatMapGraph.ToDate.Trim();
@@ -1883,18 +1881,74 @@ namespace infraredCommApp
                 LastDay = Convert.ToInt16(Convert.ToDateTime(ToDate).Day);
                 TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
                 double hours = diff.TotalHours;
-                button＿MapEdit_Click(sender, e);
-                ButtonManage(false);
-                //map_comboBox1.SelectedIndex = 2;
+                GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
             }
 
+        }
+
+        private void GenerateHeatMap(string heatmapImageName, List<string> selectedTagIds) 
+        {
+            timer.Dispose();
+            var image = Image.FromFile(workfolder + "Image\\" + heatmapImageName + ".jpeg", true);
+
+            var currentMap = gitems.FirstOrDefault(x => x.MapFileName == heatmapImageName);
+            var currentMapFilePath = workfolder + "Image\\" + heatmapImageName + ".jpeg";
+            DataTable csvData = GetDataTabletFromCSVFile(workfolder + "Contentid.CSV");
+
+            var allHeatMapList = new List<HeatMap>();
+            var filteredByDateTimeHeatMapList = new List<HeatMap>();
+
+            var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
+            foreach(var taguSingle in mapTags)
+            {
+                for (int i = 0; i < csvData.Rows.Count; i++)
+                {
+                    string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
+                    DateTime dtDateTime = Convert.ToDateTime(Common.GetValidDateTime(strDateTime));
+                    if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString())
+                    {
+                        HeatMap htMap = new HeatMap()
+                        {
+                            tagId = taguSingle.tagId,
+                            tagname = taguSingle.tagname,
+                            pointx = taguSingle.pointx,
+                            pointy = taguSingle.pointy,
+                            tagtype = taguSingle.tagtype,
+                            tagDate = dtDateTime,
+                        };
+
+                        if (htMap.tagDate >= Convert.ToDateTime(FromDate) && htMap.tagDate <= Convert.ToDateTime(ToDate))
+                        {
+                            filteredByDateTimeHeatMapList.Add(htMap);
+                        }
+
+                        allHeatMapList.Add(htMap);
+                    }
+                }
+            }
+
+            var tagWiseClientCount = (from row in filteredByDateTimeHeatMapList
+                         group row by row.tagId into sales
+                         orderby sales.Count()
+                         select new HeatMapCordinateDTO
+                         {
+                             Name = sales.Key,
+                             CountOfClients = sales.Count(),
+                             PointX = sales.First().pointx,
+                             PointY = sales.First().pointy,
+                         }).ToList();
+
+
+            Bitmap originalBitmap = new Bitmap(currentMapFilePath);
+            var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
+            Common.DrawHeatmapTags(resizedImage, tagWiseClientCount, pictureBox1);
         }
 
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
             //run koren
             ButtonManage(true);
-            ChangeLocation();
+            //ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();

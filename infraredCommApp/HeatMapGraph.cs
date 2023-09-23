@@ -23,6 +23,7 @@ namespace infraredCommApp
         public static string[] TagNameAll ;
         public static int counter =0;
         public static DataTable dtTagNameAll = new DataTable();
+        public static List<string> SelectedTags = new List<string>();
         public static string workfolder = "";
         public static DataTable HeatMapSorted = new DataTable();
         public static DataTable HeatMapUnSorted = new DataTable();
@@ -39,7 +40,10 @@ namespace infraredCommApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dtTagNameAll.Columns.Add("TagNameAll", typeof(String));
+            if (!dtTagNameAll.Columns.Contains("TagNameAll"))
+            {
+                dtTagNameAll.Columns.Add("TagNameAll", typeof(String));
+            }
 
             foreach (var item in listBoxAllData.SelectedItems.Cast<DataRowView>())
             {
@@ -47,7 +51,10 @@ namespace infraredCommApp
                 DataRow dRow = dtTagNameAll.NewRow();
                 dRow["TagNameAll"] = item.Row[1].ToString();
                 dtTagNameAll.Rows.Add(dRow);
+                SelectedTags.Add(item.Row[1].ToString());
             }
+            
+
 
             if (dayHourComboBox.SelectedItem.ToString() == "Hour")
             {

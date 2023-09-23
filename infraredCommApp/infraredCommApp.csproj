@@ -115,6 +115,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HeatMap.cs" />
+    <Compile Include="HeatMapCordinateDTO.cs" />
     <Compile Include="HeatMapGraph.cs">
       <SubType>Form</SubType>
     </Compile>

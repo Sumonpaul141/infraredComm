@@ -318,7 +318,6 @@
             this.map_comboBox1.FormattingEnabled = true;
             this.map_comboBox1.Name = "map_comboBox1";
             this.map_comboBox1.SelectedIndexChanged += new System.EventHandler(this.map_comboBox1_SelectedIndexChanged);
-
             // 
             // delete_map_button8
             // 

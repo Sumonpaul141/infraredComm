@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -253,6 +254,53 @@ namespace infraredCommApp
             }
 
             pictureBox.Image = imageToDrawTags;
+        }
+
+        static public void DrawHeatmapTags(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
+        {
+           
+            Graphics graphics = Graphics.FromImage(imageToDrawTags);
+
+            double maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
+            double minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
+
+            if(maxNumberOfClient ==  minNumberOfClient)
+            {
+                maxNumberOfClient++;
+            }
+
+            foreach (HeatMapCordinateDTO cordinate in heatMapCordinates)
+            {
+                double a = cordinate.CountOfClients - minNumberOfClient;
+                double b = maxNumberOfClient - minNumberOfClient;
+                double c = a / b;
+                double ni = c * 100;
+                double redValue = (ni * 255) / 100;
+                double blueValue = ((100 - ni) * 255) / 100;
+
+                if (redValue > 255)
+                {
+                    redValue = 255;
+                }
+                else if (redValue < 0)
+                {
+                    redValue = 0;
+                }
+                if (blueValue > 255)
+                {
+                    blueValue = 255;
+                }
+                else if (blueValue < 0)
+                {
+                    blueValue = 0;
+                }
+
+                Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                pictureBox.Image = imageToDrawTags;
+            }
+
+            
         }
 
 
