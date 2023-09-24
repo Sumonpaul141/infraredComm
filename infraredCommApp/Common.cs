@@ -300,7 +300,6 @@ namespace infraredCommApp
                 pictureBox.Image = imageToDrawTags;
             }
 
-            
         }
 
 

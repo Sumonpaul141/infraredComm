@@ -193,6 +193,15 @@ namespace infraredCommApp
         private Timer timer;
         private Bitmap heatmap;
 
+
+        // For animation 
+        private int currentCordinateIndex = 0;
+        private List<HeatMapCordinateDTO> heatMapCordinates;
+        private Bitmap imageToDrawTags;
+        private Graphics graphics;
+        private double minNumberOfClient;
+        private double maxNumberOfClient;
+
         //public AnimatedHeatmap()
         //{
         //    // Initialize the heatmap image with a blank bitmap
@@ -204,28 +213,28 @@ namespace infraredCommApp
         //    // Start the timer
         //    timer.Start();
         //}
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (FromDate != "")
-            {
-                Thread.Sleep(200);
-                map_comboBox1.SelectedIndex = 1;
-                map_comboBox1.SelectedIndex = 2;
-            }
-            // Trigger a redraw of the control
-            Invalidate();
-        }
+        //private void Timer_Tick(object sender, EventArgs e)
+        //{
+        //    if (FromDate != "")
+        //    {
+        //        Thread.Sleep(200);
+        //        map_comboBox1.SelectedIndex = 1;
+        //        map_comboBox1.SelectedIndex = 2;
+        //    }
+        //    // Trigger a redraw of the control
+        //    Invalidate();
+        //}
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            // Draw the updated heatmap onto the control
-            //e.Graphics.DrawImage(heatmap, 0, 0);
-            //if (FromDate != "")
-            //{
-            //    map_comboBox1.SelectedIndex = 2;
-            //}
-            base.OnPaint(e);
-        }
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    // Draw the updated heatmap onto the control
+        //    //e.Graphics.DrawImage(heatmap, 0, 0);
+        //    //if (FromDate != "")
+        //    //{
+        //    //    map_comboBox1.SelectedIndex = 2;
+        //    //}
+        //    base.OnPaint(e);
+        //}
         public Form1()
         {
             // Timer
@@ -233,11 +242,11 @@ namespace infraredCommApp
             // Initialize the heatmap image with a blank bitmap
             heatmap = new Bitmap(Width, Height);
             // Initialize the timer and set the interval to 100 ms
-            timer = new Timer();
-            timer.Interval = 500;
-            timer.Tick += Timer_Tick;
+            // timer = new Timer();
+            //timer.Interval = 500;
+            //timer.Tick += Timer_Tick;
             // Start the timer
-            timer.Start();
+            //timer.Start();
 
             InitializeComponent();
                        
@@ -1888,7 +1897,6 @@ namespace infraredCommApp
 
         private void GenerateHeatMap(string heatmapImageName, List<string> selectedTagIds) 
         {
-            timer.Dispose();
             var image = Image.FromFile(workfolder + "Image\\" + heatmapImageName + ".jpeg", true);
 
             var currentMap = gitems.FirstOrDefault(x => x.MapFileName == heatmapImageName);
@@ -1899,6 +1907,7 @@ namespace infraredCommApp
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
+            mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
                 for (int i = 0; i < csvData.Rows.Count; i++)
@@ -1941,14 +1950,79 @@ namespace infraredCommApp
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
-            Common.DrawHeatmapTags(resizedImage, tagWiseClientCount, pictureBox1);
+            StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
+        }
+
+        public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
+        {
+            this.imageToDrawTags = imageToDrawTags;
+            this.heatMapCordinates = heatMapCordinates;
+            this.graphics = Graphics.FromImage(imageToDrawTags);
+
+            minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
+            maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
+
+            if (maxNumberOfClient == minNumberOfClient)
+            {
+                maxNumberOfClient++;
+            }
+
+            timer = new Timer
+            {
+                Interval = 500
+            };
+            timer.Tick += new EventHandler(DrawSingleCordinate);
+            timer.Start();
+        }
+
+        private void DrawSingleCordinate(object sender, EventArgs e)
+        {
+            if (currentCordinateIndex < heatMapCordinates.Count)
+            {
+                HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
+
+                double a = cordinate.CountOfClients - minNumberOfClient;
+                double b = maxNumberOfClient - minNumberOfClient;
+                double c = a / b;
+                double ni = c * 100;
+                double redValue = (ni * 255) / 100;
+                double blueValue = ((100 - ni) * 255) / 100;
+
+                if (redValue > 255)
+                {
+                    redValue = 255;
+                }
+                else if (redValue < 0)
+                {
+                    redValue = 0;
+                }
+                if (blueValue > 255)
+                {
+                    blueValue = 255;
+                }
+                else if (blueValue < 0)
+                {
+                    blueValue = 0;
+                }
+
+                Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+
+                pictureBox1.Image = imageToDrawTags;
+
+                currentCordinateIndex++;
+            }
+            else
+            {
+                ((Timer)sender).Stop();
+            }
         }
 
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
             //run koren
             ButtonManage(true);
-            //ChangeLocation();
+            ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
