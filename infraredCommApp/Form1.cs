@@ -1110,42 +1110,43 @@ namespace infraredCommApp
 
                 if (HeatMapConsider==1)
                 {
-                    var name = map_comboBox1.SelectedValue.ToString();
-                    TagLocationSet(name);
+                    TagLocationSet(map_comboBox1.SelectedValue.ToString());
                 }
                 HeatMapConsider = 0;
 
-
+                string name = "";
                 if (map_comboBox1.SelectedValue.ToString() != "infraredCommApp.Map" && map_comboBox1.SelectedValue.ToString() != "")
                 {
-                    string name = map_comboBox1.SelectedValue.ToString();
-                    pictureBox1.Image = Image.FromFile(workfolder + "Image\\" + name + ".jpeg", true);
-                    var filePath = workfolder + "Image\\" + name + ".jpeg";
-                    Bitmap bmap = new Bitmap(filePath);
-                    if (pictureBox1.Width < pictureBox1.Image.Width || pictureBox1.Height < pictureBox1.Image.Height)
-                    {
-                        this.pictureBox1.Size = new System.Drawing.Size(PictureBoxActualWidth, PictureBoxActualHeight);
-                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    }
-                    else
-                    {
-                        pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-                    }
-                    lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
-
-                    var targetMap = gitems.FirstOrDefault(o => o.MapFileName == name);
-                    taglist = targetMap.taglist;
-                    var imageToDraw = RedrawMapAndUpdateTagListAndGetCopiedFile(filePath, targetMap.taglist);
-
-                    AllWorkDoneForImage5(name, imageToDraw, HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
-
+                    name = map_comboBox1.SelectedValue.ToString();
                 }
                 else
                 {
-                    pictureBox1.Image = null;
+                    name = (map_comboBox1.SelectedValue as Map).MapFileName;
                 }
+
+                
+                pictureBox1.Image = Image.FromFile(workfolder + "Image\\" + name + ".jpeg", true);
+                var filePath = workfolder + "Image\\" + name + ".jpeg";
+                Bitmap bmap = new Bitmap(filePath);
+                if (pictureBox1.Width < pictureBox1.Image.Width || pictureBox1.Height < pictureBox1.Image.Height)
+                {
+                    this.pictureBox1.Size = new System.Drawing.Size(PictureBoxActualWidth, PictureBoxActualHeight);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                }
+                lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
+
+                var targetMap = gitems.FirstOrDefault(o => o.MapFileName == name);
+                taglist = targetMap.taglist;
+                var imageToDraw = RedrawMapAndUpdateTagListAndGetCopiedFile(filePath, targetMap.taglist);
+
+                AllWorkDoneForImage5(name, imageToDraw, HeatMapSorted, HeatMapUnSorted, HeatMapUnSortedAll, HeatMapSortedIndividual);
+
             }
-            
+
         }
 
         private string GetTagNames(Map map)
@@ -1907,7 +1908,6 @@ namespace infraredCommApp
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
-            mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
                 for (int i = 0; i < csvData.Rows.Count; i++)
@@ -1953,6 +1953,30 @@ namespace infraredCommApp
             StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
         }
 
+        //private void DrawColorBar()
+        //{
+        //    string htIv = heatMapSortedIndividual.Rows[m]["CountOfClients"].ToString();
+        //    var divider = 800 / heatMapSortedIndividual.Rows.Count;
+
+        //    if (htIv != Count.ToString())
+        //    {
+        //        colorCountRGB++;
+        //        div = div + 1;
+        //        using (Font myFont = new Font("Arial", 10))
+        //        {
+        //            Color c2 = Color.FromArgb(200, Convert.ToInt32(Vr), 0, Convert.ToInt32(Vb));
+        //            //position = position + divider;
+        //            position = position - divider;
+        //            imageGraphics.DrawString(div.ToString(), myFont, Brushes.Green, new Point(1530, position + dividerPosition / 2));
+        //            imageGraphics.FillRectangle(new SolidBrush(c2), 1550, position, 30, dividerPosition);
+
+        //            Color c3 = Color.FromArgb(255, 255, 0);
+        //            imageGraphics.DrawString("0", myFont, Brushes.Green, new Point(1530, positionYellow + dividerPosition / 4));
+        //            imageGraphics.FillRectangle(new SolidBrush(c3), 1550, positionYellow, 30, dividerPosition);
+        //        }
+        //    }
+        //}
+
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
         {
             this.imageToDrawTags = imageToDrawTags;
@@ -1967,9 +1991,12 @@ namespace infraredCommApp
                 maxNumberOfClient++;
             }
 
+            this.progBarTagLoad.Visible = true;
+            this.lblProgBarTagLoadPercent.Visible = true;
+
             timer = new Timer
             {
-                Interval = 500
+                Interval = 200
             };
             timer.Tick += new EventHandler(DrawSingleCordinate);
             timer.Start();
@@ -2011,6 +2038,10 @@ namespace infraredCommApp
                 pictureBox1.Image = imageToDrawTags;
 
                 currentCordinateIndex++;
+
+                double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinates.Count.ToString()) ) * 100;
+                
+                ProgressBarTagLoad(parcentage);
             }
             else
             {
@@ -2022,7 +2053,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            ChangeLocation();
+            //ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2039,7 +2070,7 @@ namespace infraredCommApp
                 if(gitems.Count>0)
                 {
                     //map_comboBox1.SelectedIndex = -1;
-                    //map_comboBox1.SelectedIndex = 0;
+                    map_comboBox1.SelectedIndex = 0;
                     lblCboImageName.Text = " MapName : " + map_comboBox1.Text + " MapFileName : " + map_comboBox1.SelectedValue.ToString();
                 }
             }
