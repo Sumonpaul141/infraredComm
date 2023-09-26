@@ -2150,13 +2150,14 @@ namespace infraredCommApp
 
                 if(parcentage == 100)
                 {
-                    DrawMultiColorRectangle(this.graphics, colors, 50, 50, 50, 500);
+                    DrawMultiColorRectangle(this.graphics, colors, 50, 50, 30, 400);
+
                 }
             }
             else
             {
                 ((Timer)sender).Stop();
-                StartHeatMapDrawBlink(imageToDrawTags, heatMapCordinates, pictureBox1);
+
             }
         }
 
