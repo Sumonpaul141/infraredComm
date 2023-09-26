@@ -202,6 +202,11 @@ namespace infraredCommApp
         private double minNumberOfClient;
         private double maxNumberOfClient;
 
+        //for blink
+        private bool isShow;
+        private Bitmap imageWithoutTags;
+        private List<Color> colors = new List<Color>();
+
         //public AnimatedHeatmap()
         //{
         //    // Initialize the heatmap image with a blank bitmap
@@ -1883,7 +1888,9 @@ namespace infraredCommApp
             if (dialogResult == DialogResult.OK)
             {
                 FromDate = HeatMapGraph.FromDate.Trim();
-                ToDate = HeatMapGraph.ToDate.Trim();
+                ToDate = HeatMapGraph.ToDate.Trim();                
+                FromDate = "1/1/2023 12:00:00 AM";
+                ToDate = "1/31/2023 12:00:00 AM";
                 Type = HeatMapGraph.Type.Trim();
                 int counter = HeatMapGraph.counter;
                 dtTagNameAll = HeatMapGraph.dtTagNameAll;
@@ -1908,6 +1915,7 @@ namespace infraredCommApp
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
+            mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
                 for (int i = 0; i < csvData.Rows.Count; i++)
@@ -1947,35 +1955,114 @@ namespace infraredCommApp
                              PointY = sales.First().pointy,
                          }).ToList();
 
-
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
+            this.imageWithoutTags = new Bitmap(resizedImage);
+            this.colors.Clear();
             StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
         }
 
-        //private void DrawColorBar()
-        //{
-        //    string htIv = heatMapSortedIndividual.Rows[m]["CountOfClients"].ToString();
-        //    var divider = 800 / heatMapSortedIndividual.Rows.Count;
+        public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
+        {
+            colors.InsertRange(0,new List<Color> { Color.Yellow });
+            int numColors = colors.Count;
+            int colorHeight = height / numColors;
 
-        //    if (htIv != Count.ToString())
-        //    {
-        //        colorCountRGB++;
-        //        div = div + 1;
-        //        using (Font myFont = new Font("Arial", 10))
-        //        {
-        //            Color c2 = Color.FromArgb(200, Convert.ToInt32(Vr), 0, Convert.ToInt32(Vb));
-        //            //position = position + divider;
-        //            position = position - divider;
-        //            imageGraphics.DrawString(div.ToString(), myFont, Brushes.Green, new Point(1530, position + dividerPosition / 2));
-        //            imageGraphics.FillRectangle(new SolidBrush(c2), 1550, position, 30, dividerPosition);
+            startY += height; // Adjust starting Y position
 
-        //            Color c3 = Color.FromArgb(255, 255, 0);
-        //            imageGraphics.DrawString("0", myFont, Brushes.Green, new Point(1530, positionYellow + dividerPosition / 4));
-        //            imageGraphics.FillRectangle(new SolidBrush(c3), 1550, positionYellow, 30, dividerPosition);
-        //        }
-        //    }
-        //}
+            for (int i = numColors - 1; i >= 0; i--)
+            {
+                SolidBrush brush = new SolidBrush(colors[i]);
+                g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight); // Adjust Y position
+                brush.Dispose();
+
+                // Draw index beside color
+                string indexText = i.ToString();
+                Font font = new Font("Arial", 10);
+                SolidBrush textBrush = new SolidBrush(Color.Black);
+                g.DrawString(indexText, font, textBrush, startX + width + 5, startY - (i * colorHeight) + colorHeight / 2 - 8);
+                font.Dispose();
+                textBrush.Dispose();
+            }
+        }
+
+        public void StartHeatMapDrawBlink(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
+        {
+            this.isShow = true;
+            this.heatMapCordinates = heatMapCordinates;
+            this.imageToDrawTags = imageToDrawTags;
+            
+            this.progBarTagLoad.Visible = false;
+            this.lblProgBarTagLoadPercent.Visible = false;
+
+            if (heatMapCordinates.Any())
+            {
+                timer = new Timer
+                {
+                    Interval = 500
+                };
+
+                timer.Tick += new EventHandler(DrawEmptyOrAllCordinate);
+                timer.Start();
+            }
+            else
+            {
+                MessageBox.Show("No data found");
+                pictureBox1.Image = imageToDrawTags;
+            }
+        }
+
+        private void DrawEmptyOrAllCordinate(object sender, EventArgs e)
+        {
+            Graphics graphics = Graphics.FromImage(imageToDrawTags);
+            if (isShow)
+            {
+                double maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
+                double minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
+
+                if (maxNumberOfClient == minNumberOfClient)
+                {
+                    maxNumberOfClient++;
+                }
+
+                foreach (HeatMapCordinateDTO cordinate in heatMapCordinates)
+                {
+                    double a = cordinate.CountOfClients - minNumberOfClient;
+                    double b = maxNumberOfClient - minNumberOfClient;
+                    double c = a / b;
+                    double ni = c * 100;
+                    double redValue = (ni * 255) / 100;
+                    double blueValue = ((100 - ni) * 255) / 100;
+
+                    if (redValue > 255)
+                    {
+                        redValue = 255;
+                    }
+                    else if (redValue < 0)
+                    {
+                        redValue = 0;
+                    }
+                    if (blueValue > 255)
+                    {
+                        blueValue = 255;
+                    }
+                    else if (blueValue < 0)
+                    {
+                        blueValue = 0;
+                    }
+
+                    Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                }
+                pictureBox1.Image = imageToDrawTags;
+            }
+            else
+            {
+                pictureBox1.Image = imageWithoutTags;
+            }
+            isShow = !isShow;
+            
+        }
 
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
         {
@@ -1983,23 +2070,35 @@ namespace infraredCommApp
             this.heatMapCordinates = heatMapCordinates;
             this.graphics = Graphics.FromImage(imageToDrawTags);
 
-            minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
-            maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
 
-            if (maxNumberOfClient == minNumberOfClient)
+            if (heatMapCordinates.Any())
             {
-                maxNumberOfClient++;
+                minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
+                maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
+
+                if (maxNumberOfClient == minNumberOfClient)
+                {
+                    maxNumberOfClient++;
+                }
+
+                this.progBarTagLoad.Visible = true;
+                this.lblProgBarTagLoadPercent.Visible = true;
+
+                timer = new Timer
+                {
+                    Interval = 500
+                };
+                timer.Tick += new EventHandler(DrawSingleCordinate);
+                timer.Start();
+
+            }
+            else
+            {
+                MessageBox.Show("No data found");
+                pictureBox1.Image = imageToDrawTags;
             }
 
-            this.progBarTagLoad.Visible = true;
-            this.lblProgBarTagLoadPercent.Visible = true;
 
-            timer = new Timer
-            {
-                Interval = 200
-            };
-            timer.Tick += new EventHandler(DrawSingleCordinate);
-            timer.Start();
         }
 
         private void DrawSingleCordinate(object sender, EventArgs e)
@@ -2034,6 +2133,12 @@ namespace infraredCommApp
 
                 Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
                 graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                if (!colors.Contains(color))
+                {
+                    colors.Add(color);
+
+                }
+
 
                 pictureBox1.Image = imageToDrawTags;
 
@@ -2042,10 +2147,16 @@ namespace infraredCommApp
                 double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinates.Count.ToString()) ) * 100;
                 
                 ProgressBarTagLoad(parcentage);
+
+                if(parcentage == 100)
+                {
+                    DrawMultiColorRectangle(this.graphics, colors, 50, 50, 50, 500);
+                }
             }
             else
             {
                 ((Timer)sender).Stop();
+                StartHeatMapDrawBlink(imageToDrawTags, heatMapCordinates, pictureBox1);
             }
         }
 
@@ -2053,7 +2164,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            //ChangeLocation();
+            ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
