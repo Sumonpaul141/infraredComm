@@ -1968,12 +1968,12 @@ namespace infraredCommApp
             int numColors = colors.Count;
             int colorHeight = height / numColors;
 
-            startY += height; // Adjust starting Y position
+            startY += height;
 
             for (int i = numColors - 1; i >= 0; i--)
             {
                 SolidBrush brush = new SolidBrush(colors[i]);
-                g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight); // Adjust Y position
+                g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight);
                 brush.Dispose();
 
                 // Draw index beside color
@@ -2086,7 +2086,7 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = 500
+                    Interval = 5
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
@@ -2095,7 +2095,7 @@ namespace infraredCommApp
             else
             {
                 MessageBox.Show("No data found");
-                pictureBox1.Image = imageToDrawTags;
+                pictureBox.Image = imageToDrawTags;
             }
 
 
@@ -2150,8 +2150,8 @@ namespace infraredCommApp
 
                 if(parcentage == 100)
                 {
-                    DrawMultiColorRectangle(this.graphics, colors, 50, 50, 30, 400);
-
+                    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 700);
+                    
                 }
             }
             else
