@@ -52,8 +52,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.lblTagNameTest = new System.Windows.Forms.Label();
             this.chartWithData = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.progBarTagLoad = new System.Windows.Forms.ProgressBar();
             this.lblProgBarTagLoadPercent = new System.Windows.Forms.Label();
             this.lblFromDate = new System.Windows.Forms.Label();
@@ -207,17 +205,6 @@
             series1.Name = "Series1";
             this.chartWithData.Series.Add(series1);
             // 
-            // lblMonth
-            // 
-            resources.ApplyResources(this.lblMonth, "lblMonth");
-            this.lblMonth.Name = "lblMonth";
-            // 
-            // lblDate
-            // 
-            resources.ApplyResources(this.lblDate, "lblDate");
-            this.lblDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDate.Name = "lblDate";
-            // 
             // progBarTagLoad
             // 
             resources.ApplyResources(this.progBarTagLoad, "progBarTagLoad");
@@ -351,8 +338,6 @@
             this.Controls.Add(this.lblFromDate);
             this.Controls.Add(this.lblProgBarTagLoadPercent);
             this.Controls.Add(this.progBarTagLoad);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.lblTagNameTest);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblCboImageName);
@@ -407,8 +392,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Label lblTagNameTest;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWithData;
-        private System.Windows.Forms.Label lblMonth;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ProgressBar progBarTagLoad;
         private System.Windows.Forms.Label lblProgBarTagLoadPercent;
         private System.Windows.Forms.Label lblFromDate;

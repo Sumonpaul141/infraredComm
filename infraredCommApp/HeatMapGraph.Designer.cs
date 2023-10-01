@@ -35,11 +35,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtToDateTime = new System.Windows.Forms.DateTimePicker();
             this.dtFromDateTime = new System.Windows.Forms.DateTimePicker();
-            this.PictureBox = new System.Windows.Forms.PictureBox();
             this.dayHourComboBox = new System.Windows.Forms.ComboBox();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBoxAllData = new System.Windows.Forms.ListBox();
+            this.selectAllBtn = new System.Windows.Forms.Button();
+            this.unselectAllBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +118,18 @@
             this.dtFromDateTime.Size = new System.Drawing.Size(146, 23);
             this.dtFromDateTime.TabIndex = 40;
             // 
+            // dayHourComboBox
+            // 
+            this.dayHourComboBox.FormattingEnabled = true;
+            this.dayHourComboBox.Items.AddRange(new object[] {
+            "Hour",
+            "Day"});
+            this.dayHourComboBox.Location = new System.Drawing.Point(126, 11);
+            this.dayHourComboBox.Name = "dayHourComboBox";
+            this.dayHourComboBox.Size = new System.Drawing.Size(121, 24);
+            this.dayHourComboBox.TabIndex = 40;
+            this.dayHourComboBox.SelectedIndexChanged += new System.EventHandler(this.DayHourComboBoxChange);
+            // 
             // PictureBox
             // 
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -124,18 +138,6 @@
             this.PictureBox.Size = new System.Drawing.Size(24, 10);
             this.PictureBox.TabIndex = 32;
             this.PictureBox.TabStop = false;
-            // 
-            // cmbType
-            // 
-            this.dayHourComboBox.FormattingEnabled = true;
-            this.dayHourComboBox.Items.AddRange(new object[] {
-            "Hour",
-            "Day"});
-            this.dayHourComboBox.Location = new System.Drawing.Point(126, 11);
-            this.dayHourComboBox.Name = "cmbType";
-            this.dayHourComboBox.Size = new System.Drawing.Size(121, 24);
-            this.dayHourComboBox.TabIndex = 40;
-            this.dayHourComboBox.SelectedIndexChanged += new System.EventHandler(this.DayHourComboBoxChange);
             // 
             // button2
             // 
@@ -168,11 +170,33 @@
             this.listBoxAllData.Size = new System.Drawing.Size(416, 148);
             this.listBoxAllData.TabIndex = 32;
             // 
+            // selectAllBtn
+            // 
+            this.selectAllBtn.Location = new System.Drawing.Point(124, 429);
+            this.selectAllBtn.Name = "selectAllBtn";
+            this.selectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.selectAllBtn.TabIndex = 33;
+            this.selectAllBtn.Text = "Select all";
+            this.selectAllBtn.UseVisualStyleBackColor = true;
+            this.selectAllBtn.Click += new System.EventHandler(this.SelectAllClick);
+            // 
+            // unselectAllBtn
+            // 
+            this.unselectAllBtn.Location = new System.Drawing.Point(226, 429);
+            this.unselectAllBtn.Name = "unselectAllBtn";
+            this.unselectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.unselectAllBtn.TabIndex = 34;
+            this.unselectAllBtn.Text = "Unselect all";
+            this.unselectAllBtn.UseVisualStyleBackColor = true;
+            this.unselectAllBtn.Click += new System.EventHandler(this.UnSelectAllClick);
+            // 
             // HeatMapGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 485);
+            this.Controls.Add(this.unselectAllBtn);
+            this.Controls.Add(this.selectAllBtn);
             this.Controls.Add(this.listBoxAllData);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
@@ -201,5 +225,7 @@
         private System.Windows.Forms.DateTimePicker dtToDateTime;
         private System.Windows.Forms.DateTimePicker dtFromDateTime;
         private System.Windows.Forms.ListBox listBoxAllData;
+        private System.Windows.Forms.Button selectAllBtn;
+        private System.Windows.Forms.Button unselectAllBtn;
     }
 }

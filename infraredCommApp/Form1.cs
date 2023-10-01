@@ -1238,7 +1238,6 @@ namespace infraredCommApp
                             if (heatMapSorted.Rows[i]["Name"].ToString() == heatMapUnSorted.Rows[j]["tagId"].ToString() && heatMapSorted.Rows[i]["CountOfClients"].ToString() == heatMapSortedIndividual.Rows[m]["CountOfClients"].ToString())
                             {
                                 int u = Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Month);
-                                lblMonth.Text = tagDateFirstMonth.ToString();
                                 //lblDate.Text = HeatMapUnSorted.Rows[j]["tagDate"].ToString();
                                 for (int htm = tagInitialDateFirstMonth; htm <= tagDateFirstMonth; htm++)
                                 {
@@ -1248,7 +1247,6 @@ namespace infraredCommApp
                                     {
                                         for (int htn = FirstDay; htn <= Month; htn++)
                                         {
-                                            lblDate.Text = htn.ToString() + "/" + htm.ToString() + "/" + "2023";
                                             int day = Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Day);
                                             if (htm == Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Month) && htn == day)
                                             {
@@ -1295,8 +1293,6 @@ namespace infraredCommApp
                                                 //lblDate.Text = htn.ToString() + "/" + htm.ToString() + "/" + "2023 "+ time;
                                                 int day = Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Day);
                                                 int hour = Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Hour);
-                                                lblDate.Text = htn.ToString() + "/" + htm.ToString() + "/" + "2023 " + hto.ToString() + ":00:00";
-
                                                 if (htm == Convert.ToInt16(Convert.ToDateTime(heatMapUnSorted.Rows[j]["tagDate"].ToString()).Month) && htn == day && hto == hour)
                                                 {
 
@@ -1572,6 +1568,8 @@ namespace infraredCommApp
             set_map_label1.Visible = isVisible;
             Exit_map_edit_button9.Visible = isVisible;
             map_comboBox1.Visible = isVisible;
+            map_button.Enabled = !isVisible;
+            buttonFLowLineAnalysis.Visible = isVisible;
 
 
             progBarTagLoad.Visible = !isVisible;
@@ -1580,9 +1578,6 @@ namespace infraredCommApp
             label2.Visible = !isVisible;
             lblToDate.Visible = !isVisible;
             lblFromDate.Visible = !isVisible;
-            lblDate.Visible = !isVisible;
-            lblMonth.Visible = !isVisible;
-
             ControlGroupBox.Visible = false;
 
 
@@ -1889,15 +1884,16 @@ namespace infraredCommApp
             {
                 FromDate = HeatMapGraph.FromDate.Trim();
                 ToDate = HeatMapGraph.ToDate.Trim();                
-                FromDate = "1/1/2023 12:00:00 AM";
-                ToDate = "1/31/2023 12:00:00 AM";
                 Type = HeatMapGraph.Type.Trim();
                 int counter = HeatMapGraph.counter;
                 dtTagNameAll = HeatMapGraph.dtTagNameAll;
                 FirstDay = Convert.ToInt16(Convert.ToDateTime(FromDate).Day);
                 LastDay = Convert.ToInt16(Convert.ToDateTime(ToDate).Day);
+                lblFromDate.Text = Convert.ToDateTime(FromDate).ToShortDateString();
+                lblToDate.Text = Convert.ToDateTime(ToDate).ToShortDateString();
                 TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
                 double hours = diff.TotalHours;
+                ButtonManage(false);
                 GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
             }
 
@@ -1915,7 +1911,6 @@ namespace infraredCommApp
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
-            mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
                 for (int i = 0; i < csvData.Rows.Count; i++)
@@ -1944,22 +1939,29 @@ namespace infraredCommApp
                 }
             }
 
-            var tagWiseClientCount = (from row in filteredByDateTimeHeatMapList
-                         group row by row.tagId into sales
-                         orderby sales.Count()
-                         select new HeatMapCordinateDTO
-                         {
-                             Name = sales.Key,
-                             CountOfClients = sales.Count(),
-                             PointX = sales.First().pointx,
-                             PointY = sales.First().pointy,
-                         }).ToList();
+            var tagWiseClientCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
+
+            var allTagClientCount = GetClientCountFromHeatMapList(allHeatMapList);
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
             this.imageWithoutTags = new Bitmap(resizedImage);
             this.colors.Clear();
             StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
+        }
+
+        private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
+        {
+            return (from row in maps
+                    group row by row.tagId into sales
+                    orderby sales.Count()
+                    select new HeatMapCordinateDTO
+                    {
+                        Name = sales.Key,
+                        CountOfClients = sales.Count(),
+                        PointX = sales.First().pointx,
+                        PointY = sales.First().pointy,
+                    }).ToList();
         }
 
         public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
@@ -2086,7 +2088,7 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = 5
+                    Interval = 50
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
@@ -2150,7 +2152,7 @@ namespace infraredCommApp
 
                 if(parcentage == 100)
                 {
-                    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 700);
+                    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 880);
                     
                 }
             }
@@ -2165,7 +2167,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            ChangeLocation();
+            //ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2189,26 +2191,26 @@ namespace infraredCommApp
             EnableMapSpecificButtons();
         }
 
-        private void EnableMapSpecificButtons()
-        {
+       private void EnableMapSpecificButtons()
+       {
             this.map_button.Enabled = false;
             this.add_map_button1.Enabled = true;
             this.delete_map_button8.Enabled = true;
             this.set_map_label1.Enabled = true;
             this.map_comboBox1.Enabled = true;
             this.Exit_map_edit_button9.Enabled = true;
-        }
+       }
 
-        private void ChangeLocation()
-        {
+       private void ChangeLocation()
+       {
             add_map_button1.Location = new Point(10, 300);
             delete_map_button8.Location = new Point(10, 350);
             map_comboBox1.Location = new Point(10, 400);
             Exit_map_edit_button9.Location = new Point(10,450);
             lblTagNameTest.Location = new Point(10, 500);
-        }
-        private void AddMapImageAndFillPictureBoxWithResizedImage(object sender, EventArgs e)
-        {
+       }
+       private void AddMapImageAndFillPictureBoxWithResizedImage(object sender, EventArgs e)
+       {
             // New Picturbox
             OpenFileDialog opnfd = new OpenFileDialog();
             opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
@@ -2242,7 +2244,7 @@ namespace infraredCommApp
                 Common.FillPictureBox(pictureBox1, bmap);
                 flag = 1;
             }
-        }
+       }
 
         // For save info 
         public static void SaveToBinaryFile(object obj, string path)

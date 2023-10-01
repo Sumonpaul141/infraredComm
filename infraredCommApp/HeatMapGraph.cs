@@ -40,6 +40,7 @@ namespace infraredCommApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SelectedTags.Clear();
             if (!dtTagNameAll.Columns.Contains("TagNameAll"))
             {
                 dtTagNameAll.Columns.Add("TagNameAll", typeof(String));
@@ -71,6 +72,14 @@ namespace infraredCommApp
             this.DialogResult = DialogResult.OK;
             this.Close();
 
+        }
+
+        private void AllSelectionToggle(bool isSelectAll)
+        {
+            for (int i = 0; i < listBoxAllData.Items.Count; i++)
+            {
+                listBoxAllData.SetSelected(i, isSelectAll);
+            }
         }
 
         DataTable GetListItemData()
@@ -202,5 +211,14 @@ namespace infraredCommApp
             this.Close();
         }
 
+        private void UnSelectAllClick(object sender, EventArgs e)
+        {
+            AllSelectionToggle(false);
+        }
+
+        private void SelectAllClick(object sender, EventArgs e)
+        {
+            AllSelectionToggle(true);
+        }
     }
 }
