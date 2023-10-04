@@ -432,6 +432,33 @@ namespace infraredCommApp
             }
             return csvData;
         }
+
+        public List<Dictionary<string, string>> ReadCsv(string filePath)
+        {
+            List<Dictionary<string, string>> csvData = new List<Dictionary<string, string>>();
+
+            using (var reader = new StreamReader(filePath))
+            {
+                var headers = reader.ReadLine().Split(',');
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    Dictionary<string, string> row = new Dictionary<string, string>();
+
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        row.Add(headers[i], values[i]);
+                    }
+
+                    csvData.Add(row);
+                }
+            }
+
+            return csvData;
+        }
         void TagLocationSet(string name)
         {
             string FilePath = workfolder + "Contentid.CSV";
@@ -792,7 +819,7 @@ namespace infraredCommApp
                 strTemp = u32UserSN.ToString() + ","
                    + cpi.u32CID.ToString("X8") + ","
                    + cpi.dtStartTime.ToString("yyyy-MM-dd") + ","
-                   + cpi.dtStartTime.ToString("HH:mm:ss") + ", "
+                   + cpi.dtStartTime.ToString("HH:mm:ss") + ","
                    + cpi.nPlayTime.ToString() + ","
                    + cpi.nEndMode.ToString() + ","
                    + cpi.bQuiz.ToString() + ","
@@ -1883,7 +1910,9 @@ namespace infraredCommApp
             if (dialogResult == DialogResult.OK)
             {
                 FromDate = HeatMapGraph.FromDate.Trim();
-                ToDate = HeatMapGraph.ToDate.Trim();                
+                FromDate = "1/1/2023 12:00:00 AM";
+                ToDate = HeatMapGraph.ToDate.Trim();
+                ToDate = "1/30/2023 12:00:00 AM";
                 Type = HeatMapGraph.Type.Trim();
                 int counter = HeatMapGraph.counter;
                 dtTagNameAll = HeatMapGraph.dtTagNameAll;
@@ -1911,8 +1940,10 @@ namespace infraredCommApp
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
+            // mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
+                //var dataForSingleTag = csvData.Rows.
                 for (int i = 0; i < csvData.Rows.Count; i++)
                 {
                     string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
@@ -1935,13 +1966,12 @@ namespace infraredCommApp
                         }
 
                         allHeatMapList.Add(htMap);
-                    }
+
+                    } 
                 }
             }
 
             var tagWiseClientCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
-
-            var allTagClientCount = GetClientCountFromHeatMapList(allHeatMapList);
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
@@ -1950,18 +1980,43 @@ namespace infraredCommApp
             StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
         }
 
+        //private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
+        //{
+        //    return (from row in maps
+        //            group row by row.tagId into sales
+        //            orderby sales.Count()
+        //            select new HeatMapCordinateDTO
+        //            {
+        //                Name = sales.Key,
+        //                CountOfClients = sales.Count(),
+        //                PointX = sales.First().pointx,
+        //                PointY = sales.First().pointy,
+        //            }).ToList();
+        //}
+
         private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
         {
-            return (from row in maps
-                    group row by row.tagId into sales
-                    orderby sales.Count()
-                    select new HeatMapCordinateDTO
-                    {
-                        Name = sales.Key,
-                        CountOfClients = sales.Count(),
-                        PointX = sales.First().pointx,
-                        PointY = sales.First().pointy,
-                    }).ToList();
+            var a = maps.GroupBy(row => row.tagId);
+            var b = a.OrderBy(group => group.Count());
+            var c = b.Select(sales => new HeatMapCordinateDTO
+            {
+                Name = sales.Key,
+                CountOfClients = sales.Count(),
+                PointX = sales.First().pointx,
+                PointY = sales.First().pointy,
+            })
+            .ToList();
+            return maps
+                .GroupBy(row => row.tagId)
+                .OrderBy(group => group.Count())
+                .Select(sales => new HeatMapCordinateDTO
+                {
+                    Name = sales.Key,
+                    CountOfClients = sales.Count(),
+                    PointX = sales.First().pointx,
+                    PointY = sales.First().pointy,
+                })
+                .ToList();
         }
 
         public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
@@ -2167,7 +2222,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            //ChangeLocation();
+            ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
