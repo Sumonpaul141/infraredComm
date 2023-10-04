@@ -1097,6 +1097,8 @@ namespace infraredCommApp
 
             int nIndex = files.Length;
 
+            ChangeLocation();
+
             while (nIndex > 0)
             {
                 nIndex--;
@@ -1910,9 +1912,9 @@ namespace infraredCommApp
             if (dialogResult == DialogResult.OK)
             {
                 FromDate = HeatMapGraph.FromDate.Trim();
-                FromDate = "1/1/2023 12:00:00 AM";
+                //FromDate = "1/1/2023 12:00:00 AM";
                 ToDate = HeatMapGraph.ToDate.Trim();
-                ToDate = "1/30/2023 12:00:00 AM";
+                //ToDate = "1/30/2023 12:00:00 AM";
                 Type = HeatMapGraph.Type.Trim();
                 int counter = HeatMapGraph.counter;
                 dtTagNameAll = HeatMapGraph.dtTagNameAll;
@@ -1965,13 +1967,25 @@ namespace infraredCommApp
                             filteredByDateTimeHeatMapList.Add(htMap);
                         }
 
-                        allHeatMapList.Add(htMap);
+                        //allHeatMapList.Add(htMap);
 
                     } 
                 }
             }
 
             var tagWiseClientCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
+            var foundTagIds = tagWiseClientCount.Select(t => t.Name);
+            var unmatchedHeatMaps = mapTags.Where(x => !foundTagIds.Contains(x.tagId))
+                                      .Select(x => new HeatMap()
+                                      {
+                                          tagId = x.tagId,
+                                          tagname = x.tagname,
+                                          pointx = x.pointx,
+                                          pointy = x.pointy,
+                                          tagtype = x.tagtype,
+                                          tagDate = DateTime.Now
+                                      }).ToList();
+            var unmatchedTagWiseClientCount = GetClientCountFromHeatMapList(unmatchedHeatMaps);
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
@@ -1996,16 +2010,16 @@ namespace infraredCommApp
 
         private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
         {
-            var a = maps.GroupBy(row => row.tagId);
-            var b = a.OrderBy(group => group.Count());
-            var c = b.Select(sales => new HeatMapCordinateDTO
-            {
-                Name = sales.Key,
-                CountOfClients = sales.Count(),
-                PointX = sales.First().pointx,
-                PointY = sales.First().pointy,
-            })
-            .ToList();
+            //var a = maps.GroupBy(row => row.tagId);
+            //var b = a.OrderBy(group => group.Count());
+            //var c = b.Select(sales => new HeatMapCordinateDTO
+            //{
+            //    Name = sales.Key,
+            //    CountOfClients = sales.Count(),
+            //    PointX = sales.First().pointx,
+            //    PointY = sales.First().pointy,
+            //})
+            //.ToList();
             return maps
                 .GroupBy(row => row.tagId)
                 .OrderBy(group => group.Count())
@@ -2222,7 +2236,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            ChangeLocation();
+            // ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2258,11 +2272,14 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10,450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10,450);
+            //lblTagNameTest.Location = new Point(10, 500);
+
+            buttonSetup.Location = new Point(10, 300);
+            buttonExit.Location = new Point(10, 350);
        }
        private void AddMapImageAndFillPictureBoxWithResizedImage(object sender, EventArgs e)
        {

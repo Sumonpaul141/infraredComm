@@ -57,6 +57,7 @@ namespace infraredCommApp
             
 
 
+
             if (dayHourComboBox.SelectedItem.ToString() == "Hour")
             {
                 FromDate = Convert.ToString(dtFromDate.Value.Date + dtFromDateTime.Value.TimeOfDay);
