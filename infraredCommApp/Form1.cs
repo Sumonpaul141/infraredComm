@@ -1939,13 +1939,12 @@ namespace infraredCommApp
             DataTable csvData = GetDataTabletFromCSVFile(workfolder + "Contentid.CSV");
 
             var allHeatMapList = new List<HeatMap>();
+            var allHeatMapCordinatesList = new List<HeatMapCordinateDTO>();
             var filteredByDateTimeHeatMapList = new List<HeatMap>();
 
             var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
-            // mapTags = currentMap.taglist;
             foreach(var taguSingle in mapTags)
             {
-                //var dataForSingleTag = csvData.Rows.
                 for (int i = 0; i < csvData.Rows.Count; i++)
                 {
                     string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
@@ -1973,8 +1972,8 @@ namespace infraredCommApp
                 }
             }
 
-            var tagWiseClientCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
-            var foundTagIds = tagWiseClientCount.Select(t => t.Name);
+            var matchedTagWiseClientCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList, true);
+            var foundTagIds = matchedTagWiseClientCount.Select(t => t.Name);
             var unmatchedHeatMaps = mapTags.Where(x => !foundTagIds.Contains(x.tagId))
                                       .Select(x => new HeatMap()
                                       {
@@ -1985,13 +1984,17 @@ namespace infraredCommApp
                                           tagtype = x.tagtype,
                                           tagDate = DateTime.Now
                                       }).ToList();
-            var unmatchedTagWiseClientCount = GetClientCountFromHeatMapList(unmatchedHeatMaps);
+            var unmatchedTagWiseClientCount = GetClientCountFromHeatMapList(unmatchedHeatMaps, false);
+
+            allHeatMapCordinatesList.AddRange(matchedTagWiseClientCount);
+            allHeatMapCordinatesList.AddRange(unmatchedTagWiseClientCount);
+            allHeatMapCordinatesList = allHeatMapCordinatesList.OrderBy(x => x.Name).ToList();
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
             this.imageWithoutTags = new Bitmap(resizedImage);
             this.colors.Clear();
-            StartHeatMapDrawAnimation(resizedImage, tagWiseClientCount, pictureBox1);
+            StartHeatMapDrawAnimation(resizedImage, allHeatMapCordinatesList, pictureBox1);
         }
 
         //private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
@@ -2008,18 +2011,8 @@ namespace infraredCommApp
         //            }).ToList();
         //}
 
-        private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
+        private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps, bool isMatched)
         {
-            //var a = maps.GroupBy(row => row.tagId);
-            //var b = a.OrderBy(group => group.Count());
-            //var c = b.Select(sales => new HeatMapCordinateDTO
-            //{
-            //    Name = sales.Key,
-            //    CountOfClients = sales.Count(),
-            //    PointX = sales.First().pointx,
-            //    PointY = sales.First().pointy,
-            //})
-            //.ToList();
             return maps
                 .GroupBy(row => row.tagId)
                 .OrderBy(group => group.Count())
@@ -2029,6 +2022,7 @@ namespace infraredCommApp
                     CountOfClients = sales.Count(),
                     PointX = sales.First().pointx,
                     PointY = sales.First().pointy,
+                    IsMatched = isMatched
                 })
                 .ToList();
         }
@@ -2141,7 +2135,6 @@ namespace infraredCommApp
             this.heatMapCordinates = heatMapCordinates;
             this.graphics = Graphics.FromImage(imageToDrawTags);
 
-
             if (heatMapCordinates.Any())
             {
                 minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
@@ -2157,11 +2150,10 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = 50
+                    Interval = 500
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
-
             }
             else
             {
@@ -2178,36 +2170,44 @@ namespace infraredCommApp
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
 
-                double a = cordinate.CountOfClients - minNumberOfClient;
-                double b = maxNumberOfClient - minNumberOfClient;
-                double c = a / b;
-                double ni = c * 100;
-                double redValue = (ni * 255) / 100;
-                double blueValue = ((100 - ni) * 255) / 100;
+                if (cordinate.IsMatched)
+                {
+                    double a = cordinate.CountOfClients - minNumberOfClient;
+                    double b = maxNumberOfClient - minNumberOfClient;
+                    double c = a / b;
+                    double ni = c * 100;
+                    double redValue = (ni * 255) / 100;
+                    double blueValue = ((100 - ni) * 255) / 100;
 
-                if (redValue > 255)
-                {
-                    redValue = 255;
-                }
-                else if (redValue < 0)
-                {
-                    redValue = 0;
-                }
-                if (blueValue > 255)
-                {
-                    blueValue = 255;
-                }
-                else if (blueValue < 0)
-                {
-                    blueValue = 0;
-                }
+                    if (redValue > 255)
+                    {
+                        redValue = 255;
+                    }
+                    else if (redValue < 0)
+                    {
+                        redValue = 0;
+                    }
+                    if (blueValue > 255)
+                    {
+                        blueValue = 255;
+                    }
+                    else if (blueValue < 0)
+                    {
+                        blueValue = 0;
+                    }
 
-                Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
-                graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
-                if (!colors.Contains(color))
-                {
-                    colors.Add(color);
+                    Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                    if (!colors.Contains(color))
+                    {
+                        colors.Add(color);
 
+                    }
+                } 
+                else
+                {
+                    Color color = Color.FromArgb(200, 255, 255, 0);
+                    this.graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
                 }
 
 
@@ -2236,7 +2236,7 @@ namespace infraredCommApp
         {
             //run koren
             ButtonManage(true);
-            // ChangeLocation();
+            ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2272,15 +2272,15 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10,450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
-            buttonSetup.Location = new Point(10, 300);
-            buttonExit.Location = new Point(10, 350);
-       }
+            //buttonSetup.Location = new Point(10, 300);
+            //buttonExit.Location = new Point(10, 350);
+        }
        private void AddMapImageAndFillPictureBoxWithResizedImage(object sender, EventArgs e)
        {
             // New Picturbox
