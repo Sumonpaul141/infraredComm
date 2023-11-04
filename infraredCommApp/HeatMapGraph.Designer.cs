@@ -97,7 +97,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(424, 194);
+            this.groupBox2.Size = new System.Drawing.Size(436, 194);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "期間指定";
@@ -142,7 +142,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(22, 426);
+            this.button2.Location = new System.Drawing.Point(12, 425);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 36);
             this.button2.TabIndex = 6;
@@ -153,7 +153,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(335, 426);
+            this.button1.Location = new System.Drawing.Point(368, 425);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 36);
             this.button1.TabIndex = 6;
@@ -165,16 +165,17 @@
             // 
             this.listBoxAllData.FormattingEnabled = true;
             this.listBoxAllData.ItemHeight = 12;
-            this.listBoxAllData.Location = new System.Drawing.Point(22, 225);
+            this.listBoxAllData.Location = new System.Drawing.Point(12, 225);
             this.listBoxAllData.Name = "listBoxAllData";
-            this.listBoxAllData.Size = new System.Drawing.Size(416, 148);
+            this.listBoxAllData.Size = new System.Drawing.Size(438, 148);
             this.listBoxAllData.TabIndex = 32;
             // 
             // selectAllBtn
             // 
-            this.selectAllBtn.Location = new System.Drawing.Point(124, 429);
+            this.selectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.selectAllBtn.Location = new System.Drawing.Point(116, 425);
             this.selectAllBtn.Name = "selectAllBtn";
-            this.selectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.selectAllBtn.Size = new System.Drawing.Size(96, 36);
             this.selectAllBtn.TabIndex = 33;
             this.selectAllBtn.Text = "Select all";
             this.selectAllBtn.UseVisualStyleBackColor = true;
@@ -182,9 +183,10 @@
             // 
             // unselectAllBtn
             // 
-            this.unselectAllBtn.Location = new System.Drawing.Point(226, 429);
+            this.unselectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.unselectAllBtn.Location = new System.Drawing.Point(238, 425);
             this.unselectAllBtn.Name = "unselectAllBtn";
-            this.unselectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.unselectAllBtn.Size = new System.Drawing.Size(109, 36);
             this.unselectAllBtn.TabIndex = 34;
             this.unselectAllBtn.Text = "Unselect all";
             this.unselectAllBtn.UseVisualStyleBackColor = true;

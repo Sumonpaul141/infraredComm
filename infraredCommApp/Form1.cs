@@ -1097,7 +1097,7 @@ namespace infraredCommApp
 
             int nIndex = files.Length;
 
-            ChangeLocation();
+            //ChangeLocation();
 
             while (nIndex > 0)
             {
