@@ -1659,7 +1659,7 @@ namespace infraredCommApp
             pictureBox1.SendToBack();
             resultListView.BringToFront();
             //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
-
+            ChangeLocation();
             quizeAnsResult f2 = new quizeAnsResult(isQuizAnalyzing);
             f2.ShowDialog();
             ControlGroupBox.Visible = true;
@@ -1843,7 +1843,8 @@ namespace infraredCommApp
             DataTable dt = new DataTable();
             dt.TableName = "ChartTable";
             dt.Columns.Add("xPositionValue", typeof(string));
-            dt.Columns.Add("yPositionValue", typeof(string));
+            dt.Columns.Add("yPositionIncorrect", typeof(string));
+            dt.Columns.Add("yPositionCorrect", typeof(string));
             foreach (QuizAnsInformation sit in list)
             {
                 for (int i = 0; i < dtBarGrapggStoryINFOALl.Rows.Count; i++)
@@ -1852,8 +1853,8 @@ namespace infraredCommApp
                     {
                         DataRow dtrRS = dt.NewRow();
                         dtrRS["xPositionValue"] = sit.u32CID.ToString("X8");
-                        //dtrRS["yPositionValue"] = sit.nTotalAccessNum.ToString();
-                        dtrRS["yPositionValue"] = sit.nTotalAccessNum.ToString();
+                        dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
+                        dtrRS["yPositionCorrect"] = sit.nCorrectAnsNum.ToString();
                         dt.Rows.Add(dtrRS);
                     }
                 }
@@ -2031,6 +2032,7 @@ namespace infraredCommApp
         {
             colors.InsertRange(0,new List<Color> { Color.Yellow });
             int numColors = colors.Count;
+            colors.Sort((a,b) => a.R.CompareTo(b.R));
             int colorHeight = height / numColors;
 
             startY += height;
@@ -2150,7 +2152,7 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = 500
+                    Interval = 100
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
@@ -2232,11 +2234,41 @@ namespace infraredCommApp
             }
         }
 
+        public static string timeConversion(string s)
+        {
+            var splited = s.Split(':');
+            var hour = splited[0];
+            var min = splited[1];
+            var sec = splited[2].Substring(0,2);
+            var isAm = splited[2].Substring(2, 2).ToLower() == "am";
+            string newDate;
+            int hourInt = int.Parse(hour);
+            if (!isAm)
+            {
+                var newHour = hourInt + 12;
+                if(newHour == 24)
+                {
+                    newHour = 12;
+                }
+                newDate = $"{newHour}:{min}:{sec}";
+            }
+            else
+            {
+                if(hourInt == 12)
+                {
+                    hour = "00";
+                }
+                newDate = $"{hour}:{min}:{sec}";
+            }
+            Console.WriteLine(newDate);
+            return newDate;
+        }
+
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
             //run koren
-            ButtonManage(true);
-            ChangeLocation();
+            //ButtonManage(true);
+            //ChangeLocation();
 
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
@@ -2246,11 +2278,11 @@ namespace infraredCommApp
             {
                 gitems.Clear();
                 gitems = (List<Map>)LoadFromBinaryFile(fileName); // load                             
-                map_comboBox1.DataSource = gitems;               
+                map_comboBox1.DataSource = gitems;
                 map_comboBox1.DisplayMember = "MapName";
                 map_comboBox1.ValueMember = "MapFileName";
 
-                if(gitems.Count>0)
+                if (gitems.Count > 0)
                 {
                     //map_comboBox1.SelectedIndex = -1;
                     map_comboBox1.SelectedIndex = 0;
@@ -2272,11 +2304,14 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
+
+            ControlGroupBox.Location = new Point(0, 500);
+            chartWithData.Size = new Size(800, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);
@@ -2295,6 +2330,11 @@ namespace infraredCommApp
                 //imageFileName = InputMapName.fileName.Trim();
                 lblimage.Visible = false;
                 var itemsNo = 1;
+                var path = workfolder + "Image\\";
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
                 string destinationPath = workfolder + "Image\\" + (gitems.Count + itemsNo).ToString() + ".jpeg";
                 string MapFilename = (gitems.Count + itemsNo).ToString();
                 while (File.Exists(destinationPath))
@@ -2801,6 +2841,7 @@ namespace infraredCommApp
                                         + u8Hour.ToString() + ":" + u8Minute.ToString() + ":" + u8Second.ToString();
                         //文字列をDateTime値に変換する
                         dtDeviceDate = DateTime.Parse(s1);
+                        TempAns.dtStartTime = dtDeviceDate;
 
                         nPos += 8;
                         break;
@@ -2857,6 +2898,16 @@ namespace infraredCommApp
             }
         }
 
+        private void SetupChartSeriesConfig(string seriesName)
+        {
+            chartWithData.Series[seriesName]["PixelPointWidth"] = 50.ToString();
+            chartWithData.Series[seriesName].IsValueShownAsLabel = true;
+            chartWithData.Series[seriesName].LabelForeColor = System.Drawing.Color.Red;
+            chartWithData.Series[seriesName].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
+            chartWithData.Series[seriesName].SmartLabelStyle.Enabled = false;
+            chartWithData.Series[seriesName]["LabelPlacement"] = "Inside";
+        }
+
         private void btnBarGraph_Click(object sender, EventArgs e)
         {
             chartWithData.BringToFront();
@@ -2871,45 +2922,47 @@ namespace infraredCommApp
             if (BarGrapggStoryINFOALl.Count != 0)
             {
                 DataSet ds = ToDataSet(BarGrapggStoryINFOALl);
-
                 chartWithData.DataSource = ds;
                 //var name = chartWithData.Series;
                 chartWithData.Series["Series1"].XValueMember = "xPositionValue";
-                chartWithData.Series["Series1"].YValueMembers = "yPositionValue";
+                chartWithData.Series["Series2"].YValueMembers = "yPositionCorrect";
+                chartWithData.Series["Series1"].YValueMembers = "yPositionIncorrect";
                 chartWithData.DataBind();
-                chartWithData.Series["Series1"].ChartType = SeriesChartType.Column;
-                var maxWidth = 50;
-                chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
+                //chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
+                //chartWithData.Series["Series2"]["PixelPointWidth"] = maxWidth.ToString();
                 chartWithData.Series["Series1"].IsValueShownAsLabel = true;
-                chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Red;
-                chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
-                chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
-                chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
-                chartWithData.ChartAreas[0].AxisX.Interval = 1;
+                chartWithData.Series["Series2"].IsValueShownAsLabel = true;
+                chartWithData.Series["Series1"].Color = System.Drawing.Color.Red;
+                //chartWithData.Series["Series2"].IsValueShownAsLabel = true;
+                //chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Red;
+                //chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
+                //chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
+                //chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
+                //chartWithData.ChartAreas[0].AxisX.Interval = 1;
+                //chartWithData.ChartAreas[0].AxisY.LabelStyle.Angle = 0; // Horizontal labels
+                //chartWithData.ChartAreas[0].AxisX.LabelStyle.Angle = 0; // Horizontal labels
 
-                chartWithData.ChartAreas[0].AxisY.LabelStyle.Angle = 0; // Horizontal labels
 
+                //for (int i = 0; i < chartWithData.Series["Series1"].Points.Count; i++)
+                //{
+                //    DataPoint dataPoint = chartWithData.Series["Series1"].Points[i];
+                //    var y = dataPoint.YValues[0];
+                //    var val = BarGrapggStoryINFOALl.Where(x => x.nTotalAccessNum == y).FirstOrDefault()?.u32CID.ToString();
+                //    var label = "";
+                //    if (!string.IsNullOrWhiteSpace(val) && TitleDictionary.ContainsKey(val))
+                //    {
+                //        label = TitleDictionary[val];
+                //        dataPoint.Label = "  " + label;
+                //    }
 
-                for (int i = 0; i < chartWithData.Series["Series1"].Points.Count; i++)
-                {
-                    DataPoint dataPoint = chartWithData.Series["Series1"].Points[i];
-                    var y = dataPoint.YValues[0];
-                    var val = BarGrapggStoryINFOALl.Where(x => x.nTotalAccessNum == y).FirstOrDefault()?.u32CID.ToString();
-                    var label = "";
-                    if (!string.IsNullOrWhiteSpace(val) && TitleDictionary.ContainsKey(val))
-                    {
-                        label = TitleDictionary[val];
-                        dataPoint.Label = "  " + label;
-                    }
+                //    if (y > 100)
+                //    {
+                //        dataPoint.LabelAngle = 90;
+                //        dataPoint.LabelForeColor = System.Drawing.Color.White;
 
-                    if (y > 100)
-                    {
-                        dataPoint.LabelAngle = 90;
-                        dataPoint.LabelForeColor = System.Drawing.Color.White;
+                //    }
 
-                    }
-
-                }
+                //}
 
                 if (chartWithData.Titles.Count == 0)
                 {

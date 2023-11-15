@@ -22,10 +22,10 @@ namespace infraredCommApp
         {
             // set2 SE2=new set2();
             Form1 SE2 = new Form1();
-             Bitmap bmp =new Bitmap(Properties.Resources.contentstag);
-            bmp.MakeTransparent(Color.White);
+            // Bitmap bmp =new Bitmap(Properties.Resources.contentstag);
+            //bmp.MakeTransparent(Color.White);
             
-            this.pictureBox1.Image=bmp;           
+            //this.pictureBox1.Image=bmp;           
            
             
         }

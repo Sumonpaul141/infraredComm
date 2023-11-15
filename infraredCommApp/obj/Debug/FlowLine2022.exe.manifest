@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlowLine2022.exe" size="165888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlowLine2022.exe" size="168960">
       <assemblyIdentity name="FlowLine2022" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AQBgoCyvnzVScef808gqSZhSB5JS+Fm1yXlY2xlV3U0=</dsig:DigestValue>
+        <dsig:DigestValue>pg9uiaVEtnAgD9zpfMSnIWHborZ0fnpWBngJ7mntdrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,33 +115,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>+Sg1SkHxSllrrlnkJcPEpOoFHXRuBkyYQo/2odm3FBw=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\newcolor.PNG" size="3594">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9xAe0hyUUxCKJ4SMCqde0cT7kflV9UQD4yUFbiRQrWk=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\sozai_cman_jp_20211111183022.png" size="2953">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tkofUqGLE9ALeH+7k15TWyfUNOGnnBySoZZ7DhMCi/w=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\sozai_cman_jp_20211111183035.png" size="2129">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9PTgrwKhQU3JzqWNOzWBQPcTNO5I5J7trJakPZsbWRE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

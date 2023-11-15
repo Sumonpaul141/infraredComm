@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetup = new System.Windows.Forms.Button();
             this.buttonQuizRate = new System.Windows.Forms.Button();
@@ -194,6 +195,7 @@
             // 
             // chartWithData
             // 
+            this.chartWithData.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
             chartArea1.Name = "ChartArea1";
             this.chartWithData.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -201,9 +203,15 @@
             resources.ApplyResources(this.chartWithData, "chartWithData");
             this.chartWithData.Name = "chartWithData";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Series2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
             this.chartWithData.Series.Add(series1);
+            this.chartWithData.Series.Add(series2);
             // 
             // progBarTagLoad
             // 

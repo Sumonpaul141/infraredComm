@@ -234,8 +234,8 @@ namespace infraredCommApp
         // Mr Paul
         static public void DrawImageAndTags(String workfolder, Bitmap imageToDrawTags, List<tagu> tags, PictureBox pictureBox)
         {
-            Bitmap arrowBitmap1 = new Bitmap(workfolder + "Resources\\1.png");
-            Bitmap arrowBitmap2 = new Bitmap(workfolder + "Resources\\2.png");
+            Bitmap arrowBitmap1 = Properties.Resources.pin;
+            Bitmap arrowBitmap2 = Properties.Resources.location;
 
             Graphics graphics = Graphics.FromImage(imageToDrawTags);
 

@@ -251,13 +251,11 @@
   <ItemGroup>
     <Content Include="Icon1.ico" />
     <Content Include="Icon2.ico" />
-    <Content Include="Resources\newcolor.PNG" />
-    <Content Include="Resources\sozai_cman_jp_20211111183022.png" />
-    <Content Include="Resources\sozai_cman_jp_20211111183035.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Image\" />
-    <Folder Include="Resources\maps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
