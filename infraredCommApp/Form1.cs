@@ -90,7 +90,6 @@ namespace infraredCommApp
 
 
 
-
         public static string strSettingup = "";
 
         public static int gAgeIndex;
@@ -1837,7 +1836,7 @@ namespace infraredCommApp
             }
         }
         
-        public static DataSet ToDataSet(List<QuizAnsInformation> list)
+        public DataSet ToDataSet(List<QuizAnsInformation> list)
         {
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -1853,8 +1852,16 @@ namespace infraredCommApp
                     {
                         DataRow dtrRS = dt.NewRow();
                         dtrRS["xPositionValue"] = sit.u32CID.ToString("X8");
-                        dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
-                        dtrRS["yPositionCorrect"] = sit.nCorrectAnsNum.ToString();
+                        if (isQuizAnalyzing)
+                        {
+                            dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
+                            dtrRS["yPositionCorrect"] = sit.nCorrectAnsNum.ToString();
+                        } else
+                        {
+                            dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCompletedAns).ToString();
+                            dtrRS["yPositionCorrect"] = sit.nCompletedAns.ToString();
+                        }
+
                         dt.Rows.Add(dtrRS);
                     }
                 }
@@ -2030,14 +2037,13 @@ namespace infraredCommApp
 
         public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
         {
-            colors.InsertRange(0,new List<Color> { Color.Yellow });
-            int numColors = colors.Count;
             colors.Sort((a,b) => a.R.CompareTo(b.R));
-            int colorHeight = height / numColors;
+            colors.InsertRange(0, new List<Color> { Color.Yellow });
+            int colorHeight = height / colors.Count;
 
             startY += height;
 
-            for (int i = numColors - 1; i >= 0; i--)
+            for (int i = colors.Count - 1; i >= 0; i--)
             {
                 SolidBrush brush = new SolidBrush(colors[i]);
                 g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight);
@@ -2267,7 +2273,7 @@ namespace infraredCommApp
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
             //run koren
-            //ButtonManage(true);
+            ButtonManage(true);
             //ChangeLocation();
 
             pictureBox1.BringToFront();
@@ -2310,8 +2316,8 @@ namespace infraredCommApp
             //Exit_map_edit_button9.Location = new Point(10, 450);
             //lblTagNameTest.Location = new Point(10, 500);
 
-            ControlGroupBox.Location = new Point(0, 500);
-            chartWithData.Size = new Size(800, 400);
+            //ControlGroupBox.Location = new Point(0, 500);
+            //chartWithData.Size = new Size(800, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);
