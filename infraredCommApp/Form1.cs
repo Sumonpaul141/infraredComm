@@ -184,6 +184,7 @@ namespace infraredCommApp
         public static string workfolder = "";
         public static string workfolder2 = "";
         public static string ibcfolder = "";
+        public static string imageFolder = "";
 
         public static List<ContentPlayingInfo> gContPLAY = new List<ContentPlayingInfo>();
         public static List<contentsInfo> gconINFO = new List<contentsInfo>(); // list for content information
@@ -283,6 +284,7 @@ namespace infraredCommApp
 
                 Form1.workfolder = "c:\\" + appName + "\\";
                 Form1.logpath = "c:\\" + appName + "\\Log\\";
+                Form1.imageFolder = "c:\\" + appName + "\\Image\\";
 
 
                 {
@@ -301,6 +303,11 @@ namespace infraredCommApp
                     if (!Directory.Exists(logpath)) //ceate new folder, if no exist
                     {
                         Directory.CreateDirectory(logpath);
+                    }
+
+                    if (!Directory.Exists(imageFolder)) //ceate new folder, if no exist
+                    {
+                        Directory.CreateDirectory(imageFolder);
                     }
 
                 }
