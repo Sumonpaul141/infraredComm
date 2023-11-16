@@ -285,6 +285,7 @@ namespace infraredCommApp
                 Form1.workfolder = "c:\\" + appName + "\\";
                 Form1.logpath = "c:\\" + appName + "\\Log\\";
                 Form1.imageFolder = "c:\\" + appName + "\\Image\\";
+                Form1.ibcfolder = "c:\\" + appName + "\\IBCQ\\";
 
 
                 {
