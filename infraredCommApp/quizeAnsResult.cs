@@ -117,8 +117,8 @@ namespace infraredCommApp
             string szTitle, temp, szFilePath;
             UInt32 u32CCID;
             gconINFO.Clear();
-            ibcfolder="C:\\testfolder\\IBCQ\\";
-            if (Directory.Exists(ibcfolder))
+            ibcfolder=$"C:\\{Form1.workfolder}\\IBCQ\\";
+            if (Directory.Exists(Form1.ibcfolder))
             {
                 string[] fileslist =
                  System.IO.Directory.GetFiles(Form1.ibcfolder, "*.ibc", System.IO.SearchOption.AllDirectories);

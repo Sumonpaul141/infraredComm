@@ -268,6 +268,19 @@ namespace infraredCommApp
                     Form1.workfolder = sr.ReadLine();
                     Form1.logpath = sr.ReadLine();
                     Form1.ibcfolder = sr.ReadLine();
+                    if (!Directory.Exists(Form1.workfolder))
+                    {
+                        Directory.CreateDirectory(Form1.workfolder);
+                    }
+                    if (!Directory.Exists(Form1.logpath))
+                    {
+                        Directory.CreateDirectory(Form1.logpath);
+                    }
+                    if (!Directory.Exists(Form1.ibcfolder))
+                    {
+                        Directory.CreateDirectory(Form1.ibcfolder);
+                    }
+
                 }
                 catch
                 {
@@ -1097,34 +1110,27 @@ namespace infraredCommApp
 
             string logDirPath = Form1.logpath;
             string[] files = System.IO.Directory.GetFiles(
-                     logDirPath, "*", System.IO.SearchOption.AllDirectories);
+                                     logDirPath, "*", System.IO.SearchOption.AllDirectories);
 
 
 
-            //FileStream fs = new FileStream(files[nIndex], FileMode.Open, FileAccess.Read);
+                //FileStream fs = new FileStream(files[nIndex], FileMode.Open, FileAccess.Read);
 
-            int nIndex = files.Length;
+                int nIndex = files.Length;
 
-            ChangeLocation();
+                ChangeLocation();
 
-            while (nIndex > 0)
-            {
-                nIndex--;
-                gContPLAY.Clear();
+                while (nIndex > 0)
+                {
+                    nIndex--;
+                    gContPLAY.Clear();
 
-                ScanLogFile(files[nIndex]);
+                    ScanLogFile(files[nIndex]);
 
-                fep_save_Content_Play_Info(00000);
-                
-            }
-            //string fileName = workfolder + "obj";
-            //List<Map> obj2 = (List<Map>)LoadFromBinaryFile(fileName);
-            //foreach (Map obj in obj2)
-            //{
-            //    map_comboBox1.Items.Add(obj.MapFileName);
-            //}
+                    fep_save_Content_Play_Info(00000);
 
-
+                }
+            
 
         }
         private void ProgressBarTagLoad(double value)
@@ -1818,6 +1824,7 @@ namespace infraredCommApp
                 //var name = chartWithData.Series;
                 chartWithData.Series["Series1"].XValueMember = "xPositionValue";
                 chartWithData.Series["Series1"].YValueMembers = "yPositionValue";
+                chartWithData.Series["Series1"].IsVisibleInLegend = false;
                 chartWithData.DataBind();
                 chartWithData.Series["Series1"].ChartType = SeriesChartType.Column;
                 //chartWithData.Titles.Add("Museum Chart");
@@ -1830,7 +1837,6 @@ namespace infraredCommApp
 
                 //chartWithData.Series["Series1"].Legend = "xPositionValue";
                 //chartWithData.Series["Series1"].Legend = "yPositionValue";
-                chartWithData.Series["Series1"].IsVisibleInLegend = true;
 
 
                 //chartWithData.Legends.Add(new Legend("Series1"));
@@ -1845,7 +1851,7 @@ namespace infraredCommApp
             }
         }
         
-        public static DataSet ToDataSet(List<QuizAnsInformation> list)
+        public DataSet ToDataSet(List<QuizAnsInformation> list)
         {
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -1861,8 +1867,17 @@ namespace infraredCommApp
                     {
                         DataRow dtrRS = dt.NewRow();
                         dtrRS["xPositionValue"] = sit.u32CID.ToString("X8");
-                        dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
-                        dtrRS["yPositionCorrect"] = sit.nCorrectAnsNum.ToString();
+                        if (isQuizAnalyzing)
+                        {
+                            dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
+                            dtrRS["yPositionCorrect"] = sit.nCorrectAnsNum.ToString();
+                        }
+                        else
+                        {
+                            dtrRS["yPositionIncorrect"] = (sit.nTotalAccessNum - sit.nCompletedAns).ToString();
+                            dtrRS["yPositionCorrect"] = sit.nCompletedAns.ToString();
+                        }
+                        
                         dt.Rows.Add(dtrRS);
                     }
                 }
@@ -1916,7 +1931,7 @@ namespace infraredCommApp
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
             var heatmapImageName = map_comboBox1.SelectedValue.ToString();
-            HeatMapGraph f2 = new HeatMapGraph(heatmapImageName);
+            HeatMapGraph f2 = new HeatMapGraph(heatmapImageName, Form1.workfolder);
             var dialogResult = f2.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -2275,7 +2290,7 @@ namespace infraredCommApp
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
             //run koren
-            //ButtonManage(true);
+            ButtonManage(true);
             //ChangeLocation();
 
             pictureBox1.BringToFront();
@@ -2318,8 +2333,8 @@ namespace infraredCommApp
             //Exit_map_edit_button9.Location = new Point(10, 450);
             //lblTagNameTest.Location = new Point(10, 500);
 
-            ControlGroupBox.Location = new Point(0, 500);
-            chartWithData.Size = new Size(800, 400);
+            //ControlGroupBox.Location = new Point(0, 500);
+            //chartWithData.Size = new Size(800, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);

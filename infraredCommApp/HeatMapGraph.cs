@@ -29,11 +29,11 @@ namespace infraredCommApp
         public static DataTable HeatMapUnSorted = new DataTable();
         private readonly Map CurrentMap;
 
-        public HeatMapGraph(string mapName)
+        public HeatMapGraph(string mapName, string wFolder)
         {
             InitializeComponent();
-            string fileName = "C:\\testfolder\\Image\\obj";
-            workfolder = "C:\\testfolder\\";
+            workfolder = wFolder;
+            string fileName = $"{wFolder}\\Image\\obj";
             var mapDataList = (List<Map>)LoadFromBinaryFile(fileName);
             CurrentMap = mapDataList.FirstOrDefault(x => x.MapFileName == mapName);
         }

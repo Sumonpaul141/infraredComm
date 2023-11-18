@@ -29,9 +29,7 @@ namespace infraredCommApp
             //Form1.logpath = "c:\\" + appName + "\\Log\\";
             workfolder.Text = Form1.workfolder;
             logfolder.Text = Form1.logpath;
-
             ibcfolder.Text = Form1.ibcfolder;
-            
             
 
         }
@@ -178,17 +176,10 @@ namespace infraredCommApp
                     Directory.CreateDirectory(Form1.logpath);
                 }
 
-                if (!Directory.Exists(Form1.imageFolder)) //if no exist, create new
-                {
-                    Directory.CreateDirectory(Form1.imageFolder);
-                }
-
                 if (!Directory.Exists(Form1.ibcfolder)) //if no exist, create new
                 {
                     Directory.CreateDirectory(Form1.ibcfolder);
                 }
-
-
 
                 this.Close();
             }
