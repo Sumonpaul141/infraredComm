@@ -863,7 +863,7 @@ namespace infraredCommApp
                         strIds = cpi.UID.ToString() + ","
                         + 0 + ","
                         + cDate + ","
-                        + cTime + ", ";
+                        + cTime;
                         IdsWrite.WriteLine(strIds);
                     }
                     else if (cUID == "" && cRFID != "")
@@ -871,7 +871,7 @@ namespace infraredCommApp
                         strIds = cpi.RFID.ToString() + ","
                         + 1 + ","
                         + cDate + ","
-                        + cTime + ", ";
+                        + cTime ;
                         IdsWrite.WriteLine(strIds);
                     }
                     else
@@ -879,13 +879,13 @@ namespace infraredCommApp
                         strIds = cpi.UID.ToString() + ","
                         + 0 + ","
                         + cDate + ","
-                        + cTime + ", ";
+                        + cTime ;
                         IdsWrite.WriteLine(strIds);
 
                         strIds = cpi.RFID.ToString() + ","
                         + 1 + ","
                         + cDate + ","
-                        + cTime + ", ";
+                        + cTime ;
                         IdsWrite.WriteLine(strIds);
                     }
                 }
@@ -2545,7 +2545,7 @@ namespace infraredCommApp
 
                         u32TempCID = 0;
 
-                        dtStart = dtDeviceDate;
+                        TempAns.dtStartTime = dtDeviceDate;
 
                         u8Second = bs[nPos + 1];//ss
                         u8Minute = bs[nPos + 2];//mm
@@ -2557,7 +2557,7 @@ namespace infraredCommApp
                         dtStart = DateTime.Parse(s2);
 
                         TempAns.u32CID = u32CID;
-                        TempAns.dtStartTime = dtStart;
+                        
                         TempAns.UID = "";
                         nPos += 8;
                         break;

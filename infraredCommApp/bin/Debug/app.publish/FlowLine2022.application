@@ -7,7 +7,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="FlowLine2022.exe.manifest" size="6395">
+    <dependentAssembly dependencyType="install" codebase="Application Files\FlowLine2022_1_0_0_26\FlowLine2022.exe.manifest" size="6395">
       <assemblyIdentity name="FlowLine2022.exe" version="1.0.0.26" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
