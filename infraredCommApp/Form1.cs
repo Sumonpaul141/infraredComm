@@ -2053,14 +2053,13 @@ namespace infraredCommApp
 
         public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
         {
-            colors.InsertRange(0,new List<Color> { Color.Yellow });
-            int numColors = colors.Count;
             colors.Sort((a,b) => a.R.CompareTo(b.R));
-            int colorHeight = height / numColors;
+            colors.InsertRange(0, new List<Color> { Color.Yellow });
+            int colorHeight = height / colors.Count;
 
             startY += height;
 
-            for (int i = numColors - 1; i >= 0; i--)
+            for (int i = colors.Count - 1; i >= 0; i--)
             {
                 SolidBrush brush = new SolidBrush(colors[i]);
                 g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight);
