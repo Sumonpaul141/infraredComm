@@ -1700,8 +1700,9 @@ namespace infraredCommApp
             listViewQuiz.View = View.Details;
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
-            var quizHeader = new List<string>() { "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans"  , "正解率", "再生回数" };
-            var guideHeader = new List<string>() { "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数" };
+
+            var quizHeader = new List<string>() { "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数", "ID" };
+            var guideHeader = new List<string>() { "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数", "ID" };
 
             if (isQuiz)
             {
@@ -1712,9 +1713,10 @@ namespace infraredCommApp
                 guideHeader.ForEach(head => listViewQuiz.Columns.Add(head));
             }
 
-            
-            foreach (var quizInfo in quizList)
+
+            for (int i = 0; i < quizList.Count; i++)
             {
+                var quizInfo = quizList[i];
                 ListViewItem item = new ListViewItem(quizInfo.u32CID.ToString("X8"));
                 var title = "N/A";
                 if (TitleDictionary.ContainsKey(quizInfo.u32CID.ToString()))
@@ -1735,8 +1737,10 @@ namespace infraredCommApp
                 }
 
                 item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
-                
+
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+
+                item.SubItems.Add((i + 1).ToString());
 
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
@@ -1952,6 +1956,39 @@ namespace infraredCommApp
                 GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
             }
 
+        }
+
+        private void ChangeSpeed(int speed)
+        {
+            if (timer != null)
+            {
+                if (speed == 1)
+                {
+                    timer.Interval = 200;
+                }
+                else if (speed == 2)
+                {
+                    timer.Interval = 500;
+                }
+                else if (speed == 3)
+                {
+                    timer.Interval = 1000;
+                }
+
+            }
+        }
+
+        private void TooglePlayPause(bool isPlay)
+        {
+            if (timer == null) return;
+            if (isPlay)
+            {
+                timer.Start();
+            }
+            else
+            {
+                timer.Stop();
+            }
         }
 
         private void GenerateHeatMap(string heatmapImageName, List<string> selectedTagIds) 
@@ -2930,69 +2967,121 @@ namespace infraredCommApp
             chartWithData.Series[seriesName]["LabelPlacement"] = "Inside";
         }
 
+        //private void btnBarGraph_Click(object sender, EventArgs e)
+        //{
+        //    chartWithData.BringToFront();
+        //    pictureBox1.SendToBack();
+        //    txtAnalyzedData.SendToBack();
+
+        //    //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
+
+        //    //ExpRankResult Err = new ExpRankResult();
+        //    //Err.ShowDialog();
+        //    //gStoryINFOALl = ExpRankResult.gStoryINFO;
+        //    if (BarGrapggStoryINFOALl.Count != 0)
+        //    {
+        //        DataSet ds = ToDataSet(BarGrapggStoryINFOALl);
+        //        chartWithData.DataSource = ds;
+        //        //var name = chartWithData.Series;
+        //        chartWithData.Series["Series1"].XValueMember = "xPositionValue";
+        //        chartWithData.Series["Series2"].YValueMembers = "yPositionCorrect";
+        //        chartWithData.Series["Series1"].YValueMembers = "yPositionIncorrect";
+        //        chartWithData.DataBind();
+        //        //chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
+        //        //chartWithData.Series["Series2"]["PixelPointWidth"] = maxWidth.ToString();
+        //        chartWithData.Series["Series1"].IsValueShownAsLabel = true;
+        //        chartWithData.Series["Series2"].IsValueShownAsLabel = true;
+        //        chartWithData.Series["Series1"].Color = System.Drawing.Color.Red;
+        //        //chartWithData.Series["Series2"].IsValueShownAsLabel = true;
+        //        //chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Red;
+        //        //chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
+        //        //chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
+        //        //chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
+        //        //chartWithData.ChartAreas[0].AxisX.Interval = 1;
+        //        //chartWithData.ChartAreas[0].AxisY.LabelStyle.Angle = 0; // Horizontal labels
+        //        //chartWithData.ChartAreas[0].AxisX.LabelStyle.Angle = 0; // Horizontal labels
+
+
+        //        //for (int i = 0; i < chartWithData.Series["Series1"].Points.Count; i++)
+        //        //{
+        //        //    DataPoint dataPoint = chartWithData.Series["Series1"].Points[i];
+        //        //    var y = dataPoint.YValues[0];
+        //        //    var val = BarGrapggStoryINFOALl.Where(x => x.nTotalAccessNum == y).FirstOrDefault()?.u32CID.ToString();
+        //        //    var label = "";
+        //        //    if (!string.IsNullOrWhiteSpace(val) && TitleDictionary.ContainsKey(val))
+        //        //    {
+        //        //        label = TitleDictionary[val];
+        //        //        dataPoint.Label = "  " + label;
+        //        //    }
+
+        //        //    if (y > 100)
+        //        //    {
+        //        //        dataPoint.LabelAngle = 90;
+        //        //        dataPoint.LabelForeColor = System.Drawing.Color.White;
+
+        //        //    }
+
+        //        //}
+
+        //        if (chartWithData.Titles.Count == 0)
+        //        {
+        //            chartWithData.Titles.Add("Museum Chart");
+        //        }
+
+        //        chartWithData.Series["Series1"].IsVisibleInLegend = true;
+        //        chartWithData.Series["Series1"].MarkerSize = 10;
+        //    }
+
+        //}
+
         private void btnBarGraph_Click(object sender, EventArgs e)
         {
             chartWithData.BringToFront();
             pictureBox1.SendToBack();
             txtAnalyzedData.SendToBack();
+            chartWithData.Series["Correct"].Points.Clear();
+            chartWithData.Series["Incorrect"].Points.Clear();
 
-            //List<StoryInformation> gStoryINFOALl = new List<StoryInformation>();
-
-            //ExpRankResult Err = new ExpRankResult();
-            //Err.ShowDialog();
-            //gStoryINFOALl = ExpRankResult.gStoryINFO;
-            if (BarGrapggStoryINFOALl.Count != 0)
+            List<string> selectedIDs = dtBarGrapggStoryINFOALl.AsEnumerable()
+                                                .Where(row => row["u32ContentID"] != DBNull.Value)
+                                                .Select(row => row["u32ContentID"].ToString())
+                                                .ToList();
+            var selectedItemsForChart = BarGrapggStoryINFOALl.Where(x => selectedIDs.Contains(x.u32CID.ToString())).ToList();
+            if (selectedItemsForChart.Count != 0)
             {
-                DataSet ds = ToDataSet(BarGrapggStoryINFOALl);
-                chartWithData.DataSource = ds;
-                //var name = chartWithData.Series;
-                chartWithData.Series["Series1"].XValueMember = "xPositionValue";
-                chartWithData.Series["Series2"].YValueMembers = "yPositionCorrect";
-                chartWithData.Series["Series1"].YValueMembers = "yPositionIncorrect";
-                chartWithData.DataBind();
-                //chartWithData.Series["Series1"]["PixelPointWidth"] = maxWidth.ToString();
-                //chartWithData.Series["Series2"]["PixelPointWidth"] = maxWidth.ToString();
-                chartWithData.Series["Series1"].IsValueShownAsLabel = true;
-                chartWithData.Series["Series2"].IsValueShownAsLabel = true;
-                chartWithData.Series["Series1"].Color = System.Drawing.Color.Red;
-                //chartWithData.Series["Series2"].IsValueShownAsLabel = true;
-                //chartWithData.Series["Series1"].LabelForeColor = System.Drawing.Color.Red;
-                //chartWithData.Series["Series1"].Font = new Font(FontFamily.GenericSansSerif, 14, FontStyle.Bold);
-                //chartWithData.Series["Series1"].SmartLabelStyle.Enabled = false;
-                //chartWithData.Series["Series1"]["LabelPlacement"] = "Inside";
-                //chartWithData.ChartAreas[0].AxisX.Interval = 1;
-                //chartWithData.ChartAreas[0].AxisY.LabelStyle.Angle = 0; // Horizontal labels
-                //chartWithData.ChartAreas[0].AxisX.LabelStyle.Angle = 0; // Horizontal labels
+                for (int i = 0; i < selectedItemsForChart.Count; i++)
+                {
+                    var sit = selectedItemsForChart[i];
+                    var xValue = $"{sit.u32CID}({i + 1})";
+                    if (isQuizAnalyzing)
+                    {
+                        var incorrectVal = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
+                        var correctVal = sit.nCorrectAnsNum.ToString();
+                        chartWithData.Series["Correct"].Points.AddXY(xValue, correctVal);
+                        chartWithData.Series["Incorrect"].Points.AddXY(xValue, incorrectVal);
 
+                    }
+                    else
+                    {
+                        var incompleteVal = (sit.nTotalAccessNum - sit.nCompletedAns).ToString();
+                        var completeVal = sit.nCompletedAns.ToString();
+                        chartWithData.Series["Correct"].Points.AddXY(xValue, completeVal);
+                        chartWithData.Series["Incorrect"].Points.AddXY(xValue, incompleteVal);
+                    }
+                }
 
-                //for (int i = 0; i < chartWithData.Series["Series1"].Points.Count; i++)
-                //{
-                //    DataPoint dataPoint = chartWithData.Series["Series1"].Points[i];
-                //    var y = dataPoint.YValues[0];
-                //    var val = BarGrapggStoryINFOALl.Where(x => x.nTotalAccessNum == y).FirstOrDefault()?.u32CID.ToString();
-                //    var label = "";
-                //    if (!string.IsNullOrWhiteSpace(val) && TitleDictionary.ContainsKey(val))
-                //    {
-                //        label = TitleDictionary[val];
-                //        dataPoint.Label = "  " + label;
-                //    }
-
-                //    if (y > 100)
-                //    {
-                //        dataPoint.LabelAngle = 90;
-                //        dataPoint.LabelForeColor = System.Drawing.Color.White;
-
-                //    }
-
-                //}
+                chartWithData.Series["Incorrect"].Color = System.Drawing.Color.Red;
+                chartWithData.Series["Correct"].Color = System.Drawing.Color.SkyBlue;
+                chartWithData.Series["Incorrect"].IsValueShownAsLabel = true;
+                chartWithData.Series["Correct"].IsValueShownAsLabel = true;
+                chartWithData.Series["Correct"].IsXValueIndexed = true;
+                chartWithData.ChartAreas[0].AxisX.Interval = 1;
+                chartWithData.ChartAreas[0].AxisX.IsMarginVisible = false;
 
                 if (chartWithData.Titles.Count == 0)
                 {
                     chartWithData.Titles.Add("Museum Chart");
                 }
-
-                chartWithData.Series["Series1"].IsVisibleInLegend = true;
-                chartWithData.Series["Series1"].MarkerSize = 10;
             }
 
         }

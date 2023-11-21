@@ -205,11 +205,11 @@
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series1.Legend = "Legend1";
-            series1.Name = "Series2";
+            series1.Name = "Correct";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Incorrect";
             this.chartWithData.Series.Add(series1);
             this.chartWithData.Series.Add(series2);
             // 
