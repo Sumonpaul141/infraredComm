@@ -1701,8 +1701,8 @@ namespace infraredCommApp
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
 
-            var quizHeader = new List<string>() { "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数", "ID" };
-            var guideHeader = new List<string>() { "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数", "ID" };
+            var quizHeader = new List<string>() { "ID" , "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数"};
+            var guideHeader = new List<string>() { "ID", "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数"};
 
             if (isQuiz)
             {
@@ -1717,7 +1717,9 @@ namespace infraredCommApp
             for (int i = 0; i < quizList.Count; i++)
             {
                 var quizInfo = quizList[i];
-                ListViewItem item = new ListViewItem(quizInfo.u32CID.ToString("X8"));
+                ListViewItem item = new ListViewItem($"{i+1}");
+                //ListViewItem item = new ListViewItem(quizInfo.u32CID.ToString("X8"));
+                item.SubItems.Add(quizInfo.u32CID.ToString("X8"));
                 var title = "N/A";
                 if (TitleDictionary.ContainsKey(quizInfo.u32CID.ToString()))
                 {
@@ -1739,8 +1741,6 @@ namespace infraredCommApp
                 item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
 
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
-
-                item.SubItems.Add((i + 1).ToString());
 
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
@@ -3052,7 +3052,8 @@ namespace infraredCommApp
                 for (int i = 0; i < selectedItemsForChart.Count; i++)
                 {
                     var sit = selectedItemsForChart[i];
-                    var xValue = $"{sit.u32CID}({i + 1})";
+                    //var xValue = $"{sit.u32CID}({i + 1})";
+                    var xValue = $"{i + 1}";
                     if (isQuizAnalyzing)
                     {
                         var incorrectVal = (sit.nTotalAccessNum - sit.nCorrectAnsNum).ToString();
