@@ -192,6 +192,7 @@ namespace infraredCommApp
 
         // Timer
         private Timer timer;
+        private int timerSpeed = 200;
         private Bitmap heatmap;
 
 
@@ -205,6 +206,7 @@ namespace infraredCommApp
 
         //for blink
         private bool isShow;
+        private bool isPlayingHeadMap = false;
         private Bitmap imageWithoutTags;
         private List<Color> colors = new List<Color>();
 
@@ -1958,37 +1960,41 @@ namespace infraredCommApp
 
         }
 
-        private void ChangeSpeed(int speed)
+        private string getSpeedValue(bool isPlay, int speed)
         {
-            if (timer != null)
-            {
-                if (speed == 1)
-                {
-                    timer.Interval = 200;
-                }
-                else if (speed == 2)
-                {
-                    timer.Interval = 500;
-                }
-                else if (speed == 3)
-                {
-                    timer.Interval = 1000;
-                }
-
-            }
+            var playPauseText = isPlay ? "Pause" : "Play";
+            return $"{playPauseText} {speed / timerSpeed} X";
         }
 
-        private void TooglePlayPause(bool isPlay)
+        private void ChangeSpeed(bool isIncrease)
+        {
+            if (timer == null || !isPlayingHeadMap) return;
+            if (isIncrease)
+            {
+                timer.Interval += timerSpeed;
+            } 
+            else
+            {
+                if (timer.Interval <= timerSpeed) return;
+                timer.Interval -= timerSpeed;
+            }
+            playPauseButton.Text = getSpeedValue(isPlayingHeadMap, timer.Interval);
+        }
+
+        private void TooglePlayPause()
         {
             if (timer == null) return;
-            if (isPlay)
+            if (isPlayingHeadMap)
             {
-                timer.Start();
+                timer.Stop();
+                playPauseButton.Text = "Play";
             }
             else
             {
-                timer.Stop();
+                timer.Start();
+                playPauseButton.Text = "Pause";
             }
+            isPlayingHeadMap = !isPlayingHeadMap;
         }
 
         private void GenerateHeatMap(string heatmapImageName, List<string> selectedTagIds) 
@@ -2125,7 +2131,7 @@ namespace infraredCommApp
             {
                 timer = new Timer
                 {
-                    Interval = 500
+                    Interval = timerSpeed
                 };
 
                 timer.Tick += new EventHandler(DrawEmptyOrAllCordinate);
@@ -2211,10 +2217,11 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = 100
+                    Interval = timerSpeed
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
+                isPlayingHeadMap = true;
             }
             else
             {
@@ -2363,11 +2370,11 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
@@ -3178,6 +3185,21 @@ namespace infraredCommApp
         private void コンテンツToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddTagOnImage(tagType: 1);
+        }
+
+        private void PlayPauseButtonClick(object sender, EventArgs e)
+        {
+            TooglePlayPause();
+        }
+
+        private void SpeedPlusButtonClick(object sender, EventArgs e)
+        {
+            ChangeSpeed(true);
+        }
+
+        private void SpeedMinusButtonClick(object sender, EventArgs e)
+        {
+            ChangeSpeed(false);
         }
 
         private void RedrawMapAndUpdateTagList(string mapFilePath, List<tagu> tags)

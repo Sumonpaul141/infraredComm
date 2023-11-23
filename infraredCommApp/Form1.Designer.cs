@@ -71,6 +71,9 @@
             this.delete_map_button8 = new System.Windows.Forms.Button();
             this.Exit_map_edit_button9 = new System.Windows.Forms.Button();
             this.lblToDate = new System.Windows.Forms.Label();
+            this.playPauseButton = new System.Windows.Forms.Button();
+            this.speedPlusButton = new System.Windows.Forms.Button();
+            this.speedMinusButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -333,12 +336,36 @@
             resources.ApplyResources(this.lblToDate, "lblToDate");
             this.lblToDate.Name = "lblToDate";
             // 
+            // playPauseButton
+            // 
+            resources.ApplyResources(this.playPauseButton, "playPauseButton");
+            this.playPauseButton.Name = "playPauseButton";
+            this.playPauseButton.UseVisualStyleBackColor = true;
+            this.playPauseButton.Click += new System.EventHandler(this.PlayPauseButtonClick);
+            // 
+            // speedPlusButton
+            // 
+            resources.ApplyResources(this.speedPlusButton, "speedPlusButton");
+            this.speedPlusButton.Name = "speedPlusButton";
+            this.speedPlusButton.UseVisualStyleBackColor = true;
+            this.speedPlusButton.Click += new System.EventHandler(this.SpeedPlusButtonClick);
+            // 
+            // speedMinusButton
+            // 
+            resources.ApplyResources(this.speedMinusButton, "speedMinusButton");
+            this.speedMinusButton.Name = "speedMinusButton";
+            this.speedMinusButton.UseVisualStyleBackColor = true;
+            this.speedMinusButton.Click += new System.EventHandler(this.SpeedMinusButtonClick);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
+            this.Controls.Add(this.speedMinusButton);
+            this.Controls.Add(this.speedPlusButton);
+            this.Controls.Add(this.playPauseButton);
             this.Controls.Add(this.ControlGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -418,6 +445,9 @@
         private System.Windows.Forms.Button delete_map_button8;
         private System.Windows.Forms.Button Exit_map_edit_button9;
         private System.Windows.Forms.Label lblToDate;
+        private System.Windows.Forms.Button playPauseButton;
+        private System.Windows.Forms.Button speedPlusButton;
+        private System.Windows.Forms.Button speedMinusButton;
     }
 }
 
