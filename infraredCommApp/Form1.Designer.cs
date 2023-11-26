@@ -74,6 +74,7 @@
             this.playPauseButton = new System.Windows.Forms.Button();
             this.speedPlusButton = new System.Windows.Forms.Button();
             this.speedMinusButton = new System.Windows.Forms.Button();
+            this.replayButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -357,12 +358,20 @@
             this.speedMinusButton.UseVisualStyleBackColor = true;
             this.speedMinusButton.Click += new System.EventHandler(this.SpeedMinusButtonClick);
             // 
+            // replayButton
+            // 
+            resources.ApplyResources(this.replayButton, "replayButton");
+            this.replayButton.Name = "replayButton";
+            this.replayButton.UseVisualStyleBackColor = true;
+            this.replayButton.Click += new System.EventHandler(this.ReplayButtonClick);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
+            this.Controls.Add(this.replayButton);
             this.Controls.Add(this.speedMinusButton);
             this.Controls.Add(this.speedPlusButton);
             this.Controls.Add(this.playPauseButton);
@@ -448,6 +457,7 @@
         private System.Windows.Forms.Button playPauseButton;
         private System.Windows.Forms.Button speedPlusButton;
         private System.Windows.Forms.Button speedMinusButton;
+        private System.Windows.Forms.Button replayButton;
     }
 }
 

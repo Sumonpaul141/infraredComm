@@ -194,7 +194,7 @@ namespace infraredCommApp
         private Timer timer;
         private int timerSpeed = 200;
         private Bitmap heatmap;
-
+        private List<string> selectedTags = new List<string>();
 
         // For animation 
         private int currentCordinateIndex = 0;
@@ -3200,6 +3200,14 @@ namespace infraredCommApp
         private void SpeedMinusButtonClick(object sender, EventArgs e)
         {
             ChangeSpeed(false);
+        }
+
+        private void ReplayButtonClick(object sender, EventArgs e)
+        {
+            if (HeatMapGraph.SelectedTags.Count <= 0) return;
+            currentCordinateIndex = 0;
+            ButtonManage(false);
+            GenerateHeatMap(map_comboBox1.SelectedValue.ToString(), HeatMapGraph.SelectedTags);
         }
 
         private void RedrawMapAndUpdateTagList(string mapFilePath, List<tagu> tags)
