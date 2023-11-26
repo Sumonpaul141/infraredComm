@@ -193,6 +193,7 @@ namespace infraredCommApp
         // Timer
         private Timer timer;
         private int timerSpeed = 200;
+        private int timerStartPosition = 2000;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 
@@ -1978,7 +1979,8 @@ namespace infraredCommApp
                 if (timer.Interval <= timerSpeed) return;
                 timer.Interval -= timerSpeed;
             }
-            playPauseButton.Text = getSpeedValue(isPlayingHeadMap, timer.Interval);
+            //playPauseButton.Text = getSpeedValue(isPlayingHeadMap, timer.Interval);
+            playPauseButton.Text = timer.Interval.ToString();
         }
 
         private void TooglePlayPause()
@@ -2131,7 +2133,7 @@ namespace infraredCommApp
             {
                 timer = new Timer
                 {
-                    Interval = timerSpeed
+                    Interval = timerStartPosition
                 };
 
                 timer.Tick += new EventHandler(DrawEmptyOrAllCordinate);
@@ -2217,7 +2219,7 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = timerSpeed
+                    Interval = timerStartPosition
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
