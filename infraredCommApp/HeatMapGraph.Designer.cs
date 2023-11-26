@@ -172,9 +172,10 @@
             // 
             // selectAllBtn
             // 
-            this.selectAllBtn.Location = new System.Drawing.Point(124, 429);
+            this.selectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.selectAllBtn.Location = new System.Drawing.Point(238, 426);
             this.selectAllBtn.Name = "selectAllBtn";
-            this.selectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.selectAllBtn.Size = new System.Drawing.Size(87, 36);
             this.selectAllBtn.TabIndex = 33;
             this.selectAllBtn.Text = "Select all";
             this.selectAllBtn.UseVisualStyleBackColor = true;
@@ -182,9 +183,10 @@
             // 
             // unselectAllBtn
             // 
-            this.unselectAllBtn.Location = new System.Drawing.Point(226, 429);
+            this.unselectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.unselectAllBtn.Location = new System.Drawing.Point(111, 426);
             this.unselectAllBtn.Name = "unselectAllBtn";
-            this.unselectAllBtn.Size = new System.Drawing.Size(76, 32);
+            this.unselectAllBtn.Size = new System.Drawing.Size(112, 36);
             this.unselectAllBtn.TabIndex = 34;
             this.unselectAllBtn.Text = "Unselect all";
             this.unselectAllBtn.UseVisualStyleBackColor = true;

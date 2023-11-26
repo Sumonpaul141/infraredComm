@@ -192,7 +192,7 @@ namespace infraredCommApp
 
         // Timer
         private Timer timer;
-        private int timerSpeed = 200;
+        private int timerSpeed = 50;
         private int timerStartPosition = 2000;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
@@ -1625,7 +1625,8 @@ namespace infraredCommApp
             lblToDate.Visible = !isVisible;
             lblFromDate.Visible = !isVisible;
             ControlGroupBox.Visible = false;
-
+            animationControlGBox.Visible = !isVisible;
+            currentDateLabel.Visible = !isVisible;
 
         }
         private void button2_Click(object sender, EventArgs e)
@@ -1964,6 +1965,7 @@ namespace infraredCommApp
         private string getSpeedValue(bool isPlay, int speed)
         {
             var playPauseText = isPlay ? "Pause" : "Play";
+            //return playPauseText;
             return $"{playPauseText} {speed / timerSpeed} X";
         }
 
@@ -2057,7 +2059,7 @@ namespace infraredCommApp
 
             allHeatMapCordinatesList.AddRange(matchedTagWiseClientCount);
             allHeatMapCordinatesList.AddRange(unmatchedTagWiseClientCount);
-            allHeatMapCordinatesList = allHeatMapCordinatesList.OrderBy(x => x.Name).ToList();
+            allHeatMapCordinatesList = allHeatMapCordinatesList.OrderBy(x => x.OccuredDate).ToList();
 
             Bitmap originalBitmap = new Bitmap(currentMapFilePath);
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
@@ -2091,7 +2093,8 @@ namespace infraredCommApp
                     CountOfClients = sales.Count(),
                     PointX = sales.First().pointx,
                     PointY = sales.First().pointy,
-                    IsMatched = isMatched
+                    IsMatched = isMatched,
+                    OccuredDate = sales.First().tagDate
                 })
                 .ToList();
         }
@@ -2219,7 +2222,7 @@ namespace infraredCommApp
 
                 timer = new Timer
                 {
-                    Interval = timerStartPosition
+                    Interval = timerStartPosition,
                 };
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
@@ -2239,6 +2242,7 @@ namespace infraredCommApp
             if (currentCordinateIndex < heatMapCordinates.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
+                currentDateLabel.Text = $"Current date: {cordinate.OccuredDate.ToShortDateString()}";
 
                 if (cordinate.IsMatched)
                 {
@@ -2372,11 +2376,11 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
@@ -3209,6 +3213,7 @@ namespace infraredCommApp
             if (HeatMapGraph.SelectedTags.Count <= 0) return;
             currentCordinateIndex = 0;
             ButtonManage(false);
+            timerStartPosition = timer == null ? timerStartPosition : timer.Interval;
             GenerateHeatMap(map_comboBox1.SelectedValue.ToString(), HeatMapGraph.SelectedTags);
         }
 

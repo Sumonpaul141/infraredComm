@@ -75,10 +75,13 @@
             this.speedPlusButton = new System.Windows.Forms.Button();
             this.speedMinusButton = new System.Windows.Forms.Button();
             this.replayButton = new System.Windows.Forms.Button();
+            this.currentDateLabel = new System.Windows.Forms.Label();
+            this.animationControlGBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
             this.ControlGroupBox.SuspendLayout();
+            this.animationControlGBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonExit
@@ -365,16 +368,29 @@
             this.replayButton.UseVisualStyleBackColor = true;
             this.replayButton.Click += new System.EventHandler(this.ReplayButtonClick);
             // 
+            // currentDateLabel
+            // 
+            resources.ApplyResources(this.currentDateLabel, "currentDateLabel");
+            this.currentDateLabel.Name = "currentDateLabel";
+            // 
+            // animationControlGBox
+            // 
+            this.animationControlGBox.Controls.Add(this.replayButton);
+            this.animationControlGBox.Controls.Add(this.playPauseButton);
+            this.animationControlGBox.Controls.Add(this.speedPlusButton);
+            this.animationControlGBox.Controls.Add(this.speedMinusButton);
+            resources.ApplyResources(this.animationControlGBox, "animationControlGBox");
+            this.animationControlGBox.Name = "animationControlGBox";
+            this.animationControlGBox.TabStop = false;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
-            this.Controls.Add(this.replayButton);
-            this.Controls.Add(this.speedMinusButton);
-            this.Controls.Add(this.speedPlusButton);
-            this.Controls.Add(this.playPauseButton);
+            this.Controls.Add(this.animationControlGBox);
+            this.Controls.Add(this.currentDateLabel);
             this.Controls.Add(this.ControlGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -410,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).EndInit();
             this.ControlGroupBox.ResumeLayout(false);
             this.ControlGroupBox.PerformLayout();
+            this.animationControlGBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,6 +475,8 @@
         private System.Windows.Forms.Button speedPlusButton;
         private System.Windows.Forms.Button speedMinusButton;
         private System.Windows.Forms.Button replayButton;
+        private System.Windows.Forms.Label currentDateLabel;
+        private System.Windows.Forms.GroupBox animationControlGBox;
     }
 }
 
