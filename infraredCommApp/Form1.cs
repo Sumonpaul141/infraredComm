@@ -1982,12 +1982,13 @@ namespace infraredCommApp
                 timer.Interval -= timerSpeed;
             }
             //playPauseButton.Text = getSpeedValue(isPlayingHeadMap, timer.Interval);
-            playPauseButton.Text = timer.Interval.ToString();
+            timerLabel.Text = timer.Interval.ToString();
         }
 
         private void TooglePlayPause()
         {
             if (timer == null) return;
+            timerLabel.Text = timer.Interval.ToString();
             if (isPlayingHeadMap)
             {
                 timer.Stop();
@@ -2138,7 +2139,7 @@ namespace infraredCommApp
                 {
                     Interval = timerStartPosition
                 };
-
+                timerLabel.Text = timerStartPosition.ToString();
                 timer.Tick += new EventHandler(DrawEmptyOrAllCordinate);
                 timer.Start();
             }
@@ -2224,6 +2225,7 @@ namespace infraredCommApp
                 {
                     Interval = timerStartPosition,
                 };
+                timerLabel.Text = timerStartPosition.ToString();
                 timer.Tick += new EventHandler(DrawSingleCordinate);
                 timer.Start();
                 isPlayingHeadMap = true;
@@ -2384,6 +2386,8 @@ namespace infraredCommApp
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
+
+            //animationControlGBox.Location = new Point(10, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);

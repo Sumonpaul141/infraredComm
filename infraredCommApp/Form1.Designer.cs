@@ -77,6 +77,7 @@
             this.replayButton = new System.Windows.Forms.Button();
             this.currentDateLabel = new System.Windows.Forms.Label();
             this.animationControlGBox = new System.Windows.Forms.GroupBox();
+            this.timerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
@@ -375,6 +376,7 @@
             // 
             // animationControlGBox
             // 
+            this.animationControlGBox.Controls.Add(this.timerLabel);
             this.animationControlGBox.Controls.Add(this.replayButton);
             this.animationControlGBox.Controls.Add(this.playPauseButton);
             this.animationControlGBox.Controls.Add(this.speedPlusButton);
@@ -382,6 +384,11 @@
             resources.ApplyResources(this.animationControlGBox, "animationControlGBox");
             this.animationControlGBox.Name = "animationControlGBox";
             this.animationControlGBox.TabStop = false;
+            // 
+            // timerLabel
+            // 
+            resources.ApplyResources(this.timerLabel, "timerLabel");
+            this.timerLabel.Name = "timerLabel";
             // 
             // Form1
             // 
@@ -427,6 +434,7 @@
             this.ControlGroupBox.ResumeLayout(false);
             this.ControlGroupBox.PerformLayout();
             this.animationControlGBox.ResumeLayout(false);
+            this.animationControlGBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,6 +485,7 @@
         private System.Windows.Forms.Button replayButton;
         private System.Windows.Forms.Label currentDateLabel;
         private System.Windows.Forms.GroupBox animationControlGBox;
+        private System.Windows.Forms.Label timerLabel;
     }
 }
 
