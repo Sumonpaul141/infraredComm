@@ -193,7 +193,7 @@ namespace infraredCommApp
         // Timer
         private Timer timer;
         private int timerSpeed = 50;
-        private int timerStartPosition = 2000;
+        private int timerStartPosition = 50;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 
@@ -1705,8 +1705,8 @@ namespace infraredCommApp
             listViewQuiz.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 
 
-            var quizHeader = new List<string>() { "ID" , "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数"};
-            var guideHeader = new List<string>() { "ID", "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数"};
+            var quizHeader = new List<string>() { "Serial No." , "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数"};
+            var guideHeader = new List<string>() { "Serial No.", "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数"};
 
             if (isQuiz)
             {
@@ -2189,7 +2189,7 @@ namespace infraredCommApp
                         blueValue = 0;
                     }
 
-                    Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    Color color = Color.FromArgb(255, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
                     graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
                 }
                 pictureBox1.Image = imageToDrawTags;
@@ -2200,6 +2200,22 @@ namespace infraredCommApp
             }
             isShow = !isShow;
             
+        }
+
+        public void DrawFixedColorBar(int numberOfBarItem)
+        {
+            var barColors = new List<Color>();
+            if(numberOfBarItem > 0)
+            {
+                var divideValue = 255 / numberOfBarItem;
+                var redColorValue = 255;
+                for (int i = 0; i < numberOfBarItem; i++)
+                {
+                    barColors.Add(Color.FromArgb(255, redColorValue, 0, 255 - redColorValue));
+                    redColorValue -= divideValue;
+                }
+            }
+            DrawMultiColorRectangle(this.graphics, barColors, 1630, -100, 30, 880);
         }
 
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
@@ -2220,6 +2236,7 @@ namespace infraredCommApp
 
                 this.progBarTagLoad.Visible = true;
                 this.lblProgBarTagLoadPercent.Visible = true;
+                DrawFixedColorBar(heatMapCordinates.Count);
 
                 timer = new Timer
                 {
@@ -2272,7 +2289,7 @@ namespace infraredCommApp
                         blueValue = 0;
                     }
 
-                    Color color = Color.FromArgb(200, Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
                     graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
                     if (!colors.Contains(color))
                     {
@@ -2295,11 +2312,10 @@ namespace infraredCommApp
                 
                 ProgressBarTagLoad(parcentage);
 
-                if(parcentage == 100)
-                {
-                    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 880);
-                    
-                }
+                //if(parcentage == 100)
+                //{
+                //    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 880);
+                //}
             }
             else
             {
