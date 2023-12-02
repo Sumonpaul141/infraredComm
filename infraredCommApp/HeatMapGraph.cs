@@ -20,6 +20,7 @@ namespace infraredCommApp
         public static string FromDate = string.Empty;
         public static string ToDate = string.Empty;
         public static string Type = string.Empty;
+        public static bool IsHourlyView = false;
         public static string[] TagNameAll ;
         public static int counter =0;
         public static DataTable dtTagNameAll = new DataTable();
@@ -60,11 +61,13 @@ namespace infraredCommApp
 
             if (dayHourComboBox.SelectedItem.ToString() == "Hour")
             {
+                IsHourlyView = true;
                 FromDate = Convert.ToString(dtFromDate.Value.Date + dtFromDateTime.Value.TimeOfDay);
                 ToDate = Convert.ToString(dtToDate.Value.Date + dtToDateTime.Value.TimeOfDay);
             }
             else
             {
+                IsHourlyView = false;
                 FromDate = Convert.ToString(dtFromDate.Value.Date);
                 ToDate = Convert.ToString(dtToDate.Value.Date);
             }

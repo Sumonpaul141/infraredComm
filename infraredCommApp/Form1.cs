@@ -57,6 +57,7 @@ namespace infraredCommApp
         public static string Type = "";
         public static string[] TagNameAll = null;
         public static DataTable dtTagNameAll = new DataTable();
+        public static bool isHourlyView = false;
         //public static int counter = 0;
 
         public static double hours =0;
@@ -1948,6 +1949,7 @@ namespace infraredCommApp
                 ToDate = HeatMapGraph.ToDate.Trim();
                 //ToDate = "1/30/2023 12:00:00 AM";
                 Type = HeatMapGraph.Type.Trim();
+                isHourlyView = HeatMapGraph.IsHourlyView;
                 int counter = HeatMapGraph.counter;
                 dtTagNameAll = HeatMapGraph.dtTagNameAll;
                 FirstDay = Convert.ToInt16(Convert.ToDateTime(FromDate).Day);
@@ -2256,12 +2258,23 @@ namespace infraredCommApp
 
         }
 
+        private string GetDateShowValue(bool withTime, DateTime dateTime)
+        {
+            var currentDateString = $"Current date: {dateTime.ToShortDateString()}";
+            if (withTime)
+            {
+                currentDateString += $" time : {dateTime.ToShortTimeString()}";
+            }
+            Console.WriteLine(currentDateString);
+            return currentDateString;
+        }
+
         private void DrawSingleCordinate(object sender, EventArgs e)
         {
             if (currentCordinateIndex < heatMapCordinates.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
-                currentDateLabel.Text = $"Current date: {cordinate.OccuredDate.ToShortDateString()}";
+                currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
 
                 if (cordinate.IsMatched)
                 {
@@ -2394,11 +2407,11 @@ namespace infraredCommApp
 
        private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
