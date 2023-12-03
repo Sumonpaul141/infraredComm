@@ -1610,24 +1610,9 @@ namespace infraredCommApp
         private void ButtonManage(bool isVisible)
         {
             // ai 4 ta show hobe kon butto
-            add_map_button1.Visible = isVisible;
-            delete_map_button8.Visible = isVisible;
-            set_map_label1.Visible = isVisible;
-            Exit_map_edit_button9.Visible = isVisible;
-            map_comboBox1.Visible = isVisible;
-            map_button.Enabled = !isVisible;
-            buttonFLowLineAnalysis.Visible = isVisible;
-
-
-            progBarTagLoad.Visible = !isVisible;
-            lblProgBarTagLoadPercent.Visible = !isVisible;
-            label1.Visible = !isVisible;
-            label2.Visible = !isVisible;
-            lblToDate.Visible = !isVisible;
-            lblFromDate.Visible = !isVisible;
-            ControlGroupBox.Visible = false;
-            animationControlGBox.Visible = !isVisible;
-            currentDateLabel.Visible = !isVisible;
+            ShowMapControls(isVisible);
+            ShowHeatMapControls(!isVisible);
+            ShowBarGraphControls(false);
 
         }
         private void button2_Click(object sender, EventArgs e)
@@ -1681,7 +1666,9 @@ namespace infraredCommApp
             ChangeLocation();
             quizeAnsResult f2 = new quizeAnsResult(isQuizAnalyzing);
             f2.ShowDialog();
-            ControlGroupBox.Visible = true;
+            ShowBarGraphControls(true);
+            ShowMapControls(false);
+            ShowHeatMapControls(false);
             //txtAnalyzedData.Text = f2.AnalyzedData;
             //AnalyzedData = f2.AnalyzedData;
             //QuizId = f2.rdoQuizId;
@@ -1790,6 +1777,9 @@ namespace infraredCommApp
 
         private void ButtonGuideClicked(object sender, EventArgs e)
         {
+            ShowBarGraphControls(true);
+            ShowHeatMapControls(false);
+            ShowMapControls(false);
             isQuizAnalyzing = false;
             txtAnalyzedData.SendToBack();
             chartWithData.SendToBack();
@@ -1798,7 +1788,6 @@ namespace infraredCommApp
 
             quizeAnsResult f2 = new quizeAnsResult(isQuizAnalyzing);
             f2.ShowDialog();
-            ControlGroupBox.Visible = true;
             //txtAnalyzedData.Text = f2.AnalyzedData;
             //AnalyzedData = f2.AnalyzedData;
             //QuizId = f2.rdoQuizId;
@@ -2263,7 +2252,7 @@ namespace infraredCommApp
             var currentDateString = $"Current date: {dateTime.ToShortDateString()}";
             if (withTime)
             {
-                currentDateString += $" time : {dateTime.ToShortTimeString()}";
+                currentDateString += $" Time : {dateTime.ToShortTimeString()}";
             }
             Console.WriteLine(currentDateString);
             return currentDateString;
@@ -2405,13 +2394,41 @@ namespace infraredCommApp
             this.Exit_map_edit_button9.Enabled = true;
        }
 
-       private void ChangeLocation()
+       private void ShowHeatMapControls(bool isVisible)
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            progBarTagLoad.Visible = isVisible;
+            lblProgBarTagLoadPercent.Visible = isVisible;
+            label1.Visible = isVisible;
+            label2.Visible = isVisible;
+            lblToDate.Visible = isVisible;
+            lblFromDate.Visible = isVisible;
+            animationControlGBox.Visible = isVisible;
+            currentDateLabel.Visible = isVisible;
+       }
+
+        private void ShowMapControls(bool isVisible)
+        {
+            add_map_button1.Visible = isVisible;
+            delete_map_button8.Visible = isVisible;
+            set_map_label1.Visible = isVisible;
+            Exit_map_edit_button9.Visible = isVisible;
+            map_comboBox1.Visible = isVisible;
+            map_button.Enabled = !isVisible;
+            buttonFLowLineAnalysis.Visible = isVisible;
+        }
+
+        private void ShowBarGraphControls(bool isVisible)
+        {
+            BarGraphGroupBox.Visible = isVisible;
+        }
+
+        private void ChangeLocation()
+       {
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);

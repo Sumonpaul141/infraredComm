@@ -64,7 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBarGraph = new System.Windows.Forms.Button();
-            this.ControlGroupBox = new System.Windows.Forms.GroupBox();
+            this.BarGraphGroupBox = new System.Windows.Forms.GroupBox();
             this.resultListView = new System.Windows.Forms.ListView();
             this.add_map_button1 = new System.Windows.Forms.Button();
             this.map_comboBox1 = new System.Windows.Forms.ComboBox();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).BeginInit();
-            this.ControlGroupBox.SuspendLayout();
+            this.BarGraphGroupBox.SuspendLayout();
             this.animationControlGBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -289,16 +289,16 @@
             this.btnBarGraph.UseVisualStyleBackColor = true;
             this.btnBarGraph.Click += new System.EventHandler(this.btnBarGraph_Click);
             // 
-            // ControlGroupBox
+            // BarGraphGroupBox
             // 
-            this.ControlGroupBox.Controls.Add(this.btnBarGraph);
-            this.ControlGroupBox.Controls.Add(this.rdoAccurate);
-            this.ControlGroupBox.Controls.Add(this.button2);
-            this.ControlGroupBox.Controls.Add(this.rdoQuizId);
-            this.ControlGroupBox.Controls.Add(this.button1);
-            resources.ApplyResources(this.ControlGroupBox, "ControlGroupBox");
-            this.ControlGroupBox.Name = "ControlGroupBox";
-            this.ControlGroupBox.TabStop = false;
+            this.BarGraphGroupBox.Controls.Add(this.btnBarGraph);
+            this.BarGraphGroupBox.Controls.Add(this.rdoAccurate);
+            this.BarGraphGroupBox.Controls.Add(this.button2);
+            this.BarGraphGroupBox.Controls.Add(this.rdoQuizId);
+            this.BarGraphGroupBox.Controls.Add(this.button1);
+            resources.ApplyResources(this.BarGraphGroupBox, "BarGraphGroupBox");
+            this.BarGraphGroupBox.Name = "BarGraphGroupBox";
+            this.BarGraphGroupBox.TabStop = false;
             // 
             // resultListView
             // 
@@ -398,7 +398,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.animationControlGBox);
             this.Controls.Add(this.currentDateLabel);
-            this.Controls.Add(this.ControlGroupBox);
+            this.Controls.Add(this.BarGraphGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblToDate);
@@ -431,8 +431,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartWithData)).EndInit();
-            this.ControlGroupBox.ResumeLayout(false);
-            this.ControlGroupBox.PerformLayout();
+            this.BarGraphGroupBox.ResumeLayout(false);
+            this.BarGraphGroupBox.PerformLayout();
             this.animationControlGBox.ResumeLayout(false);
             this.animationControlGBox.PerformLayout();
             this.ResumeLayout(false);
@@ -472,7 +472,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBarGraph;
-        private System.Windows.Forms.GroupBox ControlGroupBox;
+        private System.Windows.Forms.GroupBox BarGraphGroupBox;
         private System.Windows.Forms.ListView resultListView;
         private System.Windows.Forms.Button add_map_button1;
         private System.Windows.Forms.ComboBox map_comboBox1;

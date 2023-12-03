@@ -739,7 +739,7 @@
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rdoQuizId.Parent" xml:space="preserve">
-    <value>ControlGroupBox</value>
+    <value>BarGraphGroupBox</value>
   </data>
   <data name="&gt;&gt;rdoQuizId.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -772,7 +772,7 @@
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rdoAccurate.Parent" xml:space="preserve">
-    <value>ControlGroupBox</value>
+    <value>BarGraphGroupBox</value>
   </data>
   <data name="&gt;&gt;rdoAccurate.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -799,7 +799,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>ControlGroupBox</value>
+    <value>BarGraphGroupBox</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -826,7 +826,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>ControlGroupBox</value>
+    <value>BarGraphGroupBox</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -853,36 +853,36 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnBarGraph.Parent" xml:space="preserve">
-    <value>ControlGroupBox</value>
+    <value>BarGraphGroupBox</value>
   </data>
   <data name="&gt;&gt;btnBarGraph.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ControlGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="BarGraphGroupBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 12pt, style=Bold</value>
   </data>
-  <data name="ControlGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BarGraphGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>1069, 913</value>
   </data>
-  <data name="ControlGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BarGraphGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>675, 100</value>
   </data>
-  <data name="ControlGroupBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="BarGraphGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
   </data>
-  <data name="ControlGroupBox.Visible" type="System.Boolean, mscorlib">
+  <data name="BarGraphGroupBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;ControlGroupBox.Name" xml:space="preserve">
-    <value>ControlGroupBox</value>
+  <data name="&gt;&gt;BarGraphGroupBox.Name" xml:space="preserve">
+    <value>BarGraphGroupBox</value>
   </data>
-  <data name="&gt;&gt;ControlGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;BarGraphGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ControlGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BarGraphGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ControlGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BarGraphGroupBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="resultListView.Font" type="System.Drawing.Font, System.Drawing">
@@ -1227,42 +1227,6 @@
   <data name="&gt;&gt;currentDateLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Name" xml:space="preserve">
-    <value>timerLabel</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.Parent" xml:space="preserve">
-    <value>animationControlGBox</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="animationControlGBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>879, 931</value>
-  </data>
-  <data name="animationControlGBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 71</value>
-  </data>
-  <data name="animationControlGBox.TabIndex" type="System.Int32, mscorlib">
-    <value>49</value>
-  </data>
-  <data name="animationControlGBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;animationControlGBox.Name" xml:space="preserve">
-    <value>animationControlGBox</value>
-  </data>
-  <data name="&gt;&gt;animationControlGBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;animationControlGBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;animationControlGBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="timerLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1295,6 +1259,30 @@
   </data>
   <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="animationControlGBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>984, 931</value>
+  </data>
+  <data name="animationControlGBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 71</value>
+  </data>
+  <data name="animationControlGBox.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="animationControlGBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;animationControlGBox.Name" xml:space="preserve">
+    <value>animationControlGBox</value>
+  </data>
+  <data name="&gt;&gt;animationControlGBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;animationControlGBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;animationControlGBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

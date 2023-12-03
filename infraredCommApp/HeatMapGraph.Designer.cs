@@ -109,6 +109,7 @@
             this.dtToDateTime.Name = "dtToDateTime";
             this.dtToDateTime.Size = new System.Drawing.Size(146, 23);
             this.dtToDateTime.TabIndex = 41;
+            this.dtToDateTime.Value = new System.DateTime(2023, 12, 3, 17, 0, 0, 0);
             // 
             // dtFromDateTime
             // 
@@ -117,6 +118,7 @@
             this.dtFromDateTime.Name = "dtFromDateTime";
             this.dtFromDateTime.Size = new System.Drawing.Size(146, 23);
             this.dtFromDateTime.TabIndex = 40;
+            this.dtFromDateTime.Value = new System.DateTime(2023, 12, 3, 8, 0, 0, 0);
             // 
             // dayHourComboBox
             // 
