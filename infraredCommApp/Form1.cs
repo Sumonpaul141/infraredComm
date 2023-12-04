@@ -194,7 +194,7 @@ namespace infraredCommApp
         // Timer
         private Timer timer;
         private int timerSpeed = 50;
-        private int timerStartPosition = 50;
+        private int timerStartPosition = 300;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 
@@ -1610,7 +1610,7 @@ namespace infraredCommApp
         private void ButtonManage(bool isVisible)
         {
             // ai 4 ta show hobe kon butto
-            ShowMapControls(isVisible);
+            ShowMapControls(!isVisible);
             ShowHeatMapControls(!isVisible);
             ShowBarGraphControls(false);
 
@@ -1929,6 +1929,7 @@ namespace infraredCommApp
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
             var heatmapImageName = map_comboBox1.SelectedValue.ToString();
+            ShowMapControls(false);
             HeatMapGraph f2 = new HeatMapGraph(heatmapImageName, Form1.workfolder);
             var dialogResult = f2.ShowDialog();
             if (dialogResult == DialogResult.OK)
@@ -1947,7 +1948,8 @@ namespace infraredCommApp
                 lblToDate.Text = Convert.ToDateTime(ToDate).ToShortDateString();
                 TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
                 double hours = diff.TotalHours;
-                ButtonManage(false);
+                ShowBarGraphControls(false);
+                ShowHeatMapControls(true);
                 GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
             }
 
@@ -2263,10 +2265,10 @@ namespace infraredCommApp
             if (currentCordinateIndex < heatMapCordinates.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
-                currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
 
                 if (cordinate.IsMatched)
                 {
+                    currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
                     double a = cordinate.CountOfClients - minNumberOfClient;
                     double b = maxNumberOfClient - minNumberOfClient;
                     double c = a / b;
@@ -2358,10 +2360,10 @@ namespace infraredCommApp
 
         private void button＿MapEdit_Click(object sender, EventArgs e)
         {
-            //run koren
-            ButtonManage(true);
-            //ChangeLocation();
 
+            ShowBarGraphControls(false);
+            ShowMapControls(true);
+            ShowHeatMapControls(false);
             pictureBox1.BringToFront();
             chartWithData.SendToBack();
 
@@ -3262,7 +3264,6 @@ namespace infraredCommApp
         {
             if (HeatMapGraph.SelectedTags.Count <= 0) return;
             currentCordinateIndex = 0;
-            ButtonManage(false);
             timerStartPosition = timer == null ? timerStartPosition : timer.Interval;
             GenerateHeatMap(map_comboBox1.SelectedValue.ToString(), HeatMapGraph.SelectedTags);
         }
