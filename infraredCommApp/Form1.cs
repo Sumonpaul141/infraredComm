@@ -186,21 +186,22 @@ namespace infraredCommApp
         public static string workfolder2 = "";
         public static string ibcfolder = "";
         public static string imageFolder = "";
-
         public static List<ContentPlayingInfo> gContPLAY = new List<ContentPlayingInfo>();
         public static List<contentsInfo> gconINFO = new List<contentsInfo>(); // list for content information
 
 
         // Timer
         private Timer timer;
-        private int timerSpeed = 50;
-        private int timerStartPosition = 50;
+        private int timerSpeed = 500;
+        private int timerStartPosition = 500;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 
         // For animation 
+        private bool shouldSkipSaving = false;
         private int currentCordinateIndex = 0;
         private List<HeatMapCordinateDTO> heatMapCordinates;
+        private List<Bitmap> generatedMaps = new List<Bitmap>();
         private Bitmap imageToDrawTags;
         private Graphics graphics;
         private double minNumberOfClient;
@@ -2193,6 +2194,21 @@ namespace infraredCommApp
             
         }
 
+        private void PrevOrNext(int addIndex)
+        {
+            var newIndex = currentCordinateIndex + addIndex;
+            if (newIndex > 0 && newIndex < generatedMaps.Count + 1)
+            {
+                currentCordinateIndex = newIndex;
+                var image = generatedMaps[newIndex - 1];
+                pictureBox1.Image = image;
+            }
+            else if (newIndex >= generatedMaps.Count + 1)
+            {
+                DrawSingleCordinate(timer, null);
+            }
+        }
+
         public void DrawFixedColorBar(int numberOfBarItem)
         {
             var barColors = new List<Color>();
@@ -2211,6 +2227,7 @@ namespace infraredCommApp
 
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
         {
+            generatedMaps.Clear();
             this.imageToDrawTags = imageToDrawTags;
             this.heatMapCordinates = heatMapCordinates;
             this.graphics = Graphics.FromImage(imageToDrawTags);
@@ -2260,6 +2277,7 @@ namespace infraredCommApp
 
         private void DrawSingleCordinate(object sender, EventArgs e)
         {
+            Console.WriteLine($"currentCordinateIndex : {currentCordinateIndex + 1}");
             if (currentCordinateIndex < heatMapCordinates.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
@@ -2298,14 +2316,19 @@ namespace infraredCommApp
                         colors.Add(color);
 
                     }
-                } 
+                }
                 else
                 {
                     Color color = Color.FromArgb(200, 255, 255, 0);
                     this.graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
                 }
-
-
+                if (currentCordinateIndex + 1 > generatedMaps.Count)
+                {
+                    generatedMaps.Add(new Bitmap(imageToDrawTags));
+                    Console.WriteLine($"shouldSave : {!shouldSkipSaving}");;
+                }
+                Console.WriteLine($"generatedMaps.Count : {generatedMaps.Count}");
+                Console.WriteLine($"========================================================");
                 pictureBox1.Image = imageToDrawTags;
 
                 currentCordinateIndex++;
@@ -2424,16 +2447,16 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
 
-            //animationControlGBox.Location = new Point(10, 400);
+            animationControlGBox.Location = new Point(10, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);
@@ -3261,10 +3284,30 @@ namespace infraredCommApp
         private void ReplayButtonClick(object sender, EventArgs e)
         {
             if (HeatMapGraph.SelectedTags.Count <= 0) return;
+            generatedMaps.Clear();
             currentCordinateIndex = 0;
             ButtonManage(false);
             timerStartPosition = timer == null ? timerStartPosition : timer.Interval;
             GenerateHeatMap(map_comboBox1.SelectedValue.ToString(), HeatMapGraph.SelectedTags);
+        }
+
+        private void PrevButtonClick(object sender, EventArgs e)
+        {
+            currentCordinateIndex -= 2;
+            imageToDrawTags = generatedMaps[currentCordinateIndex];
+            DrawSingleCordinate(timer, EventArgs.Empty);
+        }
+
+        private void NextButtonClick(object sender, EventArgs e)
+        {
+            Console.WriteLine($"currentCordinateIndex < generatedMaps.Count {currentCordinateIndex} < {generatedMaps.Count}");
+            if(currentCordinateIndex < generatedMaps.Count)
+            {
+                Console.WriteLine($"currentCordinateIndex < generatedMaps.Count {currentCordinateIndex} < {generatedMaps.Count}");
+
+                imageToDrawTags = generatedMaps[currentCordinateIndex];
+            }
+            DrawSingleCordinate(timer, null);
         }
 
         private void RedrawMapAndUpdateTagList(string mapFilePath, List<tagu> tags)
