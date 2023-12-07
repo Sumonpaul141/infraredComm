@@ -2273,21 +2273,14 @@ namespace infraredCommApp
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinatesWithMap[currentCordinateIndex].HeatMapCordinate;
                 currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
-
-                
                 pictureBox1.Image = heatMapCordinatesWithMap[currentCordinateIndex].MapImage;
-
-
-                double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinatesWithMap.Count.ToString())) * 100;
-
-                ProgressBarTagLoad(parcentage);
-
                 currentCordinateIndex++;
+                double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinatesWithMap.Count.ToString())) * 100;
+                ProgressBarTagLoad(parcentage);
             }
             else
             {
                 ((Timer)sender).Stop();
-
             }
         }
 
