@@ -1102,7 +1102,8 @@ namespace infraredCommApp
             label1.Visible = false;
             label2.Visible = false;
             this.progBarTagLoad.Visible = false;
-
+            this.prevButton.Visible = false;
+            this.nextButton.Visible = false;
 
 
             PictureBoxActualWidth = pictureBox1.Width;
@@ -2125,6 +2126,8 @@ namespace infraredCommApp
             
             this.progBarTagLoad.Visible = false;
             this.lblProgBarTagLoadPercent.Visible = false;
+            this.prevButton.Visible = false;
+            this.nextButton.Visible = false;
 
             if (heatMapCordinates.Any())
             {
@@ -2245,6 +2248,8 @@ namespace infraredCommApp
 
                 this.progBarTagLoad.Visible = true;
                 this.lblProgBarTagLoadPercent.Visible = true;
+                this.prevButton.Visible = true;
+                this.nextButton.Visible = true;
                 DrawFixedColorBar(heatMapCordinates.Count, Graphics.FromImage(imageToDrawTags));
                 this.heatMapCordinatesWithMap = Common.DrawAllCordinates(imageToDrawTags, heatMapCordinates, minNumberOfClient, maxNumberOfClient);
 
@@ -2467,16 +2472,16 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
 
-            animationControlGBox.Location = new Point(10, 400);
+            //animationControlGBox.Location = new Point(10, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);
