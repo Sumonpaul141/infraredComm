@@ -201,6 +201,7 @@ namespace infraredCommApp
         private bool shouldSkipSaving = false;
         private int currentCordinateIndex = 0;
         private List<HeatMapCordinateDTO> heatMapCordinates;
+        private List<HeatMapCordinateWithMapDTO> heatMapCordinatesWithMap;
         private List<Bitmap> generatedMaps = new List<Bitmap>();
         private Bitmap imageToDrawTags;
         private Graphics graphics;
@@ -2209,7 +2210,7 @@ namespace infraredCommApp
             }
         }
 
-        public void DrawFixedColorBar(int numberOfBarItem)
+        public void DrawFixedColorBar(int numberOfBarItem, Graphics graphics)
         {
             var barColors = new List<Color>();
             if(numberOfBarItem > 0)
@@ -2222,15 +2223,15 @@ namespace infraredCommApp
                     redColorValue -= divideValue;
                 }
             }
-            DrawMultiColorRectangle(this.graphics, barColors, 1630, -100, 30, 880);
+            DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 880);
         }
 
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
         {
-            generatedMaps.Clear();
-            this.imageToDrawTags = imageToDrawTags;
-            this.heatMapCordinates = heatMapCordinates;
-            this.graphics = Graphics.FromImage(imageToDrawTags);
+            //generatedMaps.Clear();
+            //this.imageToDrawTags = imageToDrawTags;
+            ////this.heatMapCordinates = heatMapCordinates;
+            //this.graphics = Graphics.FromImage(imageToDrawTags);
 
             if (heatMapCordinates.Any())
             {
@@ -2244,14 +2245,15 @@ namespace infraredCommApp
 
                 this.progBarTagLoad.Visible = true;
                 this.lblProgBarTagLoadPercent.Visible = true;
-                DrawFixedColorBar(heatMapCordinates.Count);
+                DrawFixedColorBar(heatMapCordinates.Count, Graphics.FromImage(imageToDrawTags));
+                this.heatMapCordinatesWithMap = Common.DrawAllCordinates(imageToDrawTags, heatMapCordinates, minNumberOfClient, maxNumberOfClient);
 
                 timer = new Timer
                 {
                     Interval = timerStartPosition,
                 };
                 timerLabel.Text = timerStartPosition.ToString();
-                timer.Tick += new EventHandler(DrawSingleCordinate);
+                timer.Tick += new EventHandler(ViewSingleCordinate);
                 timer.Start();
                 isPlayingHeadMap = true;
             }
@@ -2262,6 +2264,31 @@ namespace infraredCommApp
             }
 
 
+        }
+
+        private void ViewSingleCordinate(object sender, EventArgs e)
+        {
+            Console.WriteLine(currentCordinateIndex);
+            if (currentCordinateIndex < heatMapCordinatesWithMap.Count)
+            {
+                HeatMapCordinateDTO cordinate = heatMapCordinatesWithMap[currentCordinateIndex].HeatMapCordinate;
+                currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
+
+                
+                pictureBox1.Image = heatMapCordinatesWithMap[currentCordinateIndex].MapImage;
+
+
+                double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinatesWithMap.Count.ToString())) * 100;
+
+                ProgressBarTagLoad(parcentage);
+
+                currentCordinateIndex++;
+            }
+            else
+            {
+                ((Timer)sender).Stop();
+
+            }
         }
 
         private string GetDateShowValue(bool withTime, DateTime dateTime)
@@ -3293,21 +3320,17 @@ namespace infraredCommApp
 
         private void PrevButtonClick(object sender, EventArgs e)
         {
-            currentCordinateIndex -= 2;
-            imageToDrawTags = generatedMaps[currentCordinateIndex];
-            DrawSingleCordinate(timer, EventArgs.Empty);
+            if(currentCordinateIndex > 1)
+            {
+                currentCordinateIndex -= 2;
+                ViewSingleCordinate(timer, null);
+            }
+
         }
 
         private void NextButtonClick(object sender, EventArgs e)
         {
-            Console.WriteLine($"currentCordinateIndex < generatedMaps.Count {currentCordinateIndex} < {generatedMaps.Count}");
-            if(currentCordinateIndex < generatedMaps.Count)
-            {
-                Console.WriteLine($"currentCordinateIndex < generatedMaps.Count {currentCordinateIndex} < {generatedMaps.Count}");
-
-                imageToDrawTags = generatedMaps[currentCordinateIndex];
-            }
-            DrawSingleCordinate(timer, null);
+            ViewSingleCordinate(timer, null);
         }
 
         private void RedrawMapAndUpdateTagList(string mapFilePath, List<tagu> tags)

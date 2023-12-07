@@ -302,6 +302,62 @@ namespace infraredCommApp
 
         }
 
+        public static List<HeatMapCordinateWithMapDTO> DrawAllCordinates(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, double minNumberOfClient, double maxNumberOfClient)
+        {
+            List<HeatMapCordinateWithMapDTO> withMap = new List<HeatMapCordinateWithMapDTO>();
+            Graphics graphics = Graphics.FromImage(imageToDrawTags);
+            for (int i = 0; i < heatMapCordinates.Count; i++)
+            {
+                HeatMapCordinateDTO cordinate = heatMapCordinates[i];
+                //currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
+
+                if (cordinate.IsMatched)
+                {
+                    double a = cordinate.CountOfClients - minNumberOfClient;
+                    double b = maxNumberOfClient - minNumberOfClient;
+                    double c = a / b;
+                    double ni = c * 100;
+                    double redValue = (ni * 255) / 100;
+                    double blueValue = ((100 - ni) * 255) / 100;
+
+                    if (redValue > 255)
+                    {
+                        redValue = 255;
+                    }
+                    else if (redValue < 0)
+                    {
+                        redValue = 0;
+                    }
+                    if (blueValue > 255)
+                    {
+                        blueValue = 255;
+                    }
+                    else if (blueValue < 0)
+                    {
+                        blueValue = 0;
+                    }
+
+                    Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                }
+                else
+                {
+                    Color color = Color.FromArgb(200, 255, 255, 0);
+                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                }
+
+                withMap.Add(new HeatMapCordinateWithMapDTO()
+                {
+                    HeatMapCordinate = cordinate,
+                    MapImage = new Bitmap(imageToDrawTags)
+                }); ;
+            }
+
+            return withMap;
+            
+        }
+
+
 
         //private void doForOnly5(Bitmap resizedImage, string mapFileName)
         //{
