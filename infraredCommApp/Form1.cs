@@ -192,8 +192,8 @@ namespace infraredCommApp
 
         // Timer
         private Timer timer;
-        private int timerSpeed = 500;
-        private int timerStartPosition = 500;
+        private int timerSpeed = 50;
+        private int timerStartPosition = 50;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 
@@ -1951,7 +1951,8 @@ namespace infraredCommApp
                 TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
                 double hours = diff.TotalHours;
                 ButtonManage(false);
-                GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
+                //GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
+                GenerateNewHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
             }
 
         }
@@ -2063,6 +2064,55 @@ namespace infraredCommApp
             StartHeatMapDrawAnimation(resizedImage, allHeatMapCordinatesList, pictureBox1);
         }
 
+        private void GenerateNewHeatMap(string heatmapImageName, List<string> selectedTagIds)
+        {
+            var image = Image.FromFile(workfolder + "Image\\" + heatmapImageName + ".jpeg", true);
+
+            var currentMap = gitems.FirstOrDefault(x => x.MapFileName == heatmapImageName);
+            var currentMapFilePath = workfolder + "Image\\" + heatmapImageName + ".jpeg";
+            DataTable csvData = GetDataTabletFromCSVFile(workfolder + "Contentid.CSV");
+
+            var allHeatMapList = new List<HeatMap>();
+            var allHeatMapCordinatesList = new List<HeatMapCordinateDTO>();
+            var filteredByDateTimeHeatMapList = new List<HeatMap>();
+
+            var mapTags = currentMap.taglist.Where(x => selectedTagIds.Contains(x.tagname));
+            foreach (var taguSingle in mapTags)
+            {
+                for (int i = 0; i < csvData.Rows.Count; i++)
+                {
+                    string strDateTime = csvData.Rows[i]["Date"].ToString() + " " + csvData.Rows[i]["Time"].ToString();
+                    DateTime dtDateTime = Convert.ToDateTime(Common.GetValidDateTime(strDateTime));
+                    if (taguSingle.tagId.ToString() == csvData.Rows[i]["Id"].ToString())
+                    {
+                        HeatMap htMap = new HeatMap()
+                        {
+                            tagId = taguSingle.tagId,
+                            tagname = taguSingle.tagname,
+                            pointx = taguSingle.pointx,
+                            pointy = taguSingle.pointy,
+                            tagtype = taguSingle.tagtype,
+                            tagDate = dtDateTime,
+                        };
+
+                        if (htMap.tagDate >= Convert.ToDateTime(FromDate) && htMap.tagDate <= Convert.ToDateTime(ToDate))
+                        {
+                            filteredByDateTimeHeatMapList.Add(htMap);
+                        }
+                    }
+                }
+            }
+
+            var sortedHeatMapList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
+            var countsPerDayPerTagId = GetCountsPerDayPerTagId(sortedHeatMapList);
+
+            Bitmap originalBitmap = new Bitmap(currentMapFilePath);
+            var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
+            this.imageWithoutTags = new Bitmap(resizedImage);
+            this.colors.Clear();
+            StartHeatMapDrawAnimation(resizedImage, countsPerDayPerTagId, pictureBox1);
+        }
+
         //private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
         //{
         //    return (from row in maps
@@ -2090,6 +2140,21 @@ namespace infraredCommApp
                     PointY = sales.First().pointy,
                     IsMatched = isMatched,
                     OccuredDate = sales.First().tagDate
+                })
+                .ToList();
+        }
+        public static List<HeatMapCordinateDTO> GetCountsPerDayPerTagId(List<HeatMap> heatMapList)
+        {
+            return heatMapList
+                .GroupBy(hm => new { hm.tagId, hm.tagDate.Date })
+                .Select(group => new HeatMapCordinateDTO
+                {
+                    Name = group.First().tagname,
+                    CountOfClients = group.Count(),
+                    PointX = group.First().pointx,
+                    PointY = group.First().pointy,
+                    IsMatched = true,
+                    OccuredDate = group.Key.Date
                 })
                 .ToList();
         }

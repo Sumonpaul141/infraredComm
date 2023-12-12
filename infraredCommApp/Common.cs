@@ -300,17 +300,31 @@ namespace infraredCommApp
                 pictureBox.Image = imageToDrawTags;
             }
 
-        }
+        } 
 
         public static List<HeatMapCordinateWithMapDTO> DrawAllCordinates(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, double minNumberOfClient, double maxNumberOfClient)
         {
+            var lastPointColor = new List<HeatMapCordinateDTO>();
             List<HeatMapCordinateWithMapDTO> withMap = new List<HeatMapCordinateWithMapDTO>();
             Graphics graphics = Graphics.FromImage(imageToDrawTags);
             for (int i = 0; i < heatMapCordinates.Count; i++)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[i];
                 //currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
-
+                
+                var cordinateInfo = lastPointColor.FirstOrDefault(x => x.Name == cordinate.Name);
+                if(cordinateInfo == null)
+                {
+                    lastPointColor.Add(new HeatMapCordinateDTO
+                    {
+                        Name = cordinate.Name,
+                        CountOfClients = cordinate.CountOfClients
+                    });
+                } else
+                {
+                    cordinateInfo.CountOfClients = cordinateInfo.CountOfClients + cordinate.CountOfClients;
+                    cordinate.CountOfClients = cordinateInfo.CountOfClients;
+                }
                 if (cordinate.IsMatched)
                 {
                     double a = cordinate.CountOfClients - minNumberOfClient;
