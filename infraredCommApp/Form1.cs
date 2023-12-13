@@ -203,6 +203,7 @@ namespace infraredCommApp
         private List<HeatMapCordinateDTO> heatMapCordinates;
         private List<HeatMapCordinateWithMapDTO> heatMapCordinatesWithMap;
         private List<Bitmap> generatedMaps = new List<Bitmap>();
+        private List<HeatMapCordinateDTO> lastPointColor = new List<HeatMapCordinateDTO>();
         private Bitmap imageToDrawTags;
         private Graphics graphics;
         private double minNumberOfClient;
@@ -2110,7 +2111,7 @@ namespace infraredCommApp
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
             this.imageWithoutTags = new Bitmap(resizedImage);
             this.colors.Clear();
-            StartHeatMapDrawAnimation(resizedImage, countsPerDayPerTagId, pictureBox1);
+            StartNewHeatMapDrawAnimation(resizedImage, countsPerDayPerTagId, pictureBox1);
         }
 
         //private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
@@ -2335,6 +2336,48 @@ namespace infraredCommApp
 
 
         }
+        
+        public void StartNewHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
+        {
+            generatedMaps.Clear();
+            this.imageToDrawTags = imageToDrawTags;
+            this.heatMapCordinates = heatMapCordinates;
+            this.graphics = Graphics.FromImage(imageToDrawTags);
+            this.lastPointColor.Clear();
+
+            if (heatMapCordinates.Any())
+            {
+                minNumberOfClient = heatMapCordinates.Min(x => x.CountOfClients);
+                maxNumberOfClient = heatMapCordinates.Max(x => x.CountOfClients);
+
+                if (maxNumberOfClient == minNumberOfClient)
+                {
+                    maxNumberOfClient++;
+                }
+
+                this.progBarTagLoad.Visible = true;
+                this.lblProgBarTagLoadPercent.Visible = true;
+                this.prevButton.Visible = true;
+                this.nextButton.Visible = true;
+                DrawFixedColorBar(heatMapCordinates.Count, Graphics.FromImage(imageToDrawTags));
+
+                timer = new Timer
+                {
+                    Interval = timerStartPosition,
+                };
+                timerLabel.Text = timerStartPosition.ToString();
+                timer.Tick += new EventHandler(DrawNewSingleCordinate);
+                timer.Start();
+                isPlayingHeadMap = true;
+            }
+            else
+            {
+                MessageBox.Show("No data found");
+                pictureBox.Image = imageToDrawTags;
+            }
+
+
+        }
 
         private void ViewSingleCordinate(object sender, EventArgs e)
         {
@@ -2367,7 +2410,6 @@ namespace infraredCommApp
 
         private void DrawSingleCordinate(object sender, EventArgs e)
         {
-            Console.WriteLine($"currentCordinateIndex : {currentCordinateIndex + 1}");
             if (currentCordinateIndex < heatMapCordinates.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
@@ -2412,13 +2454,7 @@ namespace infraredCommApp
                     Color color = Color.FromArgb(200, 255, 255, 0);
                     this.graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
                 }
-                if (currentCordinateIndex + 1 > generatedMaps.Count)
-                {
-                    generatedMaps.Add(new Bitmap(imageToDrawTags));
-                    Console.WriteLine($"shouldSave : {!shouldSkipSaving}");;
-                }
-                Console.WriteLine($"generatedMaps.Count : {generatedMaps.Count}");
-                Console.WriteLine($"========================================================");
+
                 pictureBox1.Image = imageToDrawTags;
 
                 currentCordinateIndex++;
@@ -2426,11 +2462,82 @@ namespace infraredCommApp
                 double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinates.Count.ToString()) ) * 100;
                 
                 ProgressBarTagLoad(parcentage);
+            }
+            else
+            {
+                ((Timer)sender).Stop();
 
-                //if(parcentage == 100)
-                //{
-                //    DrawMultiColorRectangle(this.graphics, colors, 1630, -100, 30, 880);
-                //}
+            }
+        }
+
+        private void DrawNewSingleCordinate(object sender, EventArgs e)
+        {
+            if (currentCordinateIndex < heatMapCordinates.Count)
+            {
+                HeatMapCordinateDTO cordinate = heatMapCordinates[currentCordinateIndex];
+                currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
+                var cordinateInfo = lastPointColor.FirstOrDefault(x => x.Name == cordinate.Name);
+                if (cordinateInfo == null)
+                {
+                    lastPointColor.Add(new HeatMapCordinateDTO
+                    {
+                        Name = cordinate.Name,
+                        CountOfClients = cordinate.CountOfClients
+                    });
+                }
+                else
+                {
+                    cordinateInfo.CountOfClients = cordinateInfo.CountOfClients + cordinate.CountOfClients;
+                    cordinate.CountOfClients = cordinateInfo.CountOfClients;
+                }
+
+                if (cordinate.IsMatched)
+                {
+                    double a = cordinate.CountOfClients - minNumberOfClient;
+                    double b = maxNumberOfClient - minNumberOfClient;
+                    double c = a / b;
+                    double ni = c * 100;
+                    double redValue = (ni * 255) / 100;
+                    double blueValue = ((100 - ni) * 255) / 100;
+
+                    if (redValue > 255)
+                    {
+                        redValue = 255;
+                    }
+                    else if (redValue < 0)
+                    {
+                        redValue = 0;
+                    }
+                    if (blueValue > 255)
+                    {
+                        blueValue = 255;
+                    }
+                    else if (blueValue < 0)
+                    {
+                        blueValue = 0;
+                    }
+
+                    Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                    if (!colors.Contains(color))
+                    {
+                        colors.Add(color);
+
+                    }
+                }
+                else
+                {
+                    Color color = Color.FromArgb(200, 255, 255, 0);
+                    this.graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                }
+
+                pictureBox1.Image = imageToDrawTags;
+
+                currentCordinateIndex++;
+
+                double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinates.Count.ToString())) * 100;
+
+                ProgressBarTagLoad(parcentage);
             }
             else
             {
@@ -2537,11 +2644,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
