@@ -2147,7 +2147,7 @@ namespace infraredCommApp
         public static List<HeatMapCordinateDTO> GetCountsPerDayPerTagId(List<HeatMap> heatMapList)
         {
             return heatMapList
-                .GroupBy(hm => new { hm.tagId, hm.tagDate.Date })
+                .GroupBy(hm => new { hm.tagId, hm.tagDate.Date, hm.tagDate.Hour })
                 .Select(group => new HeatMapCordinateDTO
                 {
                     Name = group.First().tagname,
@@ -2163,7 +2163,7 @@ namespace infraredCommApp
         public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
         {
             colors.Sort((a,b) => a.R.CompareTo(b.R));
-            colors.InsertRange(0, new List<Color> { Color.Yellow });
+            //colors.InsertRange(0, new List<Color> { Color.Yellow });
             int colorHeight = height / colors.Count;
 
             startY += height;
@@ -2316,7 +2316,7 @@ namespace infraredCommApp
                 this.lblProgBarTagLoadPercent.Visible = true;
                 this.prevButton.Visible = true;
                 this.nextButton.Visible = true;
-                DrawFixedColorBar(heatMapCordinates.Count, Graphics.FromImage(imageToDrawTags));
+                DrawFixedColorBar(15, Graphics.FromImage(imageToDrawTags));
                 this.heatMapCordinatesWithMap = Common.DrawAllCordinates(imageToDrawTags, heatMapCordinates, minNumberOfClient, maxNumberOfClient);
 
                 timer = new Timer
