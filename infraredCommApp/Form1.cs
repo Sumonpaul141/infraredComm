@@ -2147,7 +2147,7 @@ namespace infraredCommApp
         public static List<HeatMapCordinateDTO> GetCountsPerDayPerTagId(List<HeatMap> heatMapList)
         {
             return heatMapList
-                .GroupBy(hm => new { hm.tagId, hm.tagDate.Date, hm.tagDate.Hour })
+                .GroupBy(hm => new { hm.tagId, hm.tagDate.Date })
                 .Select(group => new HeatMapCordinateDTO
                 {
                     Name = group.First().tagname,
