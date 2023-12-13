@@ -2644,11 +2644,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
