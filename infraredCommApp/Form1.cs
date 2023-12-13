@@ -192,8 +192,8 @@ namespace infraredCommApp
 
         // Timer
         private Timer timer;
-        private int timerSpeed = 50;
-        private int timerStartPosition = 50;
+        private int timerSpeed = 30;
+        private int timerStartPosition = 100;
         private Bitmap heatmap;
         private List<string> selectedTags = new List<string>();
 

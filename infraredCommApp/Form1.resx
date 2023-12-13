@@ -1285,7 +1285,7 @@
     <value>3</value>
   </data>
   <data name="prevButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 913</value>
+    <value>25, 267</value>
   </data>
   <data name="prevButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 30</value>
@@ -1309,7 +1309,7 @@
     <value>2</value>
   </data>
   <data name="nextButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>804, 913</value>
+    <value>79, 267</value>
   </data>
   <data name="nextButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 30</value>
