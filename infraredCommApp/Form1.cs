@@ -2111,7 +2111,7 @@ namespace infraredCommApp
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
             this.imageWithoutTags = new Bitmap(resizedImage);
             this.colors.Clear();
-            StartNewHeatMapDrawAnimation(resizedImage, countsPerDayPerTagId, pictureBox1);
+            StartHeatMapDrawAnimation(resizedImage, countsPerDayPerTagId, pictureBox1);
         }
 
         //private List<HeatMapCordinateDTO> GetClientCountFromHeatMapList(List<HeatMap> maps)
@@ -2542,6 +2542,76 @@ namespace infraredCommApp
             else
             {
                 ((Timer)sender).Stop();
+
+            }
+        }
+
+
+        private void ReDrawPrevCordinate()
+        {
+            var cachedPointColor = new List<HeatMapCordinateDTO>();
+            if (currentCordinateIndex < heatMapCordinates.Count)
+            {
+                for (int i = 0; i < currentCordinateIndex; i++)
+                {
+                    HeatMapCordinateDTO cordinate = heatMapCordinates[i];
+                    var cordinateInfo = cachedPointColor.FirstOrDefault(x => x.Name == cordinate.Name);
+                    if (cordinateInfo == null)
+                    {
+                        cachedPointColor.Add(new HeatMapCordinateDTO
+                        {
+                            Name = cordinate.Name,
+                            CountOfClients = cordinate.CountOfClients
+                        });
+                    }
+                    else
+                    {
+                        cordinateInfo.CountOfClients = cordinateInfo.CountOfClients + cordinate.CountOfClients;
+                        cordinate.CountOfClients = cordinateInfo.CountOfClients;
+                    }
+
+                    if (cordinate.IsMatched)
+                    {
+                        double a = cordinate.CountOfClients - minNumberOfClient;
+                        double b = maxNumberOfClient - minNumberOfClient;
+                        double c = a / b;
+                        double ni = c * 100;
+                        double redValue = (ni * 255) / 100;
+                        double blueValue = ((100 - ni) * 255) / 100;
+
+                        if (redValue > 255)
+                        {
+                            redValue = 255;
+                        }
+                        else if (redValue < 0)
+                        {
+                            redValue = 0;
+                        }
+                        if (blueValue > 255)
+                        {
+                            blueValue = 255;
+                        }
+                        else if (blueValue < 0)
+                        {
+                            blueValue = 0;
+                        }
+
+                        Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                        graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+
+                    }
+                    else
+                    {
+                        Color color = Color.FromArgb(200, 255, 255, 0);
+                        this.graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                    }
+
+                }
+                
+
+                
+
+                pictureBox1.Image = imageToDrawTags;
 
             }
         }
