@@ -198,7 +198,7 @@ namespace infraredCommApp
         private List<string> selectedTags = new List<string>();
 
         // For animation 
-        private bool shouldSkipSaving = false;
+        private DateTime currentDate = DateTime.Now;
         private int currentCordinateIndex = 0;
         private List<HeatMapCordinateDTO> heatMapCordinates;
         private List<HeatMapCordinateWithMapDTO> heatMapCordinatesWithMap;
@@ -2318,13 +2318,14 @@ namespace infraredCommApp
                 this.nextButton.Visible = true;
                 DrawFixedColorBar(15, Graphics.FromImage(imageToDrawTags));
                 this.heatMapCordinatesWithMap = Common.DrawAllCordinates(imageToDrawTags, heatMapCordinates, minNumberOfClient, maxNumberOfClient);
+                currentDate = DateTime.Parse(FromDate);
 
                 timer = new Timer
                 {
                     Interval = timerStartPosition,
                 };
                 timerLabel.Text = timerStartPosition.ToString();
-                timer.Tick += new EventHandler(ViewSingleCordinate);
+                timer.Tick += new EventHandler(ViewSingleCordinateDateWise);
                 timer.Start();
                 isPlayingHeadMap = true;
             }
@@ -2390,6 +2391,25 @@ namespace infraredCommApp
                 currentCordinateIndex++;
                 double parcentage = (double.Parse(currentCordinateIndex.ToString()) / double.Parse(heatMapCordinatesWithMap.Count.ToString())) * 100;
                 ProgressBarTagLoad(parcentage);
+            }
+            else
+            {
+                ((Timer)sender).Stop();
+            }
+        }
+
+        private void ViewSingleCordinateDateWise(object sender, EventArgs e)
+        {
+            var endDate = ToDate;
+            Console.WriteLine(currentDate);
+            if(currentDate <= DateTime.Parse(ToDate) && currentDate >= DateTime.Parse(FromDate))
+            {
+                HeatMapCordinateWithMapDTO cordinateWithMap = heatMapCordinatesWithMap.FirstOrDefault(x => x.HeatMapCordinate.OccuredDate.Equals(currentDate));
+                if(cordinateWithMap != null)
+                {
+                    ViewSingleCordinate(timer, null);
+                }
+                currentDate = currentDate.AddDays(1);
             }
             else
             {
@@ -2714,16 +2734,16 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
 
-            //animationControlGBox.Location = new Point(10, 400);
+            animationControlGBox.Location = new Point(10, 400);
 
             //buttonSetup.Location = new Point(10, 300);
             //buttonExit.Location = new Point(10, 350);
