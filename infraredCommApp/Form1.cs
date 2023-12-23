@@ -1975,9 +1975,9 @@ namespace infraredCommApp
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
 
             Graphics painter = Graphics.FromImage(resizedImage);
-
-
+            DrawFixedColorBar(15, painter);
             var mapTags = currentMap.taglist.Where(x => selectedTags.Contains(x.tagname));
+            DrawAllBlueTags(mapTags.ToList(), painter);
             foreach (var taguSingle in mapTags)
             {
                 for (int i = 0; i < csvData.Rows.Count; i++)
@@ -2056,8 +2056,6 @@ namespace infraredCommApp
                 }
             }
 
-            DrawFixedColorBar(15, graphics);
-
             this.heatMapCordinatesWithMap = heatMapWithImage;
             currentDate = DateTime.Parse(FromDate);
 
@@ -2072,6 +2070,16 @@ namespace infraredCommApp
             timer.Tick += new EventHandler(ViewSingleCordinate);
             timer.Start();
             isPlayingHeadMap = true;
+        }
+
+        private void DrawAllBlueTags(List<tagu> mapTags, Graphics painter)
+        {
+            for (int i = 0; i < mapTags.Count; i++)
+            {
+
+                Color color = Color.FromArgb(255, 0, 0, 255);
+                painter.FillEllipse(new SolidBrush(color), mapTags[i].pointx, mapTags[i].pointy, 30, 30);
+            }
         }
 
         private Color GetColorToPlot(double maxAmount,double currentAmount)
