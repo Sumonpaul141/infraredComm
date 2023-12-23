@@ -2056,8 +2056,13 @@ namespace infraredCommApp
                 }
             }
 
+            DrawFixedColorBar(15, graphics);
+
             this.heatMapCordinatesWithMap = heatMapWithImage;
             currentDate = DateTime.Parse(FromDate);
+
+            this.prevButton.Visible = true;
+            this.nextButton.Visible = true;
 
             timer = new Timer
             {
