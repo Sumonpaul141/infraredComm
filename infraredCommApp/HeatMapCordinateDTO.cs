@@ -10,11 +10,11 @@ namespace infraredCommApp
 {
     public class HeatMapCordinateDTO
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public int CountOfClients { get; set; }
         public int PointX { get; set; }
         public int PointY { get; set; }
-        public bool IsMatched { get; set; }
         public DateTime OccuredDate { get; set; }
     }
 

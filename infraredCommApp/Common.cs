@@ -326,44 +326,44 @@ namespace infraredCommApp
                     cordinateInfo.CountOfClients = cordinateInfo.CountOfClients + cordinate.CountOfClients;
                     cordinate.CountOfClients = cordinateInfo.CountOfClients;
                 }
-                if (cordinate.IsMatched)
-                {
-                    //double a = cordinate.CountOfClients - minNumberOfClient;
-                    //double b = maxNumberOfClient - minNumberOfClient;
-                    //double c = a / b;
-                    //double ni = c * 100;
-                    //double redValue = (ni * 255) / 100;
-                    //double blueValue = ((100 - ni) * 255) / 100;
+                //if (cordinate.IsMatched)
+                //{
+                //    //double a = cordinate.CountOfClients - minNumberOfClient;
+                //    //double b = maxNumberOfClient - minNumberOfClient;
+                //    //double c = a / b;
+                //    //double ni = c * 100;
+                //    //double redValue = (ni * 255) / 100;
+                //    //double blueValue = ((100 - ni) * 255) / 100;
 
-                    //if (redValue > 255)
-                    //{
-                    //    redValue = 255;
-                    //}
-                    //else if (redValue < 0)
-                    //{
-                    //    redValue = 0;
-                    //}
-                    //if (blueValue > 255)
-                    //{
-                    //    blueValue = 255;
-                    //}
-                    //else if (blueValue < 0)
-                    //{
-                    //    blueValue = 0;
-                    //}
+                //    //if (redValue > 255)
+                //    //{
+                //    //    redValue = 255;
+                //    //}
+                //    //else if (redValue < 0)
+                //    //{
+                //    //    redValue = 0;
+                //    //}
+                //    //if (blueValue > 255)
+                //    //{
+                //    //    blueValue = 255;
+                //    //}
+                //    //else if (blueValue < 0)
+                //    //{
+                //    //    blueValue = 0;
+                //    //}
 
-                    var nBar = ((cordinate.CountOfClients - minNumberOfClient) / (totalCount - minNumberOfClient)) * 100;
-                    double redValue = (nBar * 255) / 100;
-                    double blueValue = (255 - redValue);
+                //    var nBar = ((cordinate.CountOfClients - minNumberOfClient) / (totalCount - minNumberOfClient)) * 100;
+                //    double redValue = (nBar * 255) / 100;
+                //    double blueValue = (255 - redValue);
 
-                    Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
-                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
-                }
-                else
-                {
-                    Color color = Color.FromArgb(200, 255, 255, 0);
-                    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
-                }
+                //    Color color = Color.FromArgb(Convert.ToInt32(redValue), 0, Convert.ToInt32(blueValue));
+                //    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                //}
+                //else
+                //{
+                //    Color color = Color.FromArgb(200, 255, 255, 0);
+                //    graphics.FillEllipse(new SolidBrush(color), cordinate.PointX, cordinate.PointY, 30, 30);
+                //}
 
                 withMap.Add(new HeatMapCordinateWithMapDTO()
                 {
