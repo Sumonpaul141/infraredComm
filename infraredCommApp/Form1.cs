@@ -1613,7 +1613,6 @@ namespace infraredCommApp
 
         private void ButtonManage(bool isVisible)
         {
-            // ai 4 ta show hobe kon butto
             ShowMapControls(isVisible);
             ShowHeatMapControls(!isVisible);
             ShowBarGraphControls(false);
@@ -1934,6 +1933,7 @@ namespace infraredCommApp
         {
             var heatmapImageName = map_comboBox1.SelectedValue.ToString();
             HeatMapGraph f2 = new HeatMapGraph(heatmapImageName, Form1.workfolder);
+            ShowMapControls(false);
             var dialogResult = f2.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -1951,7 +1951,8 @@ namespace infraredCommApp
                 lblToDate.Text = Convert.ToDateTime(ToDate).ToShortDateString();
                 TimeSpan diff = Convert.ToDateTime(ToDate) - Convert.ToDateTime(FromDate);
                 double hours = diff.TotalHours;
-                ButtonManage(false);
+                ShowBarGraphControls(false);
+                ShowHeatMapControls(true);
                 //GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
                 //GenerateNewHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
                 HeatMapGenerate(heatmapImageName, HeatMapGraph.SelectedTags);
@@ -2076,7 +2077,6 @@ namespace infraredCommApp
         {
             for (int i = 0; i < mapTags.Count; i++)
             {
-
                 Color color = Color.FromArgb(255, 0, 0, 255);
                 painter.FillEllipse(new SolidBrush(color), mapTags[i].pointx, mapTags[i].pointy, 30, 30);
             }
@@ -2499,11 +2499,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
             // prevButton.Location = new Point(10, 530);
             // nextButton.Location = new Point(10, 530);
 
