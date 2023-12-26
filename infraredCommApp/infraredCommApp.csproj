@@ -93,6 +93,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorBarInfoDTO.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="ContentPlayingInfo.cs" />
     <Compile Include="ContentPlayResultModel.cs" />

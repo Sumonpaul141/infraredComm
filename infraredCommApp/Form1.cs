@@ -1975,7 +1975,6 @@ namespace infraredCommApp
             var resizedImage = Common.FillPictureBox(pictureBox1, originalBitmap);
 
             Graphics painter = Graphics.FromImage(resizedImage);
-            DrawFixedColorBar(15, painter);
             var mapTags = currentMap.taglist.Where(x => selectedTags.Contains(x.tagname));
             DrawAllBlueTags(mapTags.ToList(), painter);
             foreach (var taguSingle in mapTags)
@@ -2006,6 +2005,7 @@ namespace infraredCommApp
             Dictionary<String, int> tagCountCache = new Dictionary<String, int>();
             var tagWiseCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
             var maxClientCount = tagWiseCount.Max(x => x.CountOfClients);
+            DrawDynamicColorBars(maxClientCount, 10, painter);
             var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
             var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
             for (DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = date.AddDays(1))
@@ -2282,9 +2282,9 @@ namespace infraredCommApp
                 .ToList();
         }
 
-        public void DrawMultiColorRectangle(Graphics g, List<Color> colors, int startX, int startY, int width, int height)
+        public void DrawMultiColorRectangle(Graphics g, List<ColorBarInfoDTO> colors, int startX, int startY, int width, int height)
         {
-            colors.Sort((a,b) => a.R.CompareTo(b.R));
+            colors.Sort((a,b) => a.color.R.CompareTo(b.color.R));
             //colors.InsertRange(0, new List<Color> { Color.Yellow });
             int colorHeight = height / colors.Count;
 
@@ -2292,34 +2292,70 @@ namespace infraredCommApp
 
             for (int i = colors.Count - 1; i >= 0; i--)
             {
-                SolidBrush brush = new SolidBrush(colors[i]);
+                SolidBrush brush = new SolidBrush(colors[i].color);
                 g.FillRectangle(brush, startX, startY - (i * colorHeight), width, colorHeight);
                 brush.Dispose();
 
                 // Draw index beside color
-                string indexText = i.ToString();
+                string indexText = colors[i].index.ToString();
                 Font font = new Font("Arial", 10);
                 SolidBrush textBrush = new SolidBrush(Color.Black);
-                g.DrawString(indexText, font, textBrush, startX + width + 5, startY - (i * colorHeight) + colorHeight / 2 - 8);
+                g.DrawString(indexText, font, textBrush, startX - width + 5, startY - (i * colorHeight) + colorHeight / 2 - 8);
                 font.Dispose();
                 textBrush.Dispose();
             }
         }
 
+        public void DrawDynamicColorBars(int numberOfColors, int numberOfBars, Graphics graphics)
+        {
+            var barColors = new List<ColorBarInfoDTO>();
+            if (numberOfBars > 0 && numberOfColors > 0)
+            {
+                int interval = numberOfColors / numberOfBars;
+                int startingIndex = numberOfColors;
+
+                for (int i = 0; i < numberOfBars; i++)
+                {
+                    barColors.Add(new ColorBarInfoDTO()
+                    {
+                        color = CalculateColorFromIndex(startingIndex, numberOfColors),
+                        index = startingIndex
+                    });
+
+                    startingIndex -= interval;
+                }
+            }
+
+            DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 800);
+        }
+
+        private Color CalculateColorFromIndex(int index, int numberOfColors)
+        {
+            int divideValue = 255 / (numberOfColors - 1);
+            int redColorValue = 255 - (divideValue * index);
+            return Color.FromArgb(255, 255 - redColorValue, 0 ,redColorValue);
+        }
+
         public void DrawFixedColorBar(int numberOfBarItem, Graphics graphics)
         {
-            var barColors = new List<Color>();
+            var barColors = new List<ColorBarInfoDTO>();
             if(numberOfBarItem > 0)
             {
                 var divideValue = 255 / numberOfBarItem;
                 var redColorValue = 255;
-                for (int i = 0; i < numberOfBarItem; i++)
+                var incrementAmount = (numberOfBarItem / 10);
+                for (int i = 0; i < numberOfBarItem; i += incrementAmount)
                 {
-                    barColors.Add(Color.FromArgb(255, redColorValue, 0, 255 - redColorValue));
-                    redColorValue -= divideValue;
+                    barColors.Add(new ColorBarInfoDTO() 
+                    {
+                        color = Color.FromArgb(255, redColorValue, 0, 255 - redColorValue),
+                        index = i
+                    });
+                    redColorValue -= (divideValue * incrementAmount);
                 }
             }
-            DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 880);
+            
+            DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 300);
         }
 
         public void StartHeatMapDrawAnimation(Bitmap imageToDrawTags, List<HeatMapCordinateDTO> heatMapCordinates, PictureBox pictureBox)
@@ -2343,7 +2379,7 @@ namespace infraredCommApp
                 this.lblProgBarTagLoadPercent.Visible = true;
                 this.prevButton.Visible = true;
                 this.nextButton.Visible = true;
-                DrawFixedColorBar(15, Graphics.FromImage(imageToDrawTags));
+                DrawFixedColorBar(85, Graphics.FromImage(imageToDrawTags));
                 this.heatMapCordinatesWithMap = Common.DrawAllCordinates(imageToDrawTags, heatMapCordinates, minNumberOfClient, maxNumberOfClient);
                 currentDate = DateTime.Parse(FromDate);
 
@@ -2463,13 +2499,13 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
-            //prevButton.Location = new Point(10, 530);
-            //prevButton.Location = new Point(10, 530);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
+            // prevButton.Location = new Point(10, 530);
+            // nextButton.Location = new Point(10, 530);
 
             //ControlGroupBox.Location = new Point(0, 500);
             //chartWithData.Size = new Size(800, 400);
