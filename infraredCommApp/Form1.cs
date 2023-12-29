@@ -2006,13 +2006,26 @@ namespace infraredCommApp
             Dictionary<String, int> tagCountCache = new Dictionary<String, int>();
             var tagWiseCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
             var maxClientCount = tagWiseCount.Max(x => x.CountOfClients);
-            DrawDynamicColorBars(maxClientCount, 10, painter);
+            // DrawDynamicColorBars(maxClientCount, 10, painter);
             var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
             var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
-            for (DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = date.AddDays(1))
+            for (DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
             {
-                var currentDayTags = dateWiseSortedList.FindAll(x => x.tagDate.ToShortDateString().Equals(date.ToShortDateString()));
-                if(currentDayTags != null && currentDayTags.Any())
+                List<HeatMap> currentDayTags;
+                if (isHourlyView)
+                {
+                    currentDayTags = dateWiseSortedList.FindAll(x =>
+                                    x.tagDate.ToShortDateString().Equals(date.ToShortDateString())
+                                    && x.tagDate.TimeOfDay >= date.TimeOfDay
+                                    && x.tagDate.TimeOfDay < date.AddHours(1).TimeOfDay
+                                 );
+                }
+                else
+                {
+                    currentDayTags = dateWiseSortedList.FindAll(x => x.tagDate.ToShortDateString().Equals(date.ToShortDateString()));
+
+                }
+                if (currentDayTags != null && currentDayTags.Any())
                 {
                     var perTagCountList = currentDayTags.GroupBy(x => x.tagname)
                                         .Select(x => new HeatMapCordinateDTO
