@@ -2440,7 +2440,8 @@ namespace infraredCommApp
             var currentDateString = $"Current date: {dateTime.ToShortDateString()}";
             if (withTime)
             {
-                currentDateString += $" Time : {dateTime.ToShortTimeString()}";
+                string time = dateTime.ToString("hh:00:tt");
+                currentDateString += $" Time : {time}";
             }
             Console.WriteLine(currentDateString);
             return currentDateString;
@@ -2514,11 +2515,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
             // prevButton.Location = new Point(10, 530);
             // nextButton.Location = new Point(10, 530);
 
