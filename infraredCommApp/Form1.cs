@@ -2006,7 +2006,7 @@ namespace infraredCommApp
             Dictionary<String, int> tagCountCache = new Dictionary<String, int>();
             var tagWiseCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
             var maxClientCount = tagWiseCount.Max(x => x.CountOfClients);
-            // DrawDynamicColorBars(maxClientCount, 10, painter);
+            DrawDynamicColorBars(maxClientCount, 10, painter);
             var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
             var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
             for (DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
@@ -2321,17 +2321,26 @@ namespace infraredCommApp
 
         public void DrawDynamicColorBars(int numberOfColors, int numberOfBars, Graphics graphics)
         {
+            var total = numberOfColors;
+            double unit = 255.00 / total;
             var barColors = new List<ColorBarInfoDTO>();
             if (numberOfBars > 0 && numberOfColors > 0)
             {
+                if(numberOfColors < numberOfBars)
+                {
+                    numberOfBars = numberOfColors;
+                }
                 int interval = numberOfColors / numberOfBars;
                 int startingIndex = numberOfColors;
 
                 for (int i = 0; i < numberOfBars; i++)
                 {
+                    var redVal = startingIndex * unit;
+                    if (redVal > 255) redVal = 255;
+                    if (redVal < 0) redVal = 0;
                     barColors.Add(new ColorBarInfoDTO()
                     {
-                        color = CalculateColorFromIndex(startingIndex, numberOfColors),
+                        color = Color.FromArgb(255,(int) Math.Round(redVal), 0, (int)Math.Round(255 - redVal)),
                         index = startingIndex
                     });
 
@@ -2340,13 +2349,6 @@ namespace infraredCommApp
             }
 
             DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 800);
-        }
-
-        private Color CalculateColorFromIndex(int index, int numberOfColors)
-        {
-            int divideValue = 255 / (numberOfColors - 1);
-            int redColorValue = 255 - (divideValue * index);
-            return Color.FromArgb(255, 255 - redColorValue, 0 ,redColorValue);
         }
 
         public void DrawFixedColorBar(int numberOfBarItem, Graphics graphics)
@@ -2512,11 +2514,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            //add_map_button1.Location = new Point(10, 300);
-            //delete_map_button8.Location = new Point(10, 350);
-            //map_comboBox1.Location = new Point(10, 400);
-            //Exit_map_edit_button9.Location = new Point(10, 450);
-            //lblTagNameTest.Location = new Point(10, 500);
+            add_map_button1.Location = new Point(10, 300);
+            delete_map_button8.Location = new Point(10, 350);
+            map_comboBox1.Location = new Point(10, 400);
+            Exit_map_edit_button9.Location = new Point(10, 450);
+            lblTagNameTest.Location = new Point(10, 500);
             // prevButton.Location = new Point(10, 530);
             // nextButton.Location = new Point(10, 530);
 
