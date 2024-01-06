@@ -2440,7 +2440,7 @@ namespace infraredCommApp
             var currentDateString = $"Current date: {dateTime.ToShortDateString()}";
             if (withTime)
             {
-                string time = dateTime.ToString("hh:00:tt");
+                string time = dateTime.ToString("HH:00");
                 currentDateString += $" Time : {time}";
             }
             Console.WriteLine(currentDateString);
