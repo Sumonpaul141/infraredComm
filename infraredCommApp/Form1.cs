@@ -2348,6 +2348,16 @@ namespace infraredCommApp
                 }
             }
 
+            var zeroItem = barColors.FirstOrDefault(x => x.index == 0);
+            if(zeroItem == null)
+            {
+                barColors.Add(new ColorBarInfoDTO()
+                {
+                    color = Color.FromArgb(255, 0, 0, 255),
+                    index = 0,
+                });
+            }
+
             DrawMultiColorRectangle(graphics, barColors, 1630, -100, 30, 800);
         }
 
