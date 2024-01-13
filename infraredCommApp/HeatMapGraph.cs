@@ -28,15 +28,19 @@ namespace infraredCommApp
         public static string workfolder = "";
         public static DataTable HeatMapSorted = new DataTable();
         public static DataTable HeatMapUnSorted = new DataTable();
-        private readonly Map CurrentMap;
+        public static Map CurrentMap;
 
-        public HeatMapGraph(string mapName, string wFolder)
+        public HeatMapGraph(string wFolder)
         {
             InitializeComponent();
             workfolder = wFolder;
             string fileName = $"{wFolder}\\Image\\obj";
             var mapDataList = (List<Map>)LoadFromBinaryFile(fileName);
-            CurrentMap = mapDataList.FirstOrDefault(x => x.MapFileName == mapName);
+            selectMapComboBox.DataSource = mapDataList;
+            selectMapComboBox.DisplayMember = "MapName";
+            selectMapComboBox.ValueMember = "MapFileName";
+            selectMapComboBox.SelectedIndex = 0;
+            CurrentMap = mapDataList[0];
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -223,6 +227,22 @@ namespace infraredCommApp
         private void SelectAllClick(object sender, EventArgs e)
         {
             AllSelectionToggle(true);
+        }
+
+        private void selectMapComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var currentMap = (selectMapComboBox.SelectedItem as Map);
+            selectedMapPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            selectedMapPictureBox.Image = Image.FromFile(workfolder + "Image\\" + currentMap.MapFileName + ".jpeg", true);
+            CurrentMap = currentMap;
+            var data = GetListItemData();
+            if (data != null)
+            {
+                listBoxAllData.DataSource = data;
+                listBoxAllData.DisplayMember = "tagname";
+                listBoxAllData.ValueMember = "tagId";
+                listBoxAllData.SelectionMode = SelectionMode.MultiSimple;
+            }
         }
     }
 }

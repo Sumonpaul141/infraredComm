@@ -21,6 +21,7 @@ namespace infraredCommApp
     public class HeatMapCordinateWithMapDTO
     {
         public Bitmap MapImage { get; set; }
+        public int CummCountOfClient { get; set; }
         public HeatMapCordinateDTO HeatMapCordinate { get; set; }
 
     }

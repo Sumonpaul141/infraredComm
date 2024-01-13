@@ -42,13 +42,16 @@
             this.listBoxAllData = new System.Windows.Forms.ListBox();
             this.selectAllBtn = new System.Windows.Forms.Button();
             this.unselectAllBtn = new System.Windows.Forms.Button();
+            this.selectMapComboBox = new System.Windows.Forms.ComboBox();
+            this.selectedMapPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedMapPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dtToDate
             // 
-            this.dtToDate.Location = new System.Drawing.Point(28, 121);
+            this.dtToDate.Location = new System.Drawing.Point(28, 131);
             this.dtToDate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtToDate.Name = "dtToDate";
             this.dtToDate.Size = new System.Drawing.Size(219, 23);
@@ -56,7 +59,7 @@
             // 
             // dtFromDate
             // 
-            this.dtFromDate.Location = new System.Drawing.Point(28, 59);
+            this.dtFromDate.Location = new System.Drawing.Point(28, 64);
             this.dtFromDate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtFromDate.Name = "dtFromDate";
             this.dtFromDate.Size = new System.Drawing.Size(219, 23);
@@ -65,20 +68,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 96);
+            this.label3.Location = new System.Drawing.Point(25, 104);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 16);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "終了日";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 33);
+            this.label2.Location = new System.Drawing.Point(25, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "開始日";
             // 
@@ -93,18 +96,18 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.PictureBox);
             this.groupBox2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox2.Location = new System.Drawing.Point(14, 13);
+            this.groupBox2.Location = new System.Drawing.Point(367, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(424, 194);
+            this.groupBox2.Size = new System.Drawing.Size(424, 210);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "期間指定";
             // 
             // dtToDateTime
             // 
-            this.dtToDateTime.Location = new System.Drawing.Point(257, 120);
+            this.dtToDateTime.Location = new System.Drawing.Point(257, 130);
             this.dtToDateTime.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtToDateTime.Name = "dtToDateTime";
             this.dtToDateTime.Size = new System.Drawing.Size(146, 23);
@@ -113,7 +116,7 @@
             // 
             // dtFromDateTime
             // 
-            this.dtFromDateTime.Location = new System.Drawing.Point(257, 58);
+            this.dtFromDateTime.Location = new System.Drawing.Point(257, 63);
             this.dtFromDateTime.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtFromDateTime.Name = "dtFromDateTime";
             this.dtFromDateTime.Size = new System.Drawing.Size(146, 23);
@@ -126,7 +129,7 @@
             this.dayHourComboBox.Items.AddRange(new object[] {
             "Hour",
             "Day"});
-            this.dayHourComboBox.Location = new System.Drawing.Point(126, 11);
+            this.dayHourComboBox.Location = new System.Drawing.Point(126, 12);
             this.dayHourComboBox.Name = "dayHourComboBox";
             this.dayHourComboBox.Size = new System.Drawing.Size(121, 24);
             this.dayHourComboBox.TabIndex = 40;
@@ -135,18 +138,18 @@
             // PictureBox
             // 
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PictureBox.Location = new System.Drawing.Point(28, 133);
+            this.PictureBox.Location = new System.Drawing.Point(28, 144);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(24, 10);
+            this.PictureBox.Size = new System.Drawing.Size(24, 11);
             this.PictureBox.TabIndex = 32;
             this.PictureBox.TabStop = false;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(22, 426);
+            this.button2.Location = new System.Drawing.Point(22, 462);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 36);
+            this.button2.Size = new System.Drawing.Size(82, 39);
             this.button2.TabIndex = 6;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -155,9 +158,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(335, 426);
+            this.button1.Location = new System.Drawing.Point(335, 462);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 36);
+            this.button1.Size = new System.Drawing.Size(82, 39);
             this.button1.TabIndex = 6;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -166,18 +169,17 @@
             // listBoxAllData
             // 
             this.listBoxAllData.FormattingEnabled = true;
-            this.listBoxAllData.ItemHeight = 12;
-            this.listBoxAllData.Location = new System.Drawing.Point(22, 225);
+            this.listBoxAllData.Location = new System.Drawing.Point(22, 244);
             this.listBoxAllData.Name = "listBoxAllData";
-            this.listBoxAllData.Size = new System.Drawing.Size(416, 148);
+            this.listBoxAllData.Size = new System.Drawing.Size(416, 160);
             this.listBoxAllData.TabIndex = 32;
             // 
             // selectAllBtn
             // 
             this.selectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.selectAllBtn.Location = new System.Drawing.Point(238, 426);
+            this.selectAllBtn.Location = new System.Drawing.Point(238, 462);
             this.selectAllBtn.Name = "selectAllBtn";
-            this.selectAllBtn.Size = new System.Drawing.Size(87, 36);
+            this.selectAllBtn.Size = new System.Drawing.Size(87, 39);
             this.selectAllBtn.TabIndex = 33;
             this.selectAllBtn.Text = "Select all";
             this.selectAllBtn.UseVisualStyleBackColor = true;
@@ -186,19 +188,38 @@
             // unselectAllBtn
             // 
             this.unselectAllBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.unselectAllBtn.Location = new System.Drawing.Point(111, 426);
+            this.unselectAllBtn.Location = new System.Drawing.Point(111, 462);
             this.unselectAllBtn.Name = "unselectAllBtn";
-            this.unselectAllBtn.Size = new System.Drawing.Size(112, 36);
+            this.unselectAllBtn.Size = new System.Drawing.Size(112, 39);
             this.unselectAllBtn.TabIndex = 34;
             this.unselectAllBtn.Text = "Unselect all";
             this.unselectAllBtn.UseVisualStyleBackColor = true;
             this.unselectAllBtn.Click += new System.EventHandler(this.UnSelectAllClick);
             // 
+            // selectMapComboBox
+            // 
+            this.selectMapComboBox.FormattingEnabled = true;
+            this.selectMapComboBox.Location = new System.Drawing.Point(22, 25);
+            this.selectMapComboBox.Name = "selectMapComboBox";
+            this.selectMapComboBox.Size = new System.Drawing.Size(153, 21);
+            this.selectMapComboBox.TabIndex = 35;
+            this.selectMapComboBox.SelectedIndexChanged += new System.EventHandler(this.selectMapComboBox_SelectedIndexChanged);
+            // 
+            // selectedMapPictureBox
+            // 
+            this.selectedMapPictureBox.Location = new System.Drawing.Point(22, 65);
+            this.selectedMapPictureBox.Name = "selectedMapPictureBox";
+            this.selectedMapPictureBox.Size = new System.Drawing.Size(321, 158);
+            this.selectedMapPictureBox.TabIndex = 36;
+            this.selectedMapPictureBox.TabStop = false;
+            // 
             // HeatMapGraph
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 485);
+            this.ClientSize = new System.Drawing.Size(815, 525);
+            this.Controls.Add(this.selectedMapPictureBox);
+            this.Controls.Add(this.selectMapComboBox);
             this.Controls.Add(this.unselectAllBtn);
             this.Controls.Add(this.selectAllBtn);
             this.Controls.Add(this.listBoxAllData);
@@ -212,6 +233,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedMapPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +253,7 @@
         private System.Windows.Forms.ListBox listBoxAllData;
         private System.Windows.Forms.Button selectAllBtn;
         private System.Windows.Forms.Button unselectAllBtn;
+        private System.Windows.Forms.ComboBox selectMapComboBox;
+        private System.Windows.Forms.PictureBox selectedMapPictureBox;
     }
 }

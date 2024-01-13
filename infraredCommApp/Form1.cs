@@ -1931,12 +1931,12 @@ namespace infraredCommApp
 
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
-            var heatmapImageName = map_comboBox1.SelectedValue.ToString();
-            HeatMapGraph f2 = new HeatMapGraph(heatmapImageName, Form1.workfolder);
+            HeatMapGraph f2 = new HeatMapGraph(Form1.workfolder);
             ShowMapControls(false);
             var dialogResult = f2.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
+                var heatmapImageName = HeatMapGraph.CurrentMap.MapFileName;
                 FromDate = HeatMapGraph.FromDate.Trim();
                 //FromDate = "1/1/2023 12:00:00 AM";
                 ToDate = HeatMapGraph.ToDate.Trim();
@@ -2009,7 +2009,8 @@ namespace infraredCommApp
             DrawDynamicColorBars(maxClientCount, 10, painter);
             var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
             var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
-            for (DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
+            for (
+                DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
             {
                 List<HeatMap> currentDayTags;
                 if (isHourlyView)
@@ -2053,6 +2054,7 @@ namespace infraredCommApp
                         heatMapWithImage.Add(new HeatMapCordinateWithMapDTO()
                         {
                             HeatMapCordinate = currentTag, 
+                            CummCountOfClient = tagCountCache[currentTag.Id],
                             MapImage = new Bitmap(resizedImage)
                         });
                     }
@@ -2072,7 +2074,7 @@ namespace infraredCommApp
 
             this.heatMapCordinatesWithMap = heatMapWithImage;
             currentDate = DateTime.Parse(FromDate);
-
+            //cordinateValueLabel.BringToFront();
             this.prevButton.Visible = true;
             this.nextButton.Visible = true;
 
@@ -2432,6 +2434,16 @@ namespace infraredCommApp
             if (currentCordinateIndex < heatMapCordinatesWithMap.Count)
             {
                 HeatMapCordinateDTO cordinate = heatMapCordinatesWithMap[currentCordinateIndex].HeatMapCordinate;
+                //if(cordinate.PointX == 0 && cordinate.PointY == 0)
+                //{
+                //    cordinateValueLabel.Visible = false;
+                //} 
+                //else
+                //{
+                //    cordinateValueLabel.Visible = true;
+                //    cordinateValueLabel.Text = heatMapCordinatesWithMap[currentCordinateIndex].CummCountOfClient.ToString();
+                //    cordinateValueLabel.Location = new Point(cordinate.PointX, cordinate.PointY);
+                //}
                 currentDateLabel.Text = GetDateShowValue(isHourlyView, cordinate.OccuredDate);
                 pictureBox1.Image = heatMapCordinatesWithMap[currentCordinateIndex].MapImage;
                 currentCordinateIndex++;
@@ -2525,11 +2537,11 @@ namespace infraredCommApp
 
         private void ChangeLocation()
        {
-            add_map_button1.Location = new Point(10, 300);
-            delete_map_button8.Location = new Point(10, 350);
-            map_comboBox1.Location = new Point(10, 400);
-            Exit_map_edit_button9.Location = new Point(10, 450);
-            lblTagNameTest.Location = new Point(10, 500);
+            //add_map_button1.Location = new Point(10, 300);
+            //delete_map_button8.Location = new Point(10, 350);
+            //map_comboBox1.Location = new Point(10, 400);
+            //Exit_map_edit_button9.Location = new Point(10, 450);
+            //lblTagNameTest.Location = new Point(10, 500);
             // prevButton.Location = new Point(10, 530);
             // nextButton.Location = new Point(10, 530);
 
