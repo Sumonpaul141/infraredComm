@@ -2017,87 +2017,95 @@ namespace infraredCommApp
             }
             Dictionary<String, int> tagCountCache = new Dictionary<String, int>();
             var tagWiseCount = GetClientCountFromHeatMapList(filteredByDateTimeHeatMapList);
-            var maxClientCount = tagWiseCount.Max(x => x.CountOfClients);
-            DrawDynamicColorBars(maxClientCount, 10, painter);
-            var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
-            var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
-            for (
-                DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
+            if (tagWiseCount.Any())
             {
-                List<HeatMap> currentDayTags;
-                if (isHourlyView)
+                var maxClientCount = tagWiseCount.Max(x => x.CountOfClients);
+                DrawDynamicColorBars(maxClientCount, 10, painter);
+                var dateWiseSortedList = filteredByDateTimeHeatMapList.OrderBy(x => x.tagDate).ToList();
+                var heatMapWithImage = new List<HeatMapCordinateWithMapDTO>();
+                for (
+                    DateTime date = DateTime.Parse(FromDate); date <= DateTime.Parse(ToDate); date = isHourlyView ? date.AddHours(1) : date.AddDays(1))
                 {
-                    currentDayTags = dateWiseSortedList.FindAll(x =>
-                                    x.tagDate.ToShortDateString().Equals(date.ToShortDateString())
-                                    && x.tagDate.TimeOfDay >= date.TimeOfDay
-                                    && x.tagDate.TimeOfDay < date.AddHours(1).TimeOfDay
-                                 );
-                }
-                else
-                {
-                    currentDayTags = dateWiseSortedList.FindAll(x => x.tagDate.ToShortDateString().Equals(date.ToShortDateString()));
-
-                }
-                if (currentDayTags != null && currentDayTags.Any())
-                {
-                    var perTagCountList = currentDayTags.GroupBy(x => x.tagname)
-                                        .Select(x => new HeatMapCordinateDTO
-                                        {
-                                            Name = x.Key,
-                                            CountOfClients = x.Count(),
-                                            PointX = x.First().pointx,
-                                            PointY = x.First().pointy,
-                                            OccuredDate = x.First().tagDate,
-                                            Id = x.First().tagId
-                                        })
-                                        .ToList();
-                    for (int i = 0; i < perTagCountList.Count; i++)
+                    List<HeatMap> currentDayTags;
+                    if (isHourlyView)
                     {
-                        var currentTag = perTagCountList[i];
-                        if (tagCountCache.ContainsKey(currentTag.Id))
+                        currentDayTags = dateWiseSortedList.FindAll(x =>
+                                        x.tagDate.ToShortDateString().Equals(date.ToShortDateString())
+                                        && x.tagDate.TimeOfDay >= date.TimeOfDay
+                                        && x.tagDate.TimeOfDay < date.AddHours(1).TimeOfDay
+                                     );
+                    }
+                    else
+                    {
+                        currentDayTags = dateWiseSortedList.FindAll(x => x.tagDate.ToShortDateString().Equals(date.ToShortDateString()));
+
+                    }
+                    if (currentDayTags != null && currentDayTags.Any())
+                    {
+                        var perTagCountList = currentDayTags.GroupBy(x => x.tagname)
+                                            .Select(x => new HeatMapCordinateDTO
+                                            {
+                                                Name = x.Key,
+                                                CountOfClients = x.Count(),
+                                                PointX = x.First().pointx,
+                                                PointY = x.First().pointy,
+                                                OccuredDate = x.First().tagDate,
+                                                Id = x.First().tagId
+                                            })
+                                            .ToList();
+                        for (int i = 0; i < perTagCountList.Count; i++)
                         {
-                            tagCountCache[currentTag.Id] = tagCountCache[currentTag.Id] + currentTag.CountOfClients;
-                        }else
-                        {
-                            tagCountCache.Add(currentTag.Id, currentTag.CountOfClients);
+                            var currentTag = perTagCountList[i];
+                            if (tagCountCache.ContainsKey(currentTag.Id))
+                            {
+                                tagCountCache[currentTag.Id] = tagCountCache[currentTag.Id] + currentTag.CountOfClients;
+                            }
+                            else
+                            {
+                                tagCountCache.Add(currentTag.Id, currentTag.CountOfClients);
+                            }
+                            Color color = GetColorToPlot(maxClientCount, tagCountCache[currentTag.Id]);
+                            painter.FillEllipse(new SolidBrush(color), currentTag.PointX, currentTag.PointY, 30, 30);
+                            heatMapWithImage.Add(new HeatMapCordinateWithMapDTO()
+                            {
+                                HeatMapCordinate = currentTag,
+                                CummCountOfClient = tagCountCache[currentTag.Id],
+                                MapImage = new Bitmap(resizedImage)
+                            });
                         }
-                        Color color = GetColorToPlot(maxClientCount, tagCountCache[currentTag.Id]);
-                        painter.FillEllipse(new SolidBrush(color), currentTag.PointX, currentTag.PointY, 30, 30);
+                    }
+                    else
+                    {
                         heatMapWithImage.Add(new HeatMapCordinateWithMapDTO()
                         {
-                            HeatMapCordinate = currentTag, 
-                            CummCountOfClient = tagCountCache[currentTag.Id],
+                            HeatMapCordinate = new HeatMapCordinateDTO()
+                            {
+                                OccuredDate = date
+                            },
                             MapImage = new Bitmap(resizedImage)
                         });
                     }
-                } 
-                else
-                {
-                    heatMapWithImage.Add(new HeatMapCordinateWithMapDTO()
-                    {
-                        HeatMapCordinate = new HeatMapCordinateDTO() 
-                        {
-                            OccuredDate = date
-                        },
-                        MapImage = new Bitmap(resizedImage)
-                    });
                 }
-            }
 
-            this.heatMapCordinatesWithMap = heatMapWithImage;
-            currentDate = DateTime.Parse(FromDate);
-            //cordinateValueLabel.BringToFront();
-            this.prevButton.Visible = true;
-            this.nextButton.Visible = true;
+                this.heatMapCordinatesWithMap = heatMapWithImage;
+                currentDate = DateTime.Parse(FromDate);
+                //cordinateValueLabel.BringToFront();
+                this.prevButton.Visible = true;
+                this.nextButton.Visible = true;
 
-            timer = new Timer
+                timer = new Timer
+                {
+                    Interval = timerStartPosition,
+                };
+                timerLabel.Text = timerStartPosition.ToString();
+                timer.Tick += new EventHandler(ViewSingleCordinate);
+                timer.Start();
+                isPlayingHeadMap = true;
+            } else
             {
-                Interval = timerStartPosition,
-            };
-            timerLabel.Text = timerStartPosition.ToString();
-            timer.Tick += new EventHandler(ViewSingleCordinate);
-            timer.Start();
-            isPlayingHeadMap = true;
+                MessageBox.Show("NO items found");
+            }
+            
         }
 
         private void DrawAllBlueTags(List<tagu> mapTags, Graphics painter)
