@@ -1350,6 +1350,9 @@
   <data name="cordinateValueLabel.Text" xml:space="preserve">
     <value>cordinateValueLabel</value>
   </data>
+  <data name="cordinateValueLabel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;cordinateValueLabel.Name" xml:space="preserve">
     <value>cordinateValueLabel</value>
   </data>

@@ -209,6 +209,8 @@ namespace infraredCommApp
         private double minNumberOfClient;
         private double maxNumberOfClient;
 
+        private Map CurrentMapSelected;
+
         //for blink
         private bool isShow;
         private bool isPlayingHeadMap = false;
@@ -419,7 +421,7 @@ namespace infraredCommApp
 
             //
             // TagLocationSet("3");
-            this.buttonFLowLineAnalysis.Visible = false;
+            //this.buttonFLowLineAnalysis.Visible = false;
         }
         private static DataTable GetDataTabletFromCSVFile(string csv_file_path)
         {
@@ -1162,7 +1164,7 @@ namespace infraredCommApp
         {
             if (map_comboBox1.SelectedValue != null)
             {
-                this.buttonFLowLineAnalysis.Visible = true;
+               // this.buttonFLowLineAnalysis.Visible = true;
 
                 if (HeatMapConsider==1)
                 {
@@ -1931,12 +1933,17 @@ namespace infraredCommApp
 
         private void buttonFLowLineAnalysis_Click(object sender, EventArgs e)
         {
+            if (timer != null)
+            {
+                timer.Stop();
+                isPlayingHeadMap = false;
+            }
             HeatMapGraph f2 = new HeatMapGraph(Form1.workfolder);
             ShowMapControls(false);
             var dialogResult = f2.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
-                var heatmapImageName = HeatMapGraph.CurrentMap.MapFileName;
+                CurrentMapSelected = HeatMapGraph.CurrentMap;
                 FromDate = HeatMapGraph.FromDate.Trim();
                 //FromDate = "1/1/2023 12:00:00 AM";
                 ToDate = HeatMapGraph.ToDate.Trim();
@@ -1955,17 +1962,22 @@ namespace infraredCommApp
                 ShowHeatMapControls(true);
                 //GenerateHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
                 //GenerateNewHeatMap(heatmapImageName, HeatMapGraph.SelectedTags);
-                HeatMapGenerate(heatmapImageName, HeatMapGraph.SelectedTags);
+                HeatMapGenerate(CurrentMapSelected, HeatMapGraph.SelectedTags);
             }
 
         }
 
-        private void HeatMapGenerate(string heatmapImageName, List<string> selectedTags)
+        private void HeatMapGenerate(Map currentMap, List<string> selectedTags)
         {
-            var image = Image.FromFile(workfolder + "Image\\" + heatmapImageName + ".jpeg", true);
+            var image = Image.FromFile(workfolder + "Image\\" + currentMap.MapFileName + ".jpeg", true);
+            //ButtonManage(true);
+            //ChangeLocation();
 
-            var currentMap = gitems.FirstOrDefault(x => x.MapFileName == heatmapImageName);
-            var currentMapFilePath = workfolder + "Image\\" + heatmapImageName + ".jpeg";
+            pictureBox1.BringToFront();
+            chartWithData.SendToBack();
+            EnableMapSpecificButtons();
+            //var currentMap = gitems.FirstOrDefault(x => x.MapFileName == heatmapImageName);
+            var currentMapFilePath = workfolder + "Image\\" + currentMap.MapFileName + ".jpeg";
             DataTable csvData = GetDataTabletFromCSVFile(workfolder + "Contentid.CSV");
 
             var allHeatMapList = new List<HeatMap>();
@@ -2499,7 +2511,7 @@ namespace infraredCommApp
 
        private void EnableMapSpecificButtons()
        {
-            this.map_button.Enabled = false;
+            this.map_button.Enabled = true;
             this.add_map_button1.Enabled = true;
             this.delete_map_button8.Enabled = true;
             this.set_map_label1.Enabled = true;
@@ -2527,7 +2539,7 @@ namespace infraredCommApp
             Exit_map_edit_button9.Visible = isVisible;
             map_comboBox1.Visible = isVisible;
             map_button.Enabled = !isVisible;
-            buttonFLowLineAnalysis.Visible = isVisible;
+            //buttonFLowLineAnalysis.Visible = isVisible;
         }
 
         private void ShowBarGraphControls(bool isVisible)
