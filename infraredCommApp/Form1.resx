@@ -1339,7 +1339,7 @@
     <value>MS UI Gothic, 9pt, style=Bold</value>
   </data>
   <data name="cordinateValueLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 222</value>
+    <value>12, 240</value>
   </data>
   <data name="cordinateValueLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 12</value>

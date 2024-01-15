@@ -2066,6 +2066,9 @@ namespace infraredCommApp
                             }
                             Color color = GetColorToPlot(maxClientCount, tagCountCache[currentTag.Id]);
                             painter.FillEllipse(new SolidBrush(color), currentTag.PointX, currentTag.PointY, 30, 30);
+                            var textFont = new Font("Arial", 10, FontStyle.Bold);
+                            var brush = new SolidBrush(Color.White);
+                            painter.DrawString(tagCountCache[currentTag.Id].ToString(), textFont, brush , currentTag.PointX + 5, currentTag.PointY + 5);
                             heatMapWithImage.Add(new HeatMapCordinateWithMapDTO()
                             {
                                 HeatMapCordinate = currentTag,
