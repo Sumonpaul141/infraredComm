@@ -36,7 +36,7 @@ namespace infraredCommApp
             workfolder = wFolder;
             string fileName = $"{wFolder}\\Image\\obj";
             var mapDataList = (List<Map>)LoadFromBinaryFile(fileName);
-            selectMapComboBox.DataSource = mapDataList;
+            selectMapComboBox.DataSource = mapDataList.Where(x => x.taglist.Count > 0).ToList();
             selectMapComboBox.DisplayMember = "MapName";
             selectMapComboBox.ValueMember = "MapFileName";
             selectMapComboBox.SelectedIndex = 0;
