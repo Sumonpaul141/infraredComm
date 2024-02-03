@@ -2117,6 +2117,9 @@ namespace infraredCommApp
             {
                 Color color = Color.FromArgb(255, 0, 0, 255);
                 painter.FillEllipse(new SolidBrush(color), mapTags[i].pointx, mapTags[i].pointy, 30, 30);
+                var textFont = new Font("Arial", 10, FontStyle.Bold);
+                var brush = new SolidBrush(Color.White);
+                painter.DrawString(0.ToString(), textFont, brush, mapTags[i].pointx + 5, mapTags[i].pointy + 5);
             }
         }
 
