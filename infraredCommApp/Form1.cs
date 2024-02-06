@@ -1699,7 +1699,7 @@ namespace infraredCommApp
 
 
             var quizHeader = new List<string>() { "Serial No." , "コンテンツID", "タイトル", "Corrent ans", "Incorrect ans", "正解率", "再生回数"};
-            var guideHeader = new List<string>() { "Serial No.", "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数"};
+            var guideHeader = new List<string>() { "Serial No.", "コンテンツID", "タイトル", "全部再生数", "一部再生数", "全部再生率", "再生回数", "Total used time"};
 
             if (isQuiz)
             {
@@ -1738,6 +1738,11 @@ namespace infraredCommApp
                 item.SubItems.Add(string.Format("{0, 3}", isQuiz ? quizInfo.nCorrectRatio : quizInfo.nCompletedRatio) + "%  ");
 
                 item.SubItems.Add(quizInfo.nTotalAccessNum.ToString());
+
+                if (!isQuiz)
+                {
+                    item.SubItems.Add(quizInfo.nTotalUsedTime.ToString());
+                }
 
                 listViewQuiz.Items.Add(item);
                 ExportDataDictionary.Add(GetDictinaryValue(quizInfo, title, isQuiz));
